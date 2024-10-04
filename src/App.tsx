@@ -1,10 +1,14 @@
-function App() {
+import Signin from "./pages/Signin";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
+const App = () => {
   return (
-   <>
-     <h1 className="bg-black w-full h-screen flex justify-center items-center text-white">hii</h1>
-   </>
-  )
-}
+    <Router>
+      <Routes>
+        <Route path="/signin" element={<Signin />} />
+      </Routes>
+    </Router>
+  );
+};
 
-export default App
+export default App;
