@@ -1,8 +1,10 @@
 
+
 const Signin = () => {
   return (
-    <div>Signin</div>
-  )
-}
+    <div className="bg-white flex justify-center items-center min-h-screen w-full">
+    </div>
+  );
+};
 
-export default Signin
+export default Signin;
