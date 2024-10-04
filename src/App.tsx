@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 const App = () => {
   return (
     <>
-      <Toaster />
+      <Toaster position="bottom-right" richColors theme="dark"/>
       <Router>
       <Routes>
         <Route path="/signup" element={<Signup />} />
