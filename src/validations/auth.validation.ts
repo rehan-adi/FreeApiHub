@@ -12,3 +12,6 @@ export const signupValidation = z.object({
     .min(6, { message: "Password must be at least 6 characters" })
     .regex(/.+/, { message: "Password cannot be empty" }),
 });
+
+
+export type SignupValidationType = z.infer<typeof signupValidation>;
