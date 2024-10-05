@@ -118,7 +118,7 @@ export const Signup = () => {
           </Form>
           <div className="mt-4 text-center text-sm">
             Already have an account?{" "}
-            <Link to="#" className="underline">
+            <Link to="/signin" className="underline">
               Sign in
             </Link>
           </div>
