@@ -1,3 +1,4 @@
+import { Loader2 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { Input } from "@/components/ui/input";
@@ -36,7 +37,7 @@ export const Signup = () => {
     },
   });
 
-  const { signUp } = useSignup();
+  const { signUp, loading } = useSignup();
 
   const onSignup = useCallback(
     async (data: SignupValidationType) => {
@@ -108,7 +109,7 @@ export const Signup = () => {
               />
 
               <Button type="submit" className="w-full">
-                Create an account
+                 { loading ? <> < Loader2 className="w-4 h-4 animate-spin mr-2 inline-block"/> Creating account...</> : <>Create an account</> }
               </Button>
               <Button variant="outline" className="w-full">
                 Sign up with GitHub
