@@ -5,6 +5,7 @@ type AuthState = {
     loading: boolean;
     login: () => void;
     logout: () => void;
+    setLoading: (value: boolean) => void;
 };
 
 export const useAuthStore = create<AuthState>((set) => ({
@@ -19,4 +20,5 @@ export const useAuthStore = create<AuthState>((set) => ({
     logout: () => {
         set({ isLogin: false }); 
     },
+    setLoading: (value) => set({ loading: value }),
 }));
