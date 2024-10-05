@@ -13,7 +13,7 @@ import {
 export const Signup = () => {
   return (
     <div className="flex justify-center items-center min-h-screen w-full">
-      <Card className="mx-auto max-w-sm">
+      <Card className="mx-auto max-w-sm w-full">
         <CardHeader>
           <CardTitle className="text-xl">Sign Up</CardTitle>
           <CardDescription>
@@ -22,14 +22,10 @@ export const Signup = () => {
         </CardHeader>
         <CardContent>
           <div className="grid gap-4">
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid gap-4">
               <div className="grid gap-2">
-                <Label htmlFor="first-name">First name</Label>
-                <Input id="first-name" placeholder="Max" required />
-              </div>
-              <div className="grid gap-2">
-                <Label htmlFor="last-name">Last name</Label>
-                <Input id="last-name" placeholder="Robinson" required />
+                <Label htmlFor="first-name">Username</Label>
+                <Input id="first-name" placeholder="Enter your Username" required />
               </div>
             </div>
             <div className="grid gap-2">
@@ -37,13 +33,13 @@ export const Signup = () => {
               <Input
                 id="email"
                 type="email"
-                placeholder="m@example.com"
+                placeholder="Enter your Email"
                 required
               />
             </div>
             <div className="grid gap-2">
               <Label htmlFor="password">Password</Label>
-              <Input id="password" type="password" />
+              <Input id="password" type="password"  placeholder="Enter your Password" />
             </div>
             <Button type="submit" className="w-full">
               Create an account
