@@ -38,12 +38,15 @@ export const Signup = () => {
 
   const { signUp } = useSignup();
 
-  const onSignup = useCallback(async (data: SignupValidationType) => {
-    await signUp(data);
-  }, [signUp]);
+  const onSignup = useCallback(
+    async (data: SignupValidationType) => {
+      await signUp(data);
+    },
+    [signUp]
+  );
 
   return (
-    <div className="flex justify-center items-center min-h-screen w-full">
+    <div className="flex justify-center items-center px-4 min-h-screen w-full">
       <Card className="mx-auto max-w-sm w-full">
         <CardHeader>
           <CardTitle className="text-xl">Sign Up</CardTitle>
