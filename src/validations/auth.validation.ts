@@ -15,3 +15,14 @@ export const signupValidation = z.object({
 
 
 export type SignupValidationType = z.infer<typeof signupValidation>;
+
+
+export const signinValidation = z.object({
+  email: z.string().email({ message: "Invalid email address" }),
+  password: z
+    .string()
+    .min(6, { message: "Password must be at least 6 characters" })
+    .regex(/.+/, { message: "Password cannot be empty" }),
+});
+
+export type SigninValidationType = z.infer<typeof signinValidation>;
