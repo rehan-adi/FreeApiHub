@@ -1,5 +1,6 @@
 import axios from "axios";
 import { toast } from "sonner";
+import { API_BACKEND_URL } from "@/constant";
 import { useCallback, useState } from "react";
 import { useProducts } from "@/store/useProducts";
 
@@ -12,7 +13,7 @@ export const useGetProducts = () => {
     setLoading(true); 
     try {
       const response = await axios.get(
-        "https://api.freeapi.app/api/v1/ecommerce/products"
+        `${API_BACKEND_URL}/ecommerce/products`,
       );
       console.log(response.data);
       if (response.status === 200) {

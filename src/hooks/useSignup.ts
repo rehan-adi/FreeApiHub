@@ -1,6 +1,7 @@
 import axios from "axios";
 import { toast } from "sonner";
 import { useState } from "react";
+import { API_BACKEND_URL } from "@/constant";
 import { SignupValidationType } from "@/validations/auth.validation";
 
 export const useSignup = () => {
@@ -10,7 +11,7 @@ export const useSignup = () => {
     setLoading(true);
     try {
       const response = await axios.post(
-        "https://api.freeapi.app/api/v1/users/register",
+        `${API_BACKEND_URL}/users/register`,
         data
       );
 

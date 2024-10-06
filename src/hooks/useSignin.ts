@@ -1,5 +1,6 @@
 import axios from "axios";
 import { toast } from "sonner";
+import { API_BACKEND_URL } from "@/constant";
 import { useAuthStore } from "@/store/useAuthStore";
 import { SigninValidationType } from "@/validations/auth.validation";
 
@@ -10,7 +11,7 @@ export const useSignin = () => {
     setLoading(true);
     try {
       const response = await axios.post(
-        "https://api.freeapi.app/api/v1/users/login",
+        `${API_BACKEND_URL}/users/login`,
         data
       );
       if (response.status === 200) {
