@@ -26,7 +26,7 @@ export const useGetProducts = () => {
       }
     } catch (error: any) {
       console.log(error);
-      toast.error("Signin Failed", {
+      toast.error("Failed to get Products", {
         description:
           error.response?.data?.message ||
           "An error occurred. Please try again.",
