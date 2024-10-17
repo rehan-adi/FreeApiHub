@@ -26,7 +26,9 @@ const Navbar = () => {
         <Link href="/">
           <div className="flex justify-between items-center gap-2">
             <img src="main.svg" className="w-7 h-7" alt="Logo" />
-            <span className="text-lg font-semibold">100xStore</span>
+            <span className="text-lg dark:text-white text-black font-semibold">
+              100xStore
+            </span>
           </div>
         </Link>
         <div className="flex justify-between items-center gap-3">
@@ -42,7 +44,11 @@ const Navbar = () => {
             className="p-2 border dark:border-white border-black dark:border-opacity-20 border-opacity-40 rounded-full"
             onClick={() => setTheme(theme === "light" ? "dark" : "light")}
           >
-            {theme === "light" ? <Moon className="text-black dark:text-white" size={17} /> : <Sun size={17} />}
+            {theme === "light" ? (
+              <Moon className="text-black dark:text-white" size={17} />
+            ) : (
+              <Sun size={17} />
+            )}
           </button>
           <button
             onClick={toggleSidebar}
@@ -58,24 +64,31 @@ const Navbar = () => {
 
       {/* Sidebar that appears on small screens */}
       {isSidebarOpen && (
-        <div className="fixed top-0 right-0 w-64 h-full bg-gray-800 text-white shadow-lg z-50">
+        <div className="fixed top-0 right-0 py-1 w-full h-full bg-white dark:bg-[#020817] dark:text-white text-black shadow-lg z-50">
           <div className="flex justify-between items-center p-4">
-            <h2 className="text-lg font-semibold">Menu</h2>
-            <button onClick={toggleSidebar}>
+            <Link href="/">
+              <div className="flex justify-between items-center gap-2">
+                <img src="main.svg" className="w-7 h-7" alt="Logo" />
+                <span className="text-lg font-semibold">100xStore</span>
+              </div>
+            </Link>
+            <button onClick={toggleSidebar} className="mr-2" >
               <X size={20} />
             </button>
           </div>
-          <div className="flex flex-col p-4">
+         <div className="px-5 py-5">
+         <div className="flex flex-col border dark:border-white border-black dark:border-opacity-15 border-opacity-40 space-y-6 rounded-lg p-4">
             <Link href="/profile" className="py-2" onClick={toggleSidebar}>
-              Profile
+            <span className="text-base tracking-wider font-semibold"> <User size={20} className="inline-block mb-1 mr-2"/> Profile</span>
             </Link>
-            <Link href="/cart" className="py-2" onClick={toggleSidebar}>
-              Cart
+            <Link href="/cart" className="py-2 mb-7" onClick={toggleSidebar}>
+            <span className="text-base tracking-wider font-semibold"> <ShoppingCart size={20} className="inline-block mb-1 mr-2"/> Cart</span>
             </Link>
-            <button className="bg-[#3259E8] text-white text-xs font-medium hover:bg-[#3e63e9] rounded-full py-2 px-4 mt-4">
-              Clone
+            <button className="bg-[#3259E8] text-white text-xs font-medium hover:bg-[#3e63e9] rounded-full py-3 px-4 mt-12">
+              Login
             </button>
           </div>
+         </div>
         </div>
       )}
     </>
