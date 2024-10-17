@@ -1,6 +1,7 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
+import { ThemeProvider } from "next-themes";
 
 export const metadata: Metadata = {
   title: "100xStore",
@@ -17,9 +18,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className=" bg-black text-white antialiased">
-        <Navbar />
-        {children}
+      <body className=" dark:bg-black bg-white dark:text-white text-white antialiased">
+        <ThemeProvider attribute="class">
+          <Navbar />
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );
