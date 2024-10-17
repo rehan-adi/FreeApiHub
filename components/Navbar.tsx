@@ -72,23 +72,33 @@ const Navbar = () => {
                 <span className="text-lg font-semibold">100xStore</span>
               </div>
             </Link>
-            <button onClick={toggleSidebar} className="mr-2" >
+            <button onClick={toggleSidebar} className="mr-2">
               <X size={20} />
             </button>
           </div>
-         <div className="px-5 py-5">
-         <div className="flex flex-col border dark:border-white border-black dark:border-opacity-15 border-opacity-40 space-y-6 rounded-lg p-4">
-            <Link href="/profile" className="py-2" onClick={toggleSidebar}>
-            <span className="text-base tracking-wider font-semibold"> <User size={20} className="inline-block mb-1 mr-2"/> Profile</span>
-            </Link>
-            <Link href="/cart" className="py-2 mb-7" onClick={toggleSidebar}>
-            <span className="text-base tracking-wider font-semibold"> <ShoppingCart size={20} className="inline-block mb-1 mr-2"/> Cart</span>
-            </Link>
-            <button className="bg-[#3259E8] text-white text-xs font-medium hover:bg-[#3e63e9] rounded-full py-3 px-4 mt-12">
-              Login
-            </button>
+          <div className="px-5 py-5">
+            <div className="flex flex-col border dark:border-white border-black dark:border-opacity-15 border-opacity-40 space-y-6 rounded-lg p-4">
+              <Link href="/profile" className="py-2" onClick={toggleSidebar}>
+                <span className="text-base tracking-wider font-semibold">
+                  {" "}
+                  <User size={20} className="inline-block mb-1 mr-2" /> Profile
+                </span>
+              </Link>
+              <Link href="/cart" className="py-2 mb-7" onClick={toggleSidebar}>
+                <span className="text-base tracking-wider font-semibold">
+                  {" "}
+                  <ShoppingCart
+                    size={20}
+                    className="inline-block mb-1 mr-2"
+                  />{" "}
+                  Cart
+                </span>
+              </Link>
+              <button className="bg-[#3259E8] text-white text-xs font-medium hover:bg-[#3e63e9] rounded-full py-3 px-4 mt-12">
+                Login
+              </button>
+            </div>
           </div>
-         </div>
         </div>
       )}
     </>
