@@ -1,5 +1,5 @@
 {
-  "name": "y",
+  "name": "FreeApiHub",
   "private": true,
   "scripts": {
     "build": "turbo build",
