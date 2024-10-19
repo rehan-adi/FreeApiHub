@@ -1,0 +1,21 @@
+{
+  "name": "@freeapihub/db",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "prisma": "^5.21.1"
+  },
+  "dependencies": {
+    "@prisma/client": "5.21.1"
+  },
+  "exports": {
+    "./client": "./index.ts"
+  }
+}
