@@ -1,0 +1,21 @@
+{
+  "name": "freeapihub-be",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "turbo run dev --filter=freeapihub-be",
+    "build": "turbo run build --filter=freeapihub-be",
+    "lint": "turbo run lint --filter=freeapihub-be",
+    "start": "node dist/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.1"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.0"
+  }
+}
