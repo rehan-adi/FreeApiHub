@@ -70,11 +70,29 @@ export const submitRandomUserData = async (req: Request, res: Response) => {
       data: newUser,
       message: "User created successfully",
     });
-
   } catch (error: unknown) {
     const message =
       error instanceof Error ? error.message : "Unknown error occurred";
     console.error("Error submiting users data", message);
+    return res.status(500).json({
+      success: false,
+      message: "Internal Server Error",
+      error: message,
+    });
+  }
+};
+
+export const deleteRandomUserData = async (req: Request, res: Response) => {
+  try {
+    await prisma.randomUser.deleteMany();
+
+    return res
+      .status(200)
+      .json({ success: true, message: "Delete User's data" });
+  } catch (error: unknown) {
+    const message =
+      error instanceof Error ? error.message : "Unknown error occurred";
+    console.error("Error deleing users data", message);
     return res.status(500).json({
       success: false,
       message: "Internal Server Error",
