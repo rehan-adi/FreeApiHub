@@ -1,5 +1,5 @@
-import prisma from "@freeapihub/db";
-import { Request, Response } from "express";
+import prisma from "@freeapihub/db/index";
+import { raw, Request, Response } from "express";
 
 export const getRandomUser = async (req: Request, res: Response) => {
   try {
@@ -13,6 +13,68 @@ export const getRandomUser = async (req: Request, res: Response) => {
     const message =
       error instanceof Error ? error.message : "Unknown error occurred";
     console.error("Error fetching users:", message);
+    return res.status(500).json({
+      success: false,
+      message: "Internal Server Error",
+      error: message,
+    });
+  }
+};
+
+export const submitRandomUserData = async (req: Request, res: Response) => {
+  try {
+    const {
+      gender,
+      firstName,
+      lastName,
+      email,
+      username,
+      password,
+      phone,
+      dob,
+      age,
+      streetNumber,
+      streetName,
+      city,
+      state,
+      country,
+      postcode,
+      picture,
+      nationality,
+    } = req.body();
+
+    const newUser = await prisma.randomUser.create({
+      data: {
+        gender,
+        firstName,
+        lastName,
+        email,
+        username,
+        password,
+        phone,
+        dob,
+        age,
+        streetNumber,
+        streetName,
+        city,
+        state,
+        country,
+        postcode,
+        picture,
+        nationality,
+      },
+    });
+
+    return res.status(201).json({
+      success: true,
+      data: newUser,
+      message: "User created successfully",
+    });
+
+  } catch (error: unknown) {
+    const message =
+      error instanceof Error ? error.message : "Unknown error occurred";
+    console.error("Error submiting users data", message);
     return res.status(500).json({
       success: false,
       message: "Internal Server Error",
