@@ -4,6 +4,8 @@ import helmet from 'helmet';
 import morgan from 'morgan';
 import express, { Request, Response } from 'express';
 
+import { randomUserRouter } from './routes/randomuser.route';
+
 env.config();
 
 const app = express();
@@ -18,6 +20,9 @@ app.use(morgan('dev'));
 app.get("/", (req: Request, res: Response) => {
     return res.status(200).json({ success: true, message: "Okay" });
 });
+
+// routes 
+app.use("/api/v1/randomuser", randomUserRouter);
 
 app.listen(process.env.PORT, () => {
     console.log(`Server is running on ${process.env.PORT}`);
