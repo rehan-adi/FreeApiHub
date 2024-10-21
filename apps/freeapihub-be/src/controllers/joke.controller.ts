@@ -64,3 +64,22 @@ export const submitJokeData = async (req: Request, res: Response) => {
     });
   }
 };
+
+export const deleteJokeData = async (req: Request, res: Response) => {
+  try {
+    await prisma.joke.deleteMany();
+
+    return res
+      .status(200)
+      .json({ success: true, message: "Joke data deleted successfuly" });
+  } catch (error) {
+    const message =
+      error instanceof Error ? error.message : "Unknown error occurred";
+      console.error("Error deleting jokes:", error);
+    return res.status(500).json({
+      success: false,
+      message: "Internal Server Error",
+      error: message,
+    });
+  }
+};
