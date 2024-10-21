@@ -1,5 +1,5 @@
 import prisma from "@freeapihub/db/index";
-import { raw, Request, Response } from "express";
+import { Request, Response } from "express";
 
 export const getRandomUser = async (req: Request, res: Response) => {
   try {
@@ -31,7 +31,6 @@ export const submitRandomUserData = async (req: Request, res: Response) => {
       username,
       password,
       phone,
-      dob,
       age,
       streetNumber,
       streetName,
@@ -41,7 +40,7 @@ export const submitRandomUserData = async (req: Request, res: Response) => {
       postcode,
       picture,
       nationality,
-    } = req.body();
+    } = req.body;
 
     const newUser = await prisma.randomUser.create({
       data: {
@@ -52,7 +51,6 @@ export const submitRandomUserData = async (req: Request, res: Response) => {
         username,
         password,
         phone,
-        dob,
         age,
         streetNumber,
         streetName,
