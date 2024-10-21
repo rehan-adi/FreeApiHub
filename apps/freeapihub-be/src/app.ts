@@ -23,8 +23,8 @@ app.get("/", (req: Request, res: Response) => {
 });
 
 // routes 
-app.use("/api/v1/joke", jokeRouter);
-app.use("/api/v1/randomuser", randomUserRouter);
+app.use("/api/v1/jokes", jokeRouter);
+app.use("/api/v1/randomusers", randomUserRouter);
 
 app.listen(process.env.PORT, () => {
     console.log(`Server is running on ${process.env.PORT}`);

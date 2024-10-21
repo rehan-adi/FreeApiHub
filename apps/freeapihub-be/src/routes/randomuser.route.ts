@@ -8,7 +8,7 @@ import {
 
 export const randomUserRouter = express.Router();
 
-randomUserRouter.get("/all", getRandomUser);
+randomUserRouter.get("/", getRandomUser);
 randomUserRouter.post("/create", submitRandomUserData);
-randomUserRouter.delete("/delete/all", deleteRandomUserData);
+randomUserRouter.delete("/delete-all", deleteRandomUserData);
 randomUserRouter.delete("/delete", deleteRandomUserDataById);
