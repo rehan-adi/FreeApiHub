@@ -1,4 +1,4 @@
-import prisma from "@freeapihub/db";
+import prisma from "@freeapihub/db/index";
 import { Request, Response } from "express";
 
 export const getJokes = async (req: Request, res: Response) => {

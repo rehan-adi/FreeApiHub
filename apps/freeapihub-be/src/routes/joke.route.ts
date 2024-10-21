@@ -4,7 +4,7 @@ import {
   deleteJokeDataById,
   getJokes,
   submitJokeData,
-} from "src/controllers/joke.controller";
+} from "../controllers/joke.controller";
 
 export const jokeRouter = express.Router();
 
