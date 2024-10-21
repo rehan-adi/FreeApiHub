@@ -4,6 +4,7 @@ import helmet from 'helmet';
 import morgan from 'morgan';
 import express, { Request, Response } from 'express';
 
+import { jokeRouter } from './routes/joke.route';
 import { randomUserRouter } from './routes/randomuser.route';
 
 env.config();
@@ -22,6 +23,7 @@ app.get("/", (req: Request, res: Response) => {
 });
 
 // routes 
+app.use("/api/v1/joke", jokeRouter);
 app.use("/api/v1/randomuser", randomUserRouter);
 
 app.listen(process.env.PORT, () => {
