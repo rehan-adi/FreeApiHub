@@ -75,7 +75,44 @@ export const deleteJokeData = async (req: Request, res: Response) => {
   } catch (error) {
     const message =
       error instanceof Error ? error.message : "Unknown error occurred";
-      console.error("Error deleting jokes:", error);
+    console.error("Error deleting jokes:", error);
+    return res.status(500).json({
+      success: false,
+      message: "Internal Server Error",
+      error: message,
+    });
+  }
+};
+
+export const deleteJokeDataById = async (req: Request, res: Response) => {
+  try {
+    const { jokeId } = req.body;
+
+    const something = await prisma.joke.findUnique({
+      where: {
+        id: jokeId,
+      },
+    });
+
+    if (!something) {
+      return res
+        .status(404)
+        .json({ success: false, message: "Joke not found" });
+    }
+
+    await prisma.joke.delete({
+      where: {
+        id: jokeId,
+      },
+    });
+
+    return res
+      .status(200)
+      .json({ success: true, message: "Joke deleted successfully" });
+  } catch (error) {
+    const message =
+      error instanceof Error ? error.message : "Unknown error occurred";
+    console.error("Error deleting joke by id:", error);
     return res.status(500).json({
       success: false,
       message: "Internal Server Error",
