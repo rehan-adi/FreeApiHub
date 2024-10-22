@@ -64,6 +64,19 @@ model Quote {
   category String?
 }
 
+model Book {
+  id          String   @id @default(uuid())
+  name        String
+  author      String
+  description String
+  publisher   String
+  publishedAt DateTime
+  genre       String
+  pages       Int
+  imageUrl    String 
+  rating      Float    @default(0.0)
+}
+
 enum Gender {
   male
   female
