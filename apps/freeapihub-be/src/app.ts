@@ -5,9 +5,10 @@ import morgan from 'morgan';
 import rateLimit from 'express-rate-limit';
 import express, { Request, Response } from 'express';
 
+import { bookRouter } from './routes/book.route';
 import { jokeRouter } from './routes/joke.route';
-import { randomUserRouter } from './routes/randomuser.route';
 import { quoteRouer } from './routes/quote.route';
+import { randomUserRouter } from './routes/randomuser.route';
 
 env.config();
 
@@ -33,6 +34,7 @@ app.get("/", (req: Request, res: Response) => {
 
 // routes 
 app.use("/api/v1/jokes", jokeRouter);
+app.use("/api/v1/books", bookRouter);
 app.use("/api/v1/quotes", quoteRouer);
 app.use("/api/v1/randomusers", randomUserRouter);
 
