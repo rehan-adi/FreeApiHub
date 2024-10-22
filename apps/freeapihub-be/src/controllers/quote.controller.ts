@@ -67,22 +67,58 @@ export const submitQuoteData = async (req: Request, res: Response) => {
   }
 };
 
-
 export const deleteQuoteData = async (req: Request, res: Response) => {
-    try {
-      await prisma.quote.deleteMany();
-  
+  try {
+    await prisma.quote.deleteMany();
+
+    return res
+      .status(200)
+      .json({ success: true, message: "Quote data deleted successfuly" });
+  } catch (error) {
+    const message =
+      error instanceof Error ? error.message : "Unknown error occurred";
+    console.error("Error deleting quotes:", error);
+    return res.status(500).json({
+      success: false,
+      message: "Internal Server Error",
+      error: message,
+    });
+  }
+};
+
+export const deleteQuoteDataById = async (req: Request, res: Response) => {
+  try {
+    const { quoteId } = req.body;
+
+    const existingQuote = await prisma.quote.findUnique({
+      where: {
+        id: quoteId,
+      },
+    });
+
+    if (!existingQuote) {
       return res
-        .status(200)
-        .json({ success: true, message: "Quote data deleted successfuly" });
-    } catch (error) {
-      const message =
-        error instanceof Error ? error.message : "Unknown error occurred";
-      console.error("Error deleting quotes:", error);
-      return res.status(500).json({
-        success: false,
-        message: "Internal Server Error",
-        error: message,
-      });
+        .status(404)
+        .json({ success: false, message: "Quote not found" });
     }
-  };
+
+    await prisma.quote.delete({
+      where: {
+        id: quoteId,
+      },
+    });
+
+    return res
+      .status(200)
+      .json({ success: true, message: "Quote deleted successfully" });
+  } catch (error) {
+    const message =
+      error instanceof Error ? error.message : "Unknown error occurred";
+    console.error("Error deleting quote by id:", error);
+    return res.status(500).json({
+      success: false,
+      message: "Internal Server Error",
+      error: message,
+    });
+  }
+};
