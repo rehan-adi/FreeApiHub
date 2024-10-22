@@ -16,51 +16,51 @@ datasource db {
 model User {
   id       String @id @default(cuid())
   email    String @unique
-  password String 
+  password String
   name     String
 
   @@index([email])
 }
 
 model RandomUser {
-  id          String      @id @default(cuid())
-  gender      Gender
-  firstName   String
-  lastName    String
-  email       String   @unique
-  username    String   @unique
-  password    String
-  phone       String?
-  age         Int
+  id           String   @id @default(cuid())
+  gender       Gender
+  firstName    String
+  lastName     String
+  email        String   @unique
+  username     String   @unique
+  password     String
+  phone        String?
+  age          Int
   streetNumber Int
-  streetName  String?
-  city        String
-  state       String
-  country     String
-  postcode    Int
-  picture     String  
-  nationality String?
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
+  streetName   String?
+  city         String
+  state        String
+  country      String
+  postcode     Int
+  picture      String
+  nationality  String?
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
 }
 
 model Joke {
-  id       String   @id @default(uuid())
-  author   String 
-  content  String  
-  rate     Int  
-  likes    Int     
-  dislikes Int     
+  id       String  @id @default(uuid())
+  author   String
+  content  String
+  rate     Int
+  likes    Int
+  dislikes Int
   category String?
 }
 
 model Quote {
-  id       String   @id @default(uuid())
-  author   String 
-  content  String  
-  rate     Int  
-  likes    Int     
-  dislikes Int     
+  id       String  @id @default(uuid())
+  author   String
+  content  String
+  rate     Int
+  likes    Int
+  dislikes Int
   category String?
 }
 
@@ -73,8 +73,22 @@ model Book {
   publishedAt DateTime
   genre       String
   pages       Int
-  imageUrl    String 
+  imageUrl    String
   rating      Float    @default(0.0)
+}
+
+model Product {
+  id                 String   @id @default(uuid())
+  title              String
+  description        String
+  price              Int
+  discountPercentage Int
+  rating             Int
+  stock              Int
+  brand              String
+  category           String
+  thumbnail          String
+  images             String[]
 }
 
 enum Gender {
