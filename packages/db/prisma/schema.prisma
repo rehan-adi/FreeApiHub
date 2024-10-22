@@ -54,6 +54,15 @@ model Joke {
   category String?
 }
 
+model Quote {
+  id       String   @id @default(uuid())
+  author   String 
+  content  String  
+  rate     Int  
+  likes    Int     
+  dislikes Int     
+  category String?
+}
 
 enum Gender {
   male
