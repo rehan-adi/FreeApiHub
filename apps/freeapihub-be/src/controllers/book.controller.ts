@@ -98,3 +98,40 @@ export const deleteBookData = async (req: Request, res: Response) => {
     });
   }
 };
+
+export const deleteBookDataById = async (req: Request, res: Response) => {
+  try {
+    const { bookId } = req.body;
+
+    const existingBook = await prisma.joke.findUnique({
+      where: {
+        id: bookId,
+      },
+    });
+
+    if (!existingBook) {
+      return res
+        .status(404)
+        .json({ success: false, message: "Book not found" });
+    }
+
+    await prisma.joke.delete({
+      where: {
+        id: bookId,
+      },
+    });
+
+    return res
+      .status(200)
+      .json({ success: true, message: "Book deleted successfully" });
+  } catch (error) {
+    const message =
+      error instanceof Error ? error.message : "Unknown error occurred";
+    console.error("Error deleting book by id:", error);
+    return res.status(500).json({
+      success: false,
+      message: "Internal Server Error",
+      error: message,
+    });
+  }
+};
