@@ -7,7 +7,7 @@ import express, { Request, Response } from 'express';
 
 import { bookRouter } from './routes/book.route';
 import { jokeRouter } from './routes/joke.route';
-import { quoteRouer } from './routes/quote.route';
+import { quoteRouter } from './routes/quote.route';
 import { productRouter } from './routes/product.route';
 import { randomUserRouter } from './routes/randomuser.route';
 
@@ -36,7 +36,7 @@ app.get("/", (req: Request, res: Response) => {
 // routes 
 app.use("/api/v1/jokes", jokeRouter);
 app.use("/api/v1/books", bookRouter);
-app.use("/api/v1/quotes", quoteRouer);
+app.use("/api/v1/quotes", quoteRouter);
 app.use("/api/v1/products", productRouter);
 app.use("/api/v1/randomusers", randomUserRouter);
 

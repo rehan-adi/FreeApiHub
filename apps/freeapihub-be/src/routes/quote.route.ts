@@ -6,9 +6,9 @@ import {
   submitQuoteData,
 } from "../controllers/quote.controller";
 
-export const quoteRouer = express.Router();
+export const quoteRouter = express.Router();
 
-quoteRouer.get("/", getQuotes);
-quoteRouer.post("/create", submitQuoteData);
-quoteRouer.delete("/delete-all", deleteQuoteData);
-quoteRouer.delete("/delete", deleteQuoteDataById);
+quoteRouter.get("/", getQuotes);
+quoteRouter.post("/create", submitQuoteData);
+quoteRouter.delete("/delete-all", deleteQuoteData);
+quoteRouter.delete("/delete", deleteQuoteDataById);
