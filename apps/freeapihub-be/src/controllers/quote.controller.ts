@@ -66,3 +66,23 @@ export const submitQuoteData = async (req: Request, res: Response) => {
     });
   }
 };
+
+
+export const deleteQuoteData = async (req: Request, res: Response) => {
+    try {
+      await prisma.quote.deleteMany();
+  
+      return res
+        .status(200)
+        .json({ success: true, message: "Quote data deleted successfuly" });
+    } catch (error) {
+      const message =
+        error instanceof Error ? error.message : "Unknown error occurred";
+      console.error("Error deleting quotes:", error);
+      return res.status(500).json({
+        success: false,
+        message: "Internal Server Error",
+        error: message,
+      });
+    }
+  };
