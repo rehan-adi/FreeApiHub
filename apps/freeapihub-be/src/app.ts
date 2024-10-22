@@ -7,6 +7,7 @@ import express, { Request, Response } from 'express';
 
 import { jokeRouter } from './routes/joke.route';
 import { randomUserRouter } from './routes/randomuser.route';
+import { quoteRouer } from './routes/quote.route';
 
 env.config();
 
@@ -32,6 +33,7 @@ app.get("/", (req: Request, res: Response) => {
 
 // routes 
 app.use("/api/v1/jokes", jokeRouter);
+app.use("/api/v1/quotes", quoteRouer);
 app.use("/api/v1/randomusers", randomUserRouter);
 
 app.listen(process.env.PORT, () => {
