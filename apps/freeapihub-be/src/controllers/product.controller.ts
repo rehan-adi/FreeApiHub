@@ -100,3 +100,40 @@ export const deleteProductData = async (req: Request, res: Response) => {
     });
   }
 };
+
+export const deleteProductDataById = async (req: Request, res: Response) => {
+  try {
+    const { productId } = req.body;
+
+    const existingProduct = await prisma.product.findUnique({
+      where: {
+        id: productId,
+      },
+    });
+
+    if (!existingProduct) {
+      return res
+        .status(404)
+        .json({ success: false, message: "Product not found" });
+    }
+
+    await prisma.product.delete({
+      where: {
+        id: productId,
+      },
+    });
+
+    return res
+      .status(200)
+      .json({ success: true, message: "Product deleted successfully" });
+  } catch (error) {
+    const message =
+      error instanceof Error ? error.message : "Unknown error occurred";
+    console.error("Error deleting product by id:", error);
+    return res.status(500).json({
+      success: false,
+      message: "Internal Server Error",
+      error: message,
+    });
+  }
+};
