@@ -91,6 +91,21 @@ model Product {
   images             String[]
 }
 
+model ProgrammingLanguage {
+  id                 String @id @default(uuid())
+  name               String
+  description        String
+  logoUrl            String
+  creator            String
+  foundationYear     Int
+  popularity         Int
+  marketDemand       Int
+  industryUse        String
+  type               String
+  version            String
+  learningDifficulty Int
+}
+
 enum Gender {
   male
   female
