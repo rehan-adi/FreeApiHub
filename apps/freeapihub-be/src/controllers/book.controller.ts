@@ -132,9 +132,9 @@ export const deleteBookData = async (req: Request, res: Response) => {
 
 export const deleteBookDataById = async (req: Request, res: Response) => {
   try {
-    const { bookId } = req.body;
+    const { bookId } = req.params;
 
-    const existingBook = await prisma.joke.findUnique({
+    const existingBook = await prisma.book.findUnique({
       where: {
         id: bookId,
       },
@@ -146,7 +146,7 @@ export const deleteBookDataById = async (req: Request, res: Response) => {
         .json({ success: false, message: "Book not found" });
     }
 
-    await prisma.joke.delete({
+    await prisma.book.delete({
       where: {
         id: bookId,
       },

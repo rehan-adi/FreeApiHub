@@ -13,4 +13,4 @@ bookRouter.get("/", getBooks);
 bookRouter.get("/:bookId", getBookById);
 bookRouter.post("/create", submitBookData);
 bookRouter.post("/delete-all", deleteBookData);
-bookRouter.post("/delete", deleteBookDataById);
+bookRouter.post("/:bookId", deleteBookDataById);
