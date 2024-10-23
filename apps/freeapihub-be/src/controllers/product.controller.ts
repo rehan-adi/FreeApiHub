@@ -81,3 +81,22 @@ export const submitProductData = async (req: Request, res: Response) => {
     });
   }
 };
+
+export const deleteProductData = async (req: Request, res: Response) => {
+  try {
+    await prisma.product.deleteMany();
+
+    return res
+      .status(200)
+      .json({ success: true, message: "Product data deleted successfuly" });
+  } catch (error) {
+    const message =
+      error instanceof Error ? error.message : "Unknown error occurred";
+    console.error("Error deleting products:", error);
+    return res.status(500).json({
+      success: false,
+      message: "Internal Server Error",
+      error: message,
+    });
+  }
+};
