@@ -95,16 +95,55 @@ export const deleteProgrammingLanguageData = async (
   try {
     await prisma.programmingLanguage.deleteMany();
 
-    return res
-      .status(200)
-      .json({
-        success: true,
-        message: "Programming Language data deleted successfuly",
-      });
+    return res.status(200).json({
+      success: true,
+      message: "Programming Language data deleted successfuly",
+    });
   } catch (error) {
     const message =
       error instanceof Error ? error.message : "Unknown error occurred";
     console.error("Error deleting books:", error);
+    return res.status(500).json({
+      success: false,
+      message: "Internal Server Error",
+      error: message,
+    });
+  }
+};
+
+export const deleteProgrammingLanguageDataById = async (
+  req: Request,
+  res: Response
+) => {
+  try {
+    const { languageId } = req.body;
+
+    const existingProgrammingLanguage =
+      await prisma.programmingLanguage.findUnique({
+        where: {
+          id: languageId,
+        },
+      });
+
+    if (!existingProgrammingLanguage) {
+      return res
+        .status(404)
+        .json({ success: false, message: "Language not found" });
+    }
+
+    await prisma.programmingLanguage.delete({
+      where: {
+        id: languageId,
+      },
+    });
+
+    return res
+      .status(200)
+      .json({ success: true, message: "Language deleted successfully" });
+  } catch (error) {
+    const message =
+      error instanceof Error ? error.message : "Unknown error occurred";
+    console.error("Error deleting language by id:", error);
     return res.status(500).json({
       success: false,
       message: "Internal Server Error",
