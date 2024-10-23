@@ -22,6 +22,37 @@ export const getBooks = async (req: Request, res: Response) => {
   }
 };
 
+export const getBookById = async (req: Request, res: Response) => {
+  try {
+    const { bookId } = req.params;
+
+    const existingBook = await prisma.book.findUnique({
+      where: {
+        id: bookId,
+      },
+    });
+
+    if (!existingBook) {
+      return res
+        .status(404)
+        .json({ success: false, message: "Book not found" });
+    }
+
+    return res
+      .status(200)
+      .json({ success: true, data: existingBook, message: "Book data" });
+  } catch (error) {
+    const message =
+      error instanceof Error ? error.message : "Unknown error occurred";
+    console.error("Error fetching book:", message);
+    return res.status(500).json({
+      success: false,
+      message: "Internal Server Error",
+      error: message,
+    });
+  }
+};
+
 export const submitBookData = async (req: Request, res: Response) => {
   try {
     const {
@@ -66,7 +97,7 @@ export const submitBookData = async (req: Request, res: Response) => {
     return res.status(201).json({
       success: true,
       data: newBook,
-      message: "Books created successfully",
+      message: "Book created successfully",
     });
   } catch (error) {
     const message =
@@ -85,7 +116,7 @@ export const deleteBookData = async (req: Request, res: Response) => {
     await prisma.book.deleteMany();
 
     return res
-      .status(200)
+      .status(204)
       .json({ success: true, message: "Book data deleted successfuly" });
   } catch (error) {
     const message =
