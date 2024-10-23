@@ -87,3 +87,28 @@ export const submitProgrammingLanguageData = async (
     });
   }
 };
+
+export const deleteProgrammingLanguageData = async (
+  req: Request,
+  res: Response
+) => {
+  try {
+    await prisma.programmingLanguage.deleteMany();
+
+    return res
+      .status(200)
+      .json({
+        success: true,
+        message: "Programming Language data deleted successfuly",
+      });
+  } catch (error) {
+    const message =
+      error instanceof Error ? error.message : "Unknown error occurred";
+    console.error("Error deleting books:", error);
+    return res.status(500).json({
+      success: false,
+      message: "Internal Server Error",
+      error: message,
+    });
+  }
+};
