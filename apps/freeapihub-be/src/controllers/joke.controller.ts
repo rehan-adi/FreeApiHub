@@ -117,7 +117,7 @@ export const deleteJokeData = async (req: Request, res: Response) => {
 
 export const deleteJokeDataById = async (req: Request, res: Response) => {
   try {
-    const { jokeId } = req.body;
+    const { jokeId } = req.params;
 
     const something = await prisma.joke.findUnique({
       where: {

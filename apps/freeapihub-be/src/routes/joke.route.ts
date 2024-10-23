@@ -13,4 +13,4 @@ jokeRouter.get("/", getJokes);
 jokeRouter.get("/:jokeId", getJokeById);
 jokeRouter.post("/create", submitJokeData);
 jokeRouter.delete("/delete-all", deleteJokeData);
-jokeRouter.delete("/delete", deleteJokeDataById);
+jokeRouter.delete("/:jokeId", deleteJokeDataById);
