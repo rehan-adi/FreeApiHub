@@ -11,10 +11,18 @@ export const bookRouter = express.Router();
 
 /**
  * @swagger
+ * tags:
+ *   - name: Books
+ *     description: Operations related to books
+ */
+
+/**
+ * @swagger
  * /api/v1/books:
  *   get:
  *     summary: Retrieve a list of books
- *     description: Get a list of all books with their details.
+ *     description: Get a list of all books with their details, including author, genre, and rating.
+ *     tags: [Books]
  *     responses:
  *       200:
  *         description: A list of books.
@@ -27,6 +35,7 @@ export const bookRouter = express.Router();
  *                 properties:
  *                   id:
  *                     type: string
+ *                     format: uuid
  *                     description: The book ID (UUID).
  *                   name:
  *                     type: string
@@ -42,21 +51,25 @@ export const bookRouter = express.Router();
  *                     description: The publisher of the book.
  *                   publishedAt:
  *                     type: string
+ *                     format: date
  *                     description: The publication date of the book.
  *                   genre:
  *                     type: string
  *                     description: The genre of the book.
  *                   pages:
- *                     type: number
+ *                     type: integer
  *                     description: The number of pages in the book.
  *                   imageUrl:
  *                     type: string
+ *                     format: uri
  *                     description: URL to the book's cover image.
  *                   rating:
  *                     type: number
- *                     description: The rating of the book.
+ *                     format: float
+ *                     description: The rating of the book (out of 5).
+ *     security:
+ *       - api_key: []
  */
-bookRouter.get("/", getBooks);
 
 /**
  * @swagger
@@ -64,13 +77,15 @@ bookRouter.get("/", getBooks);
  *   get:
  *     summary: Retrieve a single book by ID
  *     description: Get details of a specific book by its ID.
+ *     tags: [Books]
  *     parameters:
  *       - in: path
  *         name: bookId
  *         required: true
  *         schema:
  *           type: string
- *         description: The book ID (UUID)
+ *           format: uuid
+ *         description: The book ID (UUID).
  *     responses:
  *       200:
  *         description: A single book.
@@ -81,6 +96,7 @@ bookRouter.get("/", getBooks);
  *               properties:
  *                 id:
  *                   type: string
+ *                   format: uuid
  *                   description: The book ID (UUID).
  *                 name:
  *                   type: string
@@ -96,24 +112,30 @@ bookRouter.get("/", getBooks);
  *                   description: The publisher of the book.
  *                 publishedAt:
  *                   type: string
+ *                   format: date
  *                   description: The publication date of the book.
  *                 genre:
  *                   type: string
  *                   description: The genre of the book.
  *                 pages:
- *                   type: number
+ *                   type: integer
  *                   description: The number of pages in the book.
  *                 imageUrl:
  *                   type: string
+ *                   format: uri
  *                   description: URL to the book's cover image.
  *                 rating:
  *                   type: number
- *                   description: The rating of the book.
+ *                   format: float
+ *                   description: The rating of the book (out of 5).
  *       404:
  *         description: Book not found
+ *     security:
+ *       - api_key: []
  */
-bookRouter.get("/:bookId", getBookById);
 
+bookRouter.get("/", getBooks);
+bookRouter.get("/:bookId", getBookById);
 bookRouter.post("/create", submitBookData);
 bookRouter.post("/delete-all", deleteBookData);
 bookRouter.post("/:bookId", deleteBookDataById);
