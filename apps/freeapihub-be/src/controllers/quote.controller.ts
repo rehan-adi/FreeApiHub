@@ -22,6 +22,38 @@ export const getQuotes = async (req: Request, res: Response) => {
   }
 };
 
+export const getQuoteById = async (req: Request, res: Response) => {
+  try {
+    const { quoteId } = req.params;
+
+    const existingQuote = await prisma.quote.findUnique({
+      where: {
+        id: quoteId,
+      },
+    });
+
+    if (!existingQuote) {
+      return res
+        .status(404)
+        .json({ success: false, message: "Quote not found" });
+    }
+
+    return res
+      .status(200)
+      .json({ success: true, data: existingQuote, message: "Quote data" });
+  } catch (error) {
+    const message =
+      error instanceof Error ? error.message : "Unknown error occurred";
+    console.error("Error fetching quote:", message);
+    return res.status(500).json({
+      success: false,
+      message: "Internal Server Error",
+      error: message,
+    });
+  }
+};
+
+
 export const submitQuoteData = async (req: Request, res: Response) => {
   try {
     const { author, content, rate, likes, dislikes, category } = req.body;
