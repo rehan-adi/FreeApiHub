@@ -44,7 +44,7 @@ export const getProductById = async (req: Request, res: Response) => {
   } catch (error) {
     const message =
       error instanceof Error ? error.message : "Unknown error occurred";
-    console.error("Error fetching book:", message);
+    console.error("Error fetching product:", message);
     return res.status(500).json({
       success: false,
       message: "Internal Server Error",

@@ -22,6 +22,45 @@ export const getProgrammingLanguage = async (req: Request, res: Response) => {
   }
 };
 
+export const getProgrammingLanguageById = async (
+  req: Request,
+  res: Response
+) => {
+  try {
+    const { languageId } = req.params;
+
+    const existingProgrammingLanguage =
+      await prisma.programmingLanguage.findUnique({
+        where: {
+          id: languageId,
+        },
+      });
+
+    if (!existingProgrammingLanguage) {
+      return res
+        .status(404)
+        .json({ success: false, message: "Language not found" });
+    }
+
+    return res
+      .status(200)
+      .json({
+        success: true,
+        data: existingProgrammingLanguage,
+        message: "Language data",
+      });
+  } catch (error) {
+    const message =
+      error instanceof Error ? error.message : "Unknown error occurred";
+    console.error("Error fetching programming language:", message);
+    return res.status(500).json({
+      success: false,
+      message: "Internal Server Error",
+      error: message,
+    });
+  }
+};
+
 export const submitProgrammingLanguageData = async (
   req: Request,
   res: Response
