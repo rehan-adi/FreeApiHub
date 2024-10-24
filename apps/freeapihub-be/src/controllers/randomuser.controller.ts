@@ -21,6 +21,37 @@ export const getRandomUser = async (req: Request, res: Response) => {
   }
 };
 
+export const getUserById = async (req: Request, res: Response) => {
+  try {
+    const { userId } = req.params;
+
+    const existingUser = await prisma.randomUser.findUnique({
+      where: {
+        id: userId,
+      },
+    });
+
+    if (!existingUser) {
+      return res
+        .status(404)
+        .json({ success: false, message: "User not found" });
+    }
+
+    return res
+      .status(200)
+      .json({ success: true, data: existingUser, message: "User data" });
+  } catch (error) {
+    const message =
+      error instanceof Error ? error.message : "Unknown error occurred";
+    console.error("Error fetching user:", message);
+    return res.status(500).json({
+      success: false,
+      message: "Internal Server Error",
+      error: message,
+    });
+  }
+};
+
 export const submitRandomUserData = async (req: Request, res: Response) => {
   try {
     const {
