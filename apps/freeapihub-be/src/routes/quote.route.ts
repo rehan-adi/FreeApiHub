@@ -13,4 +13,4 @@ quoteRouter.get("/", getQuotes);
 quoteRouter.get("/:quoteId", getQuoteById);
 quoteRouter.post("/create", submitQuoteData);
 quoteRouter.delete("/delete-all", deleteQuoteData);
-quoteRouter.delete("/delete", deleteQuoteDataById);
+quoteRouter.delete("/:quoteId", deleteQuoteDataById);

@@ -53,7 +53,6 @@ export const getQuoteById = async (req: Request, res: Response) => {
   }
 };
 
-
 export const submitQuoteData = async (req: Request, res: Response) => {
   try {
     const { author, content, rate, likes, dislikes, category } = req.body;
@@ -120,7 +119,7 @@ export const deleteQuoteData = async (req: Request, res: Response) => {
 
 export const deleteQuoteDataById = async (req: Request, res: Response) => {
   try {
-    const { quoteId } = req.body;
+    const { quoteId } = req.params;
 
     const existingQuote = await prisma.quote.findUnique({
       where: {
