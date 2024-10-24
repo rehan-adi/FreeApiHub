@@ -155,7 +155,7 @@ export const deleteProgrammingLanguageDataById = async (
   res: Response
 ) => {
   try {
-    const { languageId } = req.body;
+    const { languageId } = req.params;
 
     const existingProgrammingLanguage =
       await prisma.programmingLanguage.findUnique({
