@@ -13,4 +13,4 @@ randomUserRouter.get("/", getRandomUser);
 randomUserRouter.get("/:userId", getUserById);
 randomUserRouter.post("/create", submitRandomUserData);
 randomUserRouter.delete("/delete-all", deleteRandomUserData);
-randomUserRouter.delete("/delete", deleteRandomUserDataById);
+randomUserRouter.delete("/:userId", deleteRandomUserDataById);

@@ -132,7 +132,7 @@ export const deleteRandomUserData = async (req: Request, res: Response) => {
 
 export const deleteRandomUserDataById = async (req: Request, res: Response) => {
   try {
-    const { userId } = req.body;
+    const { userId } = req.params;
 
     const isUserExists = await prisma.randomUser.findUnique({
       where: {
