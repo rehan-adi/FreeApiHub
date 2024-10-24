@@ -13,4 +13,4 @@ productRouter.get("/", getProducts);
 productRouter.get("/:productId", getProductById);
 productRouter.post("/create", submitProductData);
 productRouter.post("/delete-all", deleteProductData);
-productRouter.post("/delete", deleteProductDataById);
+productRouter.post("/:productId", deleteProductDataById);
