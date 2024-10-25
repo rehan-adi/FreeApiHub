@@ -10,6 +10,7 @@ import { OpenAPISpecs } from "./utils/swagger";
 import { bookRouter } from "./routes/book.route";
 import { jokeRouter } from "./routes/joke.route";
 import { quoteRouter } from "./routes/quote.route";
+import { stockRouter } from "./routes/stock.route";
 import { productRouter } from "./routes/product.route";
 import { randomUserRouter } from "./routes/randomuser.route";
 import { programmingLanguageRouter } from "./routes/programmingLanguage.route";
@@ -42,6 +43,7 @@ app.get("/", (req: Request, res: Response) => {
 // routes
 app.use("/api/v1/jokes", jokeRouter);
 app.use("/api/v1/books", bookRouter);
+app.use("/api/v1/stocks", stockRouter);
 app.use("/api/v1/quotes", quoteRouter);
 app.use("/api/v1/products", productRouter);
 app.use("/api/v1/randomusers", randomUserRouter);
