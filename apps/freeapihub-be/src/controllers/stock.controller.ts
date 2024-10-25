@@ -52,3 +52,68 @@ export const getStockById = async (req: Request, res: Response) => {
     });
   }
 };
+
+export const submitStockData = async (req: Request, res: Response) => {
+  try {
+    const {
+      name,
+      symbol,
+      listingDate,
+      isin,
+      marketCap,
+      currentPrice,
+      highLow,
+      stockPE,
+      bookValue,
+      dividendYield,
+      roce,
+      roe,
+    } = req.body;
+
+    const existingStock = await prisma.stock.findFirst({
+      where: {
+        name,
+        isin,
+      },
+    });
+
+    if (existingStock) {
+      return res.status(400).json({
+        success: false,
+        message: "Stock already exists",
+      });
+    }
+
+    const Stock = await prisma.stock.create({
+      data: {
+        name,
+        symbol,
+        listingDate,
+        isin,
+        marketCap,
+        currentPrice,
+        highLow,
+        stockPE,
+        bookValue,
+        dividendYield,
+        roce,
+        roe,
+      },
+    });
+
+    return res.status(201).json({
+      success: true,
+      data: Stock,
+      message: "Stock created successfully",
+    });
+  } catch (error) {
+    const message =
+      error instanceof Error ? error.message : "Unknown error occurred";
+    console.error("Error submiting stock:", message);
+    return res.status(500).json({
+      success: false,
+      message: "Internal Server Error",
+      error: message,
+    });
+  }
+};

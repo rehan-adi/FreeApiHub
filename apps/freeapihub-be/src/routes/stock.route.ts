@@ -1,5 +1,9 @@
 import express from "express";
-import { getStockById, getStocks } from "../controllers/stock.controller";
+import {
+  getStockById,
+  getStocks,
+  submitStockData,
+} from "../controllers/stock.controller";
 
 export const stockRouter = express.Router();
 
@@ -153,3 +157,4 @@ export const stockRouter = express.Router();
 
 stockRouter.get("/", getStocks);
 stockRouter.get("/:stockId", getStockById);
+stockRouter.post("/create", submitStockData);
