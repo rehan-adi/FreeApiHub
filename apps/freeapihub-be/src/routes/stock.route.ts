@@ -4,6 +4,7 @@ import {
   getStockById,
   submitStockData,
   deleteStockData,
+  deleteStockDataById,
 } from "../controllers/stock.controller";
 
 export const stockRouter = express.Router();
@@ -160,3 +161,4 @@ stockRouter.get("/", getStocks);
 stockRouter.get("/:stockId", getStockById);
 stockRouter.post("/create", submitStockData);
 stockRouter.delete("/delete-all", deleteStockData);
+stockRouter.delete("/:stockId", deleteStockDataById);

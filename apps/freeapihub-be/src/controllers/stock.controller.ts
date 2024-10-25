@@ -136,3 +136,40 @@ export const deleteStockData = async (req: Request, res: Response) => {
     });
   }
 };
+
+export const deleteStockDataById = async (req: Request, res: Response) => {
+  try {
+    const { stockIdId } = req.params;
+
+    const existingStock = await prisma.stock.findUnique({
+      where: {
+        id: stockIdId,
+      },
+    });
+
+    if (!existingStock) {
+      return res
+        .status(404)
+        .json({ success: false, message: "Stock not found" });
+    }
+
+    await prisma.stock.delete({
+      where: {
+        id: stockIdId,
+      },
+    });
+
+    return res
+      .status(200)
+      .json({ success: true, message: "Stock deleted successfully" });
+  } catch (error) {
+    const message =
+      error instanceof Error ? error.message : "Unknown error occurred";
+    console.error("Error deleting stock by id:", error);
+    return res.status(500).json({
+      success: false,
+      message: "Internal Server Error",
+      error: message,
+    });
+  }
+};
