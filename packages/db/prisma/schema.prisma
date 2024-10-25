@@ -106,6 +106,22 @@ model ProgrammingLanguage {
   learningDifficulty Int
 }
 
+model Stock {
+  id            String   @id @default(uuid())
+  name          String
+  symbol        String
+  listingDate   DateTime
+  isin          String   @unique
+  marketCap     Float
+  currentPrice  Float
+  highLow       String
+  stockPE       Float
+  bookValue     Float
+  dividendYield Float
+  roce          Float
+  roe           Float
+}
+
 enum Gender {
   male
   female
