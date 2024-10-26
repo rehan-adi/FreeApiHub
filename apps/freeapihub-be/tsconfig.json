@@ -10,7 +10,7 @@
     "rootDir": "./src",
     "baseUrl": "./",
     "paths": {
-      "@freeapihub/db": ["../packages/db/src/index"]
+      "@freeapihub/db": ["../packages/db/dist/index"]
     }
   },
   "include": ["src/**/*.ts"],
