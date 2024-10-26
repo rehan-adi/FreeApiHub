@@ -2,11 +2,12 @@
   "name": "@freeapihub/db",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "dist/index.js", 
   "scripts": {
     "studio": "prisma studio",
     "generate": "prisma generate",
-    "migrate": "prisma migrate dev"
+    "migrate": "prisma migrate dev",
+    "build": "tsc" 
   },
   "keywords": [],
   "author": "",
@@ -19,6 +20,6 @@
     "@prisma/client": "5.21.1"
   },
   "exports": {
-    "./index": "./index.ts" 
+   "./index": "./dist/index.js" 
   }
 }
