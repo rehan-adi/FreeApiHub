@@ -1,10 +1,9 @@
-import Image from "next/image";
 import { Check } from "lucide-react";
 
 export default function Home() {
   return (
     <div className="text-white pt-16 min-h-screen flex flex-col justify-center items-center">
-      <header className="text-center py-12">
+      <header className="text-center pt-12 pb-8">
         <h1 className="md:text-6xl text-4xl bg-clip-text px-4 text-transparent bg-gradient-to-r from-white to-gray-500 w-full md:w-[60vw] font-extrabold tracking-tighter line-height">
           Explore and leverage a wide range of APIs with ease.
         </h1>
@@ -20,7 +19,7 @@ export default function Home() {
       </div>
 
       {/* API Details Section */}
-      <div className="py-20 lg:px-72 px-4 space-y-6 w-full">
+      <div className="pb-20 pt-10 lg:px-72 px-4 space-y-6 w-full">
         <div className="flex justify-between flex-col md:flex-row items-center gap-6 ">
           <div className="bg-zinc-50 p-6 dark:bg-zinc-900 border border-zinc-200/50 dark:border-zinc-700/50 min-h-44 w-full rounded-xl hover:border-zinc-200 dark:hover:border-zinc-700 transition-colors flex flex-col justify-start items-start">
             <h3 className="text-xl font-semibold tracking-wider">
