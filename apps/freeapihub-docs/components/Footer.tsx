@@ -9,13 +9,13 @@ const Footer = () => {
     >
       <span className="mr-2 text-sm text-[#FAFAFACC] font-medium">Powered by</span>
       <Image
-        aria-hidden
-        src="/vercel.svg"
-        alt="File icon"
-        width={16}
-        height={16}
-      />
-      Vercel
+          className="dark:invert"
+          src="/next.svg"
+          alt="Next.js logo"
+          width={60}
+          height={40}
+          priority
+        />
     </a>
     <p className="text-sm text-[#FAFAFACC] font-medium">© 2024 Free API Hub - All Rights Reserved</p>
   </footer>
