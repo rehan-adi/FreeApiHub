@@ -1,3 +1,6 @@
+import Image from "next/image";
+import { Check } from "lucide-react";
+
 export default function Home() {
   return (
     <div className="text-white pt-16 min-h-screen flex flex-col justify-center items-center">
@@ -17,7 +20,7 @@ export default function Home() {
       </div>
 
       {/* API Details Section */}
-      <div className="py-20 md:px-72 px-4 space-y-6 w-full">
+      <div className="py-20 lg:px-72 px-4 space-y-6 w-full">
         <div className="flex justify-between flex-col md:flex-row items-center gap-6 ">
           <div className="bg-zinc-50 p-6 dark:bg-zinc-900 border border-zinc-200/50 dark:border-zinc-700/50 min-h-44 w-full rounded-xl hover:border-zinc-200 dark:hover:border-zinc-700 transition-colors flex flex-col justify-start items-start">
             <h3 className="text-xl font-semibold tracking-wider">
@@ -97,6 +100,41 @@ export default function Home() {
               Explore API
             </button>
           </div>
+        </div>
+      </div>
+
+      {/* pricing */}
+      <div className="pb-16">
+        <h1 className="text-lg font-semibold mb-10 text-center w-full text-[#FAFAFACC]">
+          Pricing
+        </h1>
+        <div className="px-4 py-6 lg:w-[380px] w-full border border-pink-400 rounded text-center transition-colors self-stretch">
+          <h2 className="mb-6 text-2xl font-medium">Free</h2>
+          <div className="flex items-start justify-center">
+            <ul className="space-y-2 items-start flex justify-center flex-col">
+              <li className="flex items-center space-x-2">
+                <Check className="text-green-500" />
+                <span className="text-[#9B9B9B]">Full access to all APIs</span>
+              </li>
+              <li className="flex items-center space-x-2">
+                <Check className="text-green-500" />
+                <span className="text-[#9B9B9B]">Weekly updates</span>
+              </li>
+              <li className="flex items-center space-x-2">
+                <Check className="text-green-500" />
+                <span className="text-[#9B9B9B]">
+                  Comprehensive documentation
+                </span>
+              </li>
+              <li className="flex items-center space-x-2">
+                <Check className="text-green-500" />
+                <span className="text-[#9B9B9B]">Open for Contributions</span>
+              </li>
+            </ul>
+          </div>
+          <button className="mt-12 text-white text-base font-medium py-2 px-7 border border-pink-400/50   rounded-md hover:border-pink-400 w-full transition-all">
+            Get Started
+          </button>
         </div>
       </div>
     </div>
