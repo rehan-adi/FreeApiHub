@@ -1,5 +1,6 @@
 import React from "react";
 import ThemeToggle from "./ThemeToggle";
+import Link from "next/link";
 
 const Navbar = () => {
   return (
@@ -23,6 +24,7 @@ const Navbar = () => {
         <div>
           <ThemeToggle />
         </div>
+        <Link href="https://github.com/rehan-adi/FreeApiHub" target="_blank" rel="noopener noreferrer">
         <div className="px-2 py-1.5 rounded-md dark:hover:bg-neutral-800 cursor-pointer hover:bg-gray-200">
           <svg
             width="24"
@@ -37,6 +39,7 @@ const Navbar = () => {
             ></path>
           </svg>
         </div>
+        </Link>
       </div>
     </nav>
   );
