@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Check } from "lucide-react";
+import Marquee from "@/components/ui/marquee";
 
 export default function Home() {
   return (
@@ -20,6 +21,19 @@ export default function Home() {
           Explore APIs
         </button>
       </div>
+
+      <Marquee
+        pauseOnHover
+        className="[--duration:20s] mt-12 md:mb-20 mb-8 w-[85%] dark:text-white text-black md:max-w-xl "
+      >
+        <h1>Random User APi</h1>
+        <h1>Joke API</h1>
+        <h1>Book API</h1>
+        <h1>Quote API</h1>
+        <h1>Stock API</h1>
+        <h1>Programming Language API</h1>
+        <h1>Product API</h1>
+      </Marquee>
 
       {/* API Details Section */}
       <div className="pb-20 pt-10 lg:px-72 px-4 space-y-6 w-full">
