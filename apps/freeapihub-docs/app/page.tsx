@@ -204,9 +204,9 @@ export default function Home() {
         <h2 className="text-2xl font-semibold text-center mb-10">
           How it Works
         </h2>
-        <div className="flex flex-col md:flex-row justify-between items-center md:gap-8 md:px-40 w-full">
+        <div className="flex flex-col md:flex-row justify-between items-center md:gap-3 md:px-56 w-full">
           {/* API Usage Example: User API */}
-          <div className="md:mb-8 mb-6 md:p-6 p-4 shadow-sm md:w-1/2 w-full rounded-lg">
+          <div className="md:mb-8 mb-6 md:px-3 md:py-5 p-4 shadow-sm md:w-1/2 w-full rounded-lg">
             <h3 className="text-xl font-semibold mb-2">User API</h3>
             <p className="mb-4">
               Fetch random user data with a simple GET request.
@@ -233,7 +233,7 @@ export default function Home() {
           </div>
 
           {/* API Usage Example: Joke API */}
-          <div className="mb-8 md:p-6 p-4 shadow-sm md:w-1/2 w-full rounded-lg">
+          <div className="mb-8 md:px-3 md:py-5 p-4 shadow-sm md:w-1/2 w-full rounded-lg">
             <h3 className="text-xl font-semibold mb-2">Joke API</h3>
             <p className="mb-4">
               Retrieve random jokes for use in your applications.
