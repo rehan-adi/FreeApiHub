@@ -3,7 +3,7 @@ import ThemeToggle from "./ThemeToggle";
 
 const Navbar = () => {
   return (
-    <nav className="py-3.5 flex justify-between fixed top-0 w-full border-b dark:border-white border-opacity-10 border-black backdrop-blur items-center md:px-24 px-5">
+    <nav className="py-3.5 flex justify-between fixed top-0 w-full border-b dark:border-white dark:border-opacity-10 border-black border-opacity-15 backdrop-blur items-center md:px-24 px-5">
       <span className="flex justify-between text-base font-semibold items-center">
         <svg
           fill="currentColor"
