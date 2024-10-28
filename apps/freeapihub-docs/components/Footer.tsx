@@ -7,7 +7,7 @@ const Footer = () => {
     <a
       className="flex items-center gap-2 hover:underline hover:underline-offset-4"
     >
-      <span className="mr-2 text-sm text-[#FAFAFACC] font-medium">Powered by</span>
+      <span className="mr-2 text-sm dark:text-[#FAFAFACC] text-black font-medium">Powered by</span>
       <Image
           className="dark:invert"
           src="/next.svg"
@@ -17,7 +17,7 @@ const Footer = () => {
           priority
         />
     </a>
-    <p className="text-sm text-[#FAFAFACC] font-medium">© 2024 Free API Hub - All Rights Reserved</p>
+    <p className="text-sm dark:text-[#FAFAFACC] text-black font-medium">© 2024 Free API Hub - All Rights Reserved</p>
   </footer>
   );
 };
