@@ -107,36 +107,36 @@ export default function Home() {
 
       {/* pricing */}
       <div className="pb-16">
-        <h1 className="text-lg font-semibold mb-10 text-center w-full text-[#FAFAFACC]">
+        <h1 className="text-lg font-semibold mb-10 text-center w-full dark:text-[#FAFAFACC] text-black">
           Pricing
         </h1>
         <div className="px-4 py-6 lg:w-[380px] w-full border border-pink-400 rounded text-center transition-colors self-stretch">
-          <h2 className="mb-6 text-2xl font-medium">Free</h2>
+          <h2 className="mb-6 text-2xl font-medium dark:text-[#FAFAFACC] text-black">Free</h2>
           <div className="flex items-start justify-center">
             <ul className="space-y-2 items-start flex justify-center flex-col">
               <li className="flex items-center space-x-2">
                 <Check className="text-green-500" />
-                <span className="text-[#9B9B9B]">Full access to all APIs</span>
+                <span className="dark:text-[#9B9B9B] text-black">Full access to all APIs</span>
               </li>
               <li className="flex items-center space-x-2">
                 <Check className="text-green-500" />
-                <span className="text-[#9B9B9B]">Weekly updates</span>
+                <span className="dark:text-[#9B9B9B] text-black">Weekly updates</span>
               </li>
               <li className="flex items-center space-x-2">
                 <Check className="text-green-500" />
-                <span className="text-[#9B9B9B]">
+                <span className="dark:text-[#9B9B9B] text-black">
                   Comprehensive documentation
                 </span>
               </li>
               <li className="flex items-center space-x-2">
                 <Check className="text-green-500" />
-                <span className="text-[#9B9B9B]">Open for Contributions</span>
+                <span className="dark:text-[#9B9B9B] text-black">Open for Contributions</span>
               </li>
             </ul>
           </div>
           <Link href="/docs">
             {" "}
-            <button className="mt-12 text-white text-base font-medium py-2 px-7 border border-pink-400/50   rounded-md hover:border-pink-400 w-full transition-all">
+            <button className="mt-12 dark:text-[#9B9B9B] text-black text-base font-medium py-2 px-7 border border-pink-400/50   rounded-md hover:border-pink-400 w-full transition-all">
               Get Started
             </button>
           </Link>
