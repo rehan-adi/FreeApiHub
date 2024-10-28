@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Check } from "lucide-react";
 
 export default function Home() {
@@ -10,9 +11,11 @@ export default function Home() {
       </header>
 
       <div className="flex justify-center gap-6 py-5">
-        <button className=" text-white text-sm font-medium py-3 px-7 border border-white border-opacity-35 rounded-md hover:border-opacity-100 transition-all">
-          Get Started
-        </button>
+        <Link href="/docs">
+          <button className=" text-white text-sm font-medium py-3 px-7 border border-white border-opacity-35 rounded-md hover:border-opacity-100 transition-all">
+            Get Started
+          </button>
+        </Link>
         <button className=" text-white text-sm font-medium py-3 px-7 border border-white border-opacity-35 rounded-md hover:border-opacity-100 transition-all">
           Explore APIs
         </button>
@@ -131,9 +134,12 @@ export default function Home() {
               </li>
             </ul>
           </div>
-          <button className="mt-12 text-white text-base font-medium py-2 px-7 border border-pink-400/50   rounded-md hover:border-pink-400 w-full transition-all">
-            Get Started
-          </button>
+          <Link href="/docs">
+            {" "}
+            <button className="mt-12 text-white text-base font-medium py-2 px-7 border border-pink-400/50   rounded-md hover:border-pink-400 w-full transition-all">
+              Get Started
+            </button>
+          </Link>
         </div>
       </div>
     </div>
