@@ -1,6 +1,15 @@
 import Link from "next/link";
 import Marquee from "@/components/ui/marquee";
-import { Check, CodeXml, LineChart, User, Notebook, ShoppingCart, Smile, Quote } from "lucide-react";
+import {
+  Check,
+  CodeXml,
+  LineChart,
+  User,
+  Notebook,
+  ShoppingCart,
+  Smile,
+  Quote,
+} from "lucide-react";
 
 export default function Home() {
   return (
@@ -42,7 +51,7 @@ export default function Home() {
             <div className="flex items-center space-x-3">
               <User className="text-black dark:text-white w-6 h-6" />{" "}
               <h3 className="text-xl font-semibold tracking-wider">
-              Random User API
+                Random User API
               </h3>
             </div>
             <p className="mt-3 text-sm tracking-wider">
@@ -55,9 +64,7 @@ export default function Home() {
           <div className="bg-zinc-50 p-6 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-700/50 min-h-44 w-full rounded-xl hover:border-zinc-300 dark:hover:border-zinc-700 transition-colors flex flex-col justify-start items-start">
             <div className="flex items-center space-x-3">
               <Smile className="text-black dark:text-white w-6 h-6" />{" "}
-              <h3 className="text-xl font-semibold tracking-wider">
-              Joke API
-              </h3>
+              <h3 className="text-xl font-semibold tracking-wider">Joke API</h3>
             </div>
             <p className="mt-3 text-sm tracking-wider">
               Access a variety of jokes for humor and entertainment in your
@@ -73,7 +80,7 @@ export default function Home() {
             <div className="flex items-center space-x-3">
               <Quote className="text-black dark:text-white w-6 h-6" />{" "}
               <h3 className="text-xl font-semibold tracking-wider">
-              Quote API
+                Quote API
               </h3>
             </div>
             <p className="mt-3 text-sm tracking-wider">
@@ -103,9 +110,7 @@ export default function Home() {
           <div className="bg-zinc-50 p-6 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-700/50 min-h-44 w-full rounded-xl hover:border-zinc-300 dark:hover:border-zinc-700 transition-colors flex flex-col justify-start items-start">
             <div className="flex items-center space-x-3">
               <Notebook className="text-black dark:text-white w-6 h-6" />{" "}
-              <h3 className="text-xl font-semibold tracking-wider">
-              Book API
-              </h3>
+              <h3 className="text-xl font-semibold tracking-wider">Book API</h3>
             </div>
             <p className="mt-3 text-sm tracking-wider">
               Explore a catalog of books with comprehensive information for
@@ -191,6 +196,68 @@ export default function Home() {
               Get Started
             </button>
           </Link>
+        </div>
+      </div>
+
+      {/* How it works  */}
+      <div className="w-full py-12 text-black dark:text-white">
+        <h2 className="text-2xl font-semibold text-center mb-10">
+          How it Works
+        </h2>
+        <div className="flex flex-col md:flex-row justify-between items-center md:gap-8 md:px-40 w-full">
+          {/* API Usage Example: User API */}
+          <div className="md:mb-8 mb-6 md:p-6 p-4 shadow-sm md:w-1/2 w-full rounded-lg">
+            <h3 className="text-xl font-semibold mb-2">User API</h3>
+            <p className="mb-4">
+              Fetch random user data with a simple GET request.
+            </p>
+            <pre className="bg-zinc-50 p-6 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-700/50 min-h-44 w-full rounded-xl hover:border-zinc-300 dark:hover:border-zinc-700 transition-colors flex flex-col justify-start items-start overflow-auto">
+              <code>
+                {`// Example: Fetching a random user
+   fetch('https://freeapihub.com/api/user')
+      .then(response => response.json())
+      .then(data => console.log(data));
+              `}
+              </code>
+            </pre>
+            <p className="mt-4 mb-2 text-sm">Sample Response:</p>
+            <pre className="bg-gray-200 dark:bg-gray-700 p-4 rounded-md overflow-auto">
+              <code>
+                {`{
+    "id": "12345",
+    "name": "John Doe",
+    "email": "johndoe@example.com",
+}`}
+              </code>
+            </pre>
+          </div>
+
+          {/* API Usage Example: Joke API */}
+          <div className="mb-8 md:p-6 p-4 shadow-sm md:w-1/2 w-full rounded-lg">
+            <h3 className="text-xl font-semibold mb-2">Joke API</h3>
+            <p className="mb-4">
+              Retrieve random jokes for use in your applications.
+            </p>
+            <pre className="bg-zinc-50 p-6 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-700/50 min-h-44 w-full rounded-xl hover:border-zinc-300 dark:hover:border-zinc-700 transition-colors flex flex-col justify-start items-start overflow-auto">
+              <code>
+                {`// Example: Fetching a random joke
+   fetch('https://freeapihub.com/api/joke')
+      .then(response => response.json())
+      .then(data => console.log(data));
+                `}
+              </code>
+            </pre>
+            <p className="mt-4 mb-2 text-sm">Sample Response:</p>
+            <pre className="bg-gray-200 dark:bg-gray-700 p-4 rounded-md overflow-auto">
+              <code>
+                {`{
+    "id": "12345",
+    "name": "John Doe",
+    "email": "johndoe@example.com",
+}`}
+              </code>
+            </pre>
+          </div>
         </div>
       </div>
     </div>
