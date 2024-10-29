@@ -1,5 +1,9 @@
 export default {
-  logo: <span>FreeApiHub</span>,
+  logo: (
+    <span>
+      <strong>FreeApiHub</strong>
+    </span>
+  ),
   project: {
     link: 'https://github.com/rehan-adi/FreeApiHub'
   },
