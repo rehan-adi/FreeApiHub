@@ -1,6 +1,12 @@
 export default {
-    logo: <span>My Nextra Documentation</span>,
-    project: {
-      link: 'https://github.com/shuding/nextra'
-    }
-  }
+  logo: <span>FreeApiHub</span>,
+  project: {
+    link: 'https://github.com/rehan-adi/FreeApiHub'
+  },
+  docsRepositoryBase: 'https://github.com/rehan-adi/FreeApiHub',
+  useNextSeoProps() {
+    return {
+      titleTemplate: '%s – FreeApiHub'
+    };
+  },
+};
