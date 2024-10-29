@@ -1,0 +1,87 @@
+---
+title: API Usage Guide
+---
+
+# API Usage Guide
+
+Welcome to the API Usage Guide! Here, you’ll find everything you need to start using **FreeApiHub** APIs effectively in your projects.
+
+### Making Your First Request
+
+Each API can be accessed using a simple GET request following this URL format:
+
+```bash
+GET https://api.freeapihub.com/{api_name}
+```
+
+Example URLs for Each API
+
+User API: https://api.freeapihub.com/user<br />
+Product API: https://api.freeapihub.com/product<br />
+Jokes API: https://api.freeapihub.com/jokes<br />
+Books API: https://api.freeapihub.com/books<br />
+Quote API: https://api.freeapihub.com/quote<br />
+Stock API: https://api.freeapihub.com/stock<br />
+Programming Language API: https://api.freeapihub.com/programming-language
+
+### Request Format
+
+To make a request, you can use your preferred HTTP client (e.g., Axios or fetch JavaScript, or tools like Postman and cURL). Here’s an example using JavaScript fetch:
+
+```javascript
+
+import axios from 'axios';
+
+axios.get('https://example.com/api/endpoint')
+  .then(response => {
+    console.log('Data:', response.data);
+  })
+  .catch(error => {
+    console.error('Error fetching data:', error);
+});
+
+```
+
+Using curl from the Command Line
+
+```bash
+curl -X GET "https://api.freeapihub.com/user"
+```
+
+### Example Using Postman
+
+Open Postman and create a new request.<br />
+Select GET as the request method.<br />
+Enter the desired API URL (e.g., https://api.freeapihub.com/user).<br />
+Click Send to view the response.
+
+### Response Format
+All responses are returned in JSON format to ensure easy integration. Below is an example of a response from the User API:
+
+```json
+{
+  "id": "123",
+  "name": "John Doe",
+  "email": "johndoe@example.com"
+}
+```
+
+
+### Common Fields in Responses
+
+id: A unique identifier for the record.<br />
+name: Name associated with the record (e.g., user, product, etc.).<br />
+type: API-specific data fields, varying per endpoint.<br />
+
+### Rate Limiting
+To ensure fair use and consistent access, FreeApiHub enforces rate limits on API calls. For most endpoints, the default limit is 100 requests per minute. If you exceed this limit, you may receive a 429 Too Many Requests error.
+
+### Best Practices
+
+Error Handling: Always include error handling to catch unexpected responses or network issues.<br />
+Efficient Data Usage: Request only the data you need by using query parameters to minimize payload size.<br />
+Rate Limiting: Respect rate limits to prevent access disruptions and maintain reliable API performance.
+
+### Next Steps
+
+Explore each API’s details in the sidebar for additional usage examples and parameter options. With FreeApiHub, you have a powerful suite of APIs to integrate and speed up development. Happy coding!
