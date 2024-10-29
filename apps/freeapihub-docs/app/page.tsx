@@ -155,7 +155,7 @@ export default function Home() {
 
       {/* pricing */}
       <div className="pb-16">
-        <h1 className="text-lg font-semibold mb-10 text-center w-full dark:text-[#FAFAFACC] text-black">
+        <h1 className="text-xl font-medium mb-10 text-center w-full dark:text-white text-black">
           Pricing
         </h1>
         <div className="px-4 py-6 lg:w-[380px] w-full border border-pink-400 rounded text-center transition-colors self-stretch">
@@ -201,12 +201,10 @@ export default function Home() {
 
       {/* How it works  */}
       <div className="w-full py-12 text-black dark:text-white">
-        <h2 className="text-2xl font-semibold text-center mb-10">
-          How it Works
-        </h2>
-        <div className="flex flex-col md:flex-row justify-between items-center md:gap-3 md:px-56 w-full">
+        <h2 className="text-xl font-medium text-center mb-10">How it Works</h2>
+        <div className="flex flex-col md:flex-row justify-between items-center md:gap-3 md:px-[275px] w-full">
           {/* API Usage Example: User API */}
-          <div className="md:mb-8 mb-6 md:px-3 md:py-5 p-4 shadow-sm md:w-1/2 w-full rounded-lg">
+          <div className="md:mb-8 mb-6 md:px-3 md:py-5 p-4 md:w-1/2 w-full rounded-lg">
             <h3 className="text-xl font-semibold mb-2">User API</h3>
             <p className="mb-4">
               Fetch random user data with a simple GET request.
@@ -221,7 +219,7 @@ export default function Home() {
               </code>
             </pre>
             <p className="mt-4 mb-2 text-sm">Sample Response:</p>
-            <pre className="bg-gray-200 dark:bg-gray-700 p-4 rounded-md overflow-auto">
+            <pre className="bg-white dark:bg-[#0E0C0C] border dark:border-white dark:border-opacity-15 border-black border-opacity-15 p-4 rounded-md overflow-auto">
               <code>
                 {`{
     "id": "12345",
@@ -233,7 +231,7 @@ export default function Home() {
           </div>
 
           {/* API Usage Example: Joke API */}
-          <div className="mb-8 md:px-3 md:py-5 p-4 shadow-sm md:w-1/2 w-full rounded-lg">
+          <div className="mb-8 md:px-3 md:py-5 p-4  md:w-1/2 w-full rounded-lg">
             <h3 className="text-xl font-semibold mb-2">Joke API</h3>
             <p className="mb-4">
               Retrieve random jokes for use in your applications.
@@ -248,7 +246,7 @@ export default function Home() {
               </code>
             </pre>
             <p className="mt-4 mb-2 text-sm">Sample Response:</p>
-            <pre className="bg-gray-200 dark:bg-gray-700 p-4 rounded-md overflow-auto">
+            <pre className="bg-white dark:bg-[#0E0C0C] border dark:border-white dark:border-opacity-15 border-black border-opacity-15 p-4 rounded-md overflow-auto">
               <code>
                 {`{
     "id": "12345",
@@ -260,6 +258,44 @@ export default function Home() {
           </div>
         </div>
       </div>
+
+      <div className="w-full text-center mb-8">
+        <h1 className="text-xl font-medium text-black dark:text-white">
+          What Our Users Are Saying
+        </h1>
+      </div>
+      <Marquee
+        pauseOnHover
+        className="[--duration:25s] mb-20 w-[85%] md:max-w-[940px] dark:text-white text-black"
+      >
+        <div className="flex items-center space-x-8">
+          <blockquote className="text-center p-4 bg-zinc-50 dark:bg-[#1E1B1C] rounded-lg shadow-md w-72">
+            <p className="italic text-gray-700 dark:text-gray-300">
+              "FreeAPI Hub makes API integration a breeze!"
+            </p>
+            <p className="mt-2 font-semibold">– Sarah J., Developer</p>
+          </blockquote>
+          <blockquote className="text-center p-4 bg-zinc-50 dark:bg-[#1E1B1C] rounded-lg shadow-md w-72">
+            <p className="italic text-gray-700 dark:text-gray-300">
+              "10,000+ developers can’t be wrong. Love it!"
+            </p>
+            <p className="mt-2 font-semibold">– Daniel K., Product Manager</p>
+          </blockquote>
+          <blockquote className="text-center p-4 bg-zinc-50 dark:bg-[#1E1B1C] rounded-lg shadow-md w-72">
+            <p className="italic text-gray-700 dark:text-gray-300">
+              "Reliable and easy to use. Great service!"
+            </p>
+            <p className="mt-2 font-semibold">– Emily R., Software Engineer</p>
+          </blockquote>
+          <blockquote className="text-center p-4 bg-zinc-50 dark:bg-[#1E1B1C] rounded-lg shadow-md w-72">
+            <p className="italic text-gray-700 dark:text-gray-300">
+              "Highly recommended for any project!"
+            </p>
+            <p className="mt-2 font-semibold">– Chris P., Startup Founder</p>
+          </blockquote>
+        </div>
+      </Marquee>
+
     </div>
   );
 }
