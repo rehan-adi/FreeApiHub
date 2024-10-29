@@ -3,7 +3,7 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer className="flex gap-6 md:px-20 py-6 flex-wrap items-center justify-center md:justify-between">
+    <footer className="flex gap-6 md:px-20 py-6 w-full flex-wrap items-center justify-center md:justify-between">
     <a
       className="flex items-center gap-2 hover:underline hover:underline-offset-4"
     >

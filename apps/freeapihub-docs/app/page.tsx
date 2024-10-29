@@ -10,10 +10,16 @@ import {
   Smile,
   Quote,
 } from "lucide-react";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
     <div className="text-white pt-16 min-h-screen flex flex-col justify-center items-center">
+
+      {/* Navbar  */}
+      <Navbar />
+
       <header className="text-center pt-12 pb-8">
         <h1 className="md:text-6xl text-4xl bg-clip-text px-4 text-transparent dark:bg-gradient-to-r dark:from-white dark:to-gray-500  bg-gradient-to-r from-black to-blue-800 w-full md:w-[60vw] font-extrabold tracking-tighter line-height">
           Explore and leverage a wide range of APIs with ease.
@@ -295,6 +301,9 @@ export default function Home() {
           </blockquote>
         </div>
       </Marquee>
+
+      {/* Footer  */}
+      <Footer />
 
     </div>
   );
