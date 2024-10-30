@@ -59,6 +59,18 @@ const Page = () => {
     }
   };
 
+  const handleGithubSignIn = async () => {
+    const result = await signIn("github");
+
+    if (result?.error) {
+      console.error(result.error);
+      toast.error("An unexpected error occurred during GitHub login.");
+    } else {
+      toast.success("Login successful!");
+      router.push("/");
+    }
+  };
+
   return (
     <div className="min-h-screen w-full flex justify-center items-center bg-[#141312]">
       <div className="px-10 py-8 flex justify-center items-center md:w-[26vw] md:h-[91vh] h-screen w-full flex-col bg-[#0D0C0C] border border-[#292624] rounded-lg">
@@ -135,7 +147,13 @@ const Page = () => {
               </span>
               Login with Google
             </button>
-            <button className="w-full flex justify-center items-center px-4 py-3 text-white rounded border-2 border-[#1E1C1B] focus:outline-none">
+            <button
+              onClick={(e) => {
+                e.preventDefault();
+                handleGithubSignIn();
+              }}
+              className="w-full flex justify-center items-center px-4 py-3 text-white rounded border-2 border-[#1E1C1B] focus:outline-none"
+            >
               <span className="inline-block mr-4 text-2xl">
                 <FaGithub />
               </span>
