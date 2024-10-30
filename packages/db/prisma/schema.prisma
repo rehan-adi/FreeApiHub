@@ -17,7 +17,7 @@ model User {
   id       String @id @default(cuid())
   email    String @unique
   password String
-  name     String
+  name     String?
 
   @@index([email])
 }
