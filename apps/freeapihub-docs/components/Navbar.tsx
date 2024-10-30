@@ -1,8 +1,15 @@
+"use client";
+
 import Link from "next/link";
 import ThemeToggle from "./ThemeToggle";
+import { signOut } from "next-auth/react";
 import { FaGithub } from "react-icons/fa";
+import { useSession } from "next-auth/react";
+import { PiLineVerticalBold } from "react-icons/pi";
 
 const Navbar = () => {
+  const { data: session } = useSession();
+
   return (
     <nav className="py-3.5 flex justify-between fixed top-0 w-full border-b dark:border-white dark:border-opacity-10 border-black border-opacity-15 backdrop-blur items-center md:px-24 px-5">
       <span className="flex justify-between text-black dark:text-white text-base font-semibold items-center">
@@ -20,15 +27,40 @@ const Navbar = () => {
         </svg>
         FreeApiHub
       </span>
-      <div className="flex justify-between items-center gap-4">
-        <div>
+      <div className="flex justify-between items-center gap-1">
+         <div className="flex justify-between items-center gap-2">
+         <div>
           <ThemeToggle />
         </div>
-        <Link href="https://github.com/rehan-adi/FreeApiHub" target="_blank" rel="noopener noreferrer">
-        <div className="px-2 py-1.5 rounded-md dark:hover:bg-neutral-800 cursor-pointer hover:bg-gray-200">
-        <FaGithub className="text-black text-2xl dark:text-white"/>
-        </div>
+        <Link
+          href="https://github.com/rehan-adi/FreeApiHub"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <div className="px-2 py-1.5 rounded-md dark:hover:bg-neutral-800 cursor-pointer hover:bg-gray-200">
+            <FaGithub className="text-black text-2xl dark:text-white" />
+          </div>
         </Link>
+         </div>
+        <div className="mr-2 dark:text-zinc-800 text-gray-300">
+          <PiLineVerticalBold className="text-2xl"/>
+        </div>
+        <div>
+          {session?.user ? (
+            <button
+              onClick={() => signOut()}
+              className="px-3 py-1.5 bg-black dark:bg-white text-sm font-medium text-white dark:text-black rounded-full"
+            >
+              Logout
+            </button>
+          ) : (
+            <Link href="/signin">
+              <button className="px-3 py-2 bg-black dark:bg-white text-sm font-medium text-white dark:text-black rounded-full">
+                Login
+              </button>
+            </Link>
+          )}
+        </div>
       </div>
     </nav>
   );
