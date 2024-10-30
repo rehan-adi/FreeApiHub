@@ -39,7 +39,7 @@ export default function Home() {
 
       <Marquee
         pauseOnHover
-        className="[--duration:20s] mt-12 md:mb-20 mb-8 w-[85%] dark:text-white text-black md:max-w-xl "
+        className="[--duration:20s] z-0 mt-12 md:mb-20 mb-8 w-[85%] dark:text-white text-black md:max-w-xl "
       >
         <h1>Random User APi</h1>
         <h1>Joke API</h1>
