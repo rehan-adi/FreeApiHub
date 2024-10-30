@@ -1,6 +1,7 @@
 "use client";
 
 import z from "zod";
+import { toast } from "sonner";
 import { useState } from "react";
 import { Loader2 } from "lucide-react";
 import { signIn } from "next-auth/react";
@@ -44,11 +45,15 @@ const Page = () => {
 
       if (result?.error) {
         console.error(result.error);
-      } else {
-        router.push("/");
+        toast.error("Incorrect password, please try again.");
+        return;
       }
+
+      toast.success("Login successful!");
+      router.push("/");
     } catch (error: unknown) {
       console.error(error);
+      toast.error("An unexpected error occurred. Please try again.");
     } finally {
       setLoading(false);
     }

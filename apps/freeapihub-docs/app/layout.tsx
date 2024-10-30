@@ -1,4 +1,5 @@
 import "./globals.css";
+import { Toaster } from 'sonner';
 import type { Metadata } from "next";
 import { ThemeProvider } from "next-themes";
 
@@ -17,6 +18,7 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <ThemeProvider attribute="class">
+        <Toaster richColors theme="dark"/>
           {children}
         </ThemeProvider>
       </body>
