@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "nodemon src/app.ts",
     "build": "tsc",
-    "start": "node dist/app.js"
+    "start": "node dist/app.js",
+    "postinstall": "PRISMA_SCHEMA_PATH=../packages/db/prisma/schema.prisma prisma generate"
   },
   "keywords": [],
   "author": "",
