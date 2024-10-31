@@ -21,6 +21,14 @@ export default {
     link: "https://github.com/rehan-adi/FreeApiHub",
   },
   docsRepositoryBase: "https://github.com/rehan-adi/FreeApiHub",
+  footer: {
+    content: (
+      <span>
+         {new Date().getFullYear()} ©{' '}
+          Rehan
+      </span>
+    )
+  },
   useNextSeoProps() {
     return {
       titleTemplate: "%s – FreeApiHub",
