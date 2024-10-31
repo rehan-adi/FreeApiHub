@@ -29,6 +29,14 @@ export default {
       </span>
     )
   },
+  color: {
+    hue: 220,
+    saturation: 100,
+    lightness: {
+      dark: 41,
+      light: 41
+    }
+  },
   useNextSeoProps() {
     return {
       titleTemplate: "%s – FreeApiHub",
