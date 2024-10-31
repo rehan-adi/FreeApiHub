@@ -56,16 +56,18 @@ export default function Home() {
           <div className="bg-zinc-50 p-6 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-700/50 min-h-44 w-full rounded-xl hover:border-zinc-300 dark:hover:border-zinc-700 transition-colors flex flex-col justify-start items-start">
             <div className="flex items-center space-x-3">
               <User className="text-black dark:text-white w-6 h-6" />{" "}
-              <h3 className="text-xl font-semibold tracking-wider">
+             <h3 className="text-xl font-semibold tracking-wider">
                 Random User API
               </h3>
             </div>
             <p className="mt-3 text-sm tracking-wider">
               Get random user data packed with detailed information.
             </p>
+            <Link href="/docs/explore_all_apis/random-user">
             <button className="mt-10 px-4 py-2 text-sm font-semibold text-white dark:text-black dark:bg-white bg-black rounded-md">
               Explore API
             </button>
+            </Link>
           </div>
           <div className="bg-zinc-50 p-6 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-700/50 min-h-44 w-full rounded-xl hover:border-zinc-300 dark:hover:border-zinc-700 transition-colors flex flex-col justify-start items-start">
             <div className="flex items-center space-x-3">
@@ -76,9 +78,11 @@ export default function Home() {
               Access a variety of jokes for humor and entertainment in your
               applications.
             </p>
+            <Link href="/docs/explore_all_apis/joke">
             <button className="mt-10 px-4 py-2 text-sm font-semibold text-white dark:text-black dark:bg-white bg-black rounded-md">
               Explore API
             </button>
+            </Link>
           </div>
         </div>
         <div className="flex justify-between flex-col md:flex-row items-center gap-6 dark:text-[#FAFAFACC] text-black">
