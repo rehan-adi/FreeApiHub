@@ -7,7 +7,7 @@
     "dev": "nodemon src/app.ts",
     "build": "tsc",
     "start": "node dist/app.js",
-    "postinstall": "PRISMA_SCHEMA_PATH=../packages/db/prisma/schema.prisma prisma generate"
+    "postinstall": "prisma generate --schema=../packages/db/prisma/schema.prisma"
   },
   "keywords": [],
   "author": "",
