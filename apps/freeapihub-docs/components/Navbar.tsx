@@ -117,13 +117,13 @@ const Navbar = () => {
             {session?.user ? (
               <button
                 onClick={() => signOut()}
-                className="px-3 py-3 dark:bg-white w-full bg-black text-sm font-medium dark:text-black text-white rounded-full"
+                className="px-3 py-3 dark:bg-white w-full bg-black text-sm font-semibold dark:text-black text-white rounded-full"
               >
                 Logout
               </button>
             ) : (
               <Link href="/signin">
-                <button className="px-3 py-3 w-full dark:bg-white bg-black text-sm font-medium dark:text-black text-white rounded-full">
+                <button className="px-3 py-3 w-full dark:bg-white bg-black text-sm font-semibold dark:text-black text-white rounded-full">
                   Login
                 </button>
               </Link>
