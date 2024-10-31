@@ -1,0 +1,115 @@
+---
+title: Random User API
+---
+
+# Random User API
+
+The **Random User API** provides access to random user data, ideal for testing applications that require user profiles.
+
+### Endpoint
+
+```shell
+https://api.freeapihub.com/user
+```
+
+
+### Installation
+
+To use the Random User API, you'll need to install Axios. You can do this using either **npm** or **pnpm**:
+
+**Note**: Run these commands in your project directory to install Axios.
+
+### Using npm
+
+```bash
+npm install axios
+```
+### Using pnpm
+
+```bash
+pnpm add axios
+```
+
+### Example Usage
+
+Here's how to fetch random user data using Axios:
+
+```tsx
+import axios from "axios";
+
+axios
+  .get("https://api.freeapihub.com/user")
+  .then((response) => {
+    console.log(response.data);
+  })
+  .catch((error) => {12
+    console.error("Error fetching data:", error);
+  });
+```
+
+Response Format
+Below is a sample JSON response when requesting random user data:
+
+```json
+{
+  "data": [
+    {
+      "id": "1a2b3c4d",
+      "name": "Jane Doe",
+      "email": "jane.doe@example.com",
+      "gender": "female",
+      "location": "New York, USA",
+      "phone": "+1-202-555-0183",
+      "picture": "https://api.freeapihub.com/user/photos/janedoe.jpg"
+    },
+    {
+      "id": "5f6g7h8i",
+      "name": "Anna Smith",
+      "email": "anna.smith@example.com",
+      "gender": "female",
+      "location": "London, UK",
+      "phone": "+44-7700-900083",
+      "picture": "https://api.freeapihub.com/user/photos/annasmith.jpg"
+    }
+  ]
+}
+```
+
+### Error Handling
+
+When using the Random User API, it's essential to handle potential errors effectively. Below are common error codes you may encounter:
+
+| Error Code | Description                    |
+| ---------- | ------------------------------ |
+| 404        | Resource not found             |
+| 429        | Too many requests (rate limit) |
+
+### Example Error Handling
+
+To manage potential errors gracefully, you can use a `try...catch` block in your Axios requests. Here's an example of how to implement error handling when fetching user data:
+
+```javascript
+import axios from "axios";
+
+async function fetchUserData() {
+  try {
+    const response = await axios.get("https://api.freeapihub.com/user");
+    console.log(response.data);
+  } catch (error) {
+    console.error(
+      "Error fetching user data:",
+      error.response?.data?.message || "An unexpected error occurred."
+    );
+  }
+}
+
+fetchUserData();
+```
+
+### Usage Tips
+
+- Utilize the Random User API to generate user data for testing or development purposes.
+- Experiment with different API calls to see the variety of data returned, helping you understand the structure and attributes available.
+- For a deeper understanding of how to effectively use APIs, refer to the API Usage Guide.
+
+Happy coding with the Random User API! 🎉
