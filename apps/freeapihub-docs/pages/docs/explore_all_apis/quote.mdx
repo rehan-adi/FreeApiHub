@@ -1,0 +1,101 @@
+---
+title:  Quote API
+---
+
+# Quote API
+
+The **Quote API** provides access to random quotes, ideal for adding inspiration to your applications or for testing purposes.
+
+### Endpoint
+
+```shell
+https://api.freeapihub.com/quote
+```
+
+
+### Installation
+
+To use the Quote API, you'll need to install Axios. You can do this using either npm or pnpm:
+
+**Note**: Run these commands in your project directory to install Axios.
+
+### Using npm
+
+```bash
+npm install axios
+```
+### Using pnpm
+
+```bash
+pnpm add axios
+```
+
+### Example Usage
+
+Here's how to fetch random quote data using Axios:
+
+```tsx
+import axios from "axios";
+
+axios
+  .get("https://api.freeapihub.com/quote")
+  .then((response) => {
+    console.log(response.data);
+  })
+  .catch((error) => {
+    console.error("Error fetching data:", error);
+  });
+```
+
+### Response Format
+
+Below is a sample JSON response when requesting random quote data:
+
+```json
+{
+  "data": {
+    "id": "1",
+    "quote": "Why did the scarecrow win an award? Because he was outstanding in his field!",
+    "category": "General"
+  }
+}
+```
+
+### Error Handling
+
+When using the Quote API, it's essential to handle potential errors effectively. Below are common error codes you may encounter:
+
+| Error Code | Description                    |
+| ---------- | ------------------------------ |
+| 404        | Resource not found             |
+| 429        | Too many requests (rate limit) |
+
+### Example Error Handling
+
+To manage potential errors gracefully, you can use a `try...catch` block in your Axios requests. Here's an example of how to implement error handling when fetching user data:
+
+```javascript
+import axios from "axios";
+
+async function fetchQuote() {
+  try {
+    const response = await axios.get("https://api.freeapihub.com/quote");
+    console.log(response.data);
+  } catch (error) {
+    console.error(
+      "Error fetching quote: ",
+      error.response?.data?.message || "An unexpected error occurred."
+    );
+  }
+}
+
+fetchQuote();
+```
+
+### Usage Tips
+
+- Utilize the Quote API to add inspiration to your applications or for testing purposes.
+- Experiment with different API calls to see the variety of quotes returned, helping you understand the structure and attributes available.
+- For a deeper understanding of how to effectively use APIs, refer to the API Usage Guide.
+
+Happy coding with the Quote API! 🎉
