@@ -12,14 +12,12 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "devDependencies": {
-    "@types/node": "^22.7.7"
-  },
   "exports": {
     "./index": "./dist/index.js"
   },
   "dependencies": {
     "@prisma/client": "^5.21.1",
+    "@types/node": "^22.7.7",
     "prisma": "^5.21.1"
   }
 }
