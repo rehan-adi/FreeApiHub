@@ -7,8 +7,8 @@
     "dev": "nodemon src/app.ts",
     "build": "tsc",
     "start": "node dist/app.js",
-    "postinstall": "npx prisma generate --schema=../../packages/db/prisma/schema.prisma",
-    "migrate": "npx prisma migrate deploy --schema=../../packages/db/prisma/schema.prisma"
+    "postinstall": "prisma generate --schema=../../packages/db/prisma/schema.prisma",
+    "migrate": "prisma migrate deploy --schema=../../packages/db/prisma/schema.prisma"
   },
   "keywords": [],
   "author": "",
