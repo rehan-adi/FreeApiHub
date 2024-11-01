@@ -5,6 +5,7 @@
       "strict": true,
       "esModuleInterop": true,
       "skipLibCheck": true,
+      "types": ["node"],
       "typeRoots": ["node_modules/@types"],
       "forceConsistentCasingInFileNames": true,
       "outDir": "./dist",
@@ -13,7 +14,6 @@
       "paths": {
         "@freeapihub/db": ["../packages/db/dist/index"]
       },
-      "types": ["node"]
     },
     "include": ["src/**/*.ts", "src/global.d.ts"],
     "exclude": ["node_modules"]
