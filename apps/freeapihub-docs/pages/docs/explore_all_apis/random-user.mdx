@@ -12,6 +12,15 @@ The **Random User API** provides access to random user data, ideal for testing a
 https://api.freeapihub.com/user
 ```
 
+### Get User Data by ID
+
+To retrieve user data by ID, you can use the following endpoint:
+
+```shell
+https://api.freeapihub.com/user/:id
+```
+
+Replace :id with the actual user ID you want to fetch.
 
 ### Installation
 
@@ -24,6 +33,7 @@ To use the Random User API, you'll need to install Axios. You can do this using 
 ```bash
 npm install axios
 ```
+
 ### Using pnpm
 
 ```bash
@@ -42,13 +52,30 @@ axios
   .then((response) => {
     console.log(response.data);
   })
-  .catch((error) => {12
+  .catch((error) => {
     console.error("Error fetching data:", error);
   });
 ```
 
+Here's how to fetch random user data by id using Axios:
+
+```tsx
+import axios from "axios";
+
+// Fetching user data by ID
+const userId = "1a2b3c4d"; // Example user ID
+axios
+  .get(`https://api.freeapihub.com/user/${userId}`)
+  .then((response) => {
+    console.log(response.data);
+  })
+  .catch((error) => {
+    console.error("Error fetching user data by ID:", error);
+  });
+```
+
 Response Format
-Below is a sample JSON response when requesting random user data:
+Below is a sample JSON response when requesting random user data or user data by id:
 
 ```json
 {
