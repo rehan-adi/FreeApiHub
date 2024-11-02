@@ -209,66 +209,6 @@ export default function Home() {
         </div>
       </div>
 
-      {/* How it works  */}
-      <div className="w-full py-12 text-black dark:text-white">
-        <h2 className="text-xl font-medium text-center mb-10">How it Works</h2>
-        <div className="flex flex-col md:flex-row justify-between items-center md:gap-3 md:px-[275px] w-full">
-          {/* API Usage Example: User API */}
-          <div className="md:mb-8 mb-6 md:px-3 md:py-5 p-4 md:w-1/2 w-full rounded-lg">
-            <h3 className="text-xl font-semibold mb-2">User API</h3>
-            <p className="mb-4">
-              Fetch random user data with a simple GET request.
-            </p>
-            <pre className="bg-zinc-50 p-6 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-700/50 min-h-44 w-full rounded-xl hover:border-zinc-300 dark:hover:border-zinc-700 transition-colors flex flex-col justify-start items-start overflow-auto">
-              <code>
-                {`// Example: Fetching a random user
-   fetch('https://freeapihub.com/api/user')
-      .then(response => response.json())
-      .then(data => console.log(data));
-              `}
-              </code>
-            </pre>
-            <p className="mt-4 mb-2 text-sm">Sample Response:</p>
-            <pre className="bg-white dark:bg-[#0E0C0C] border dark:border-white dark:border-opacity-15 border-black border-opacity-15 p-4 rounded-md overflow-auto">
-              <code>
-                {`{
-    "id": "12345",
-    "name": "John Doe",
-    "email": "johndoe@example.com",
-}`}
-              </code>
-            </pre>
-          </div>
-
-          {/* API Usage Example: Joke API */}
-          <div className="mb-8 md:px-3 md:py-5 p-4  md:w-1/2 w-full rounded-lg">
-            <h3 className="text-xl font-semibold mb-2">Joke API</h3>
-            <p className="mb-4">
-              Retrieve random jokes for use in your applications.
-            </p>
-            <pre className="bg-zinc-50 p-6 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-700/50 min-h-44 w-full rounded-xl hover:border-zinc-300 dark:hover:border-zinc-700 transition-colors flex flex-col justify-start items-start overflow-auto">
-              <code>
-                {`// Example: Fetching a random joke
-   fetch('https://freeapihub.com/api/joke')
-      .then(response => response.json())
-      .then(data => console.log(data));
-                `}
-              </code>
-            </pre>
-            <p className="mt-4 mb-2 text-sm">Sample Response:</p>
-            <pre className="bg-white dark:bg-[#0E0C0C] border dark:border-white dark:border-opacity-15 border-black border-opacity-15 p-4 rounded-md overflow-auto">
-              <code>
-                {`{
-    "id": "12345",
-    "name": "John Doe",
-    "email": "johndoe@example.com",
-}`}
-              </code>
-            </pre>
-          </div>
-        </div>
-      </div>
-
       <div className="w-full text-center mb-8">
         <h1 className="text-xl font-medium text-black dark:text-white">
           What Our Users Are Saying
