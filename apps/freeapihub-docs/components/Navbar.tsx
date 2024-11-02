@@ -62,7 +62,7 @@ const Navbar = () => {
               </button>
             ) : (
               <Link href="/signin">
-                <button className="px-3 py-2 bg-black dark:bg-white text-sm font-medium text-white dark:text-black rounded-full">
+                <button className="px-4 py-2 bg-black dark:bg-white text-sm font-medium text-white dark:text-black rounded-full">
                   Login
                 </button>
               </Link>
@@ -77,11 +77,11 @@ const Navbar = () => {
 
       {/* Sidebar Component */}
       <div
-        className={`fixed top-0 right-0 w-full px-5 rounded-xl py-6 z-50 h-screen shadow-lg bg-white dark:bg-black transition-transform duration-300 transform ${
+        className={`fixed top-0 right-0 w-full px-5 rounded-xl py-6 z-50 h-screen shadow-lg bg-white dark:bg-[#141312] transition-transform duration-300 transform ${
           isSidebarOpen ? "translate-x-0" : "translate-x-full"
         } md:hidden`}
       >
-        <div className="p-5 border dark:border-white border-black dark:border-opacity-20 border-opacity-20">
+        <div className="p-5 border dark:border-white border-black dark:border-opacity-10 border-opacity-20">
           <div className="flex justify-between items-center">
             <span className="flex justify-between text-black dark:text-white text-base font-semibold items-center">
               <svg
