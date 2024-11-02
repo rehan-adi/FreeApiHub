@@ -1,0 +1,107 @@
+---
+title: Programming Language API
+---
+
+#  Programming Language API
+
+The **Programming Language API** provides information about different programming languages, their uses, paradigms, and release details. This API is ideal for educational applications, language comparisons, or adding dynamic content related to programming.
+
+### Endpoint
+
+```shell
+https://api.freeapihub.com/programming-language
+```
+
+### Installation
+
+To use the Programming Language API, you'll need to install Axios. You can do this using either npm or pnpm:
+
+**Note**: Run these commands in your project directory to install Axios.
+
+### Using npm
+
+```bash
+npm install axios
+```
+
+### Using pnpm
+
+```bash
+pnpm add axios
+```
+
+### Example Usage
+
+Here's how to fetch programming language data using Axios:
+
+```tsx
+import axios from "axios";
+
+axios
+  .get("https://api.freeapihub.com/programming-language")
+  .then((response) => {
+    console.log(response.data);
+  })
+  .catch((error) => {
+    12;
+    console.error("Error fetching data:", error);
+  });
+```
+
+### Response Format
+
+Below is a sample JSON response when requesting programming language data:
+
+```json
+{
+  "data": {
+    "id": "python",
+    "name": "Python",
+    "paradigm": ["Object-Oriented", "Procedural", "Functional"],
+    "firstAppeared": 1991,
+    "developer": "Guido van Rossum",
+    "description": "A high-level, interpreted language known for its readability and versatility.",
+    "latestVersion": "3.10.2",
+    "website": "https://www.python.org"
+  }
+}
+```
+
+### Error Handling
+
+When using the Programming Language API, it's essential to handle potential errors effectively. Below are common error codes you may encounter:
+
+| Error Code | Description                    |
+| ---------- | ------------------------------ |
+| 404        | Resource not found             |
+| 429        | Too many requests (rate limit) |
+
+### Example Error Handling
+
+To manage potential errors gracefully, you can use a try...catch block in your Axios requests. Here's an example of how to implement error handling when fetching book data:
+
+```javascript
+import axios from "axios";
+
+async function fetchProgrammingLanguageData() {
+  try {
+    const response = await axios.get("https://api.freeapihub.com/programming-language");
+    console.log(response.data);
+  } catch (error) {
+    console.error(
+      "Error fetching programming language data: ",
+      error.response?.data?.message || "An unexpected error occurred."
+    );
+  }
+}
+
+fetchProgrammingLanguageData();
+```
+
+### Usage Tips
+
+- Use the Programming Language API to retrieve data for educational tools, language comparison charts, or for showcasing popular languages on your platform.
+- Experiment with different API calls to explore the range of languages and details available.
+- For a deeper understanding of how to effectively use APIs, refer to the API Usage Guide.
+
+Happy coding with the Programming Language API! 🎉
