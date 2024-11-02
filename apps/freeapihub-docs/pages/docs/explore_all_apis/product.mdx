@@ -1,0 +1,107 @@
+---
+title: Product API
+---
+
+# Product API
+
+The **Product API** provides access to product data, making it easy to retrieve information on various products for e-commerce applications, cataloging, or testing purposes.
+
+### Endpoint
+
+```shell
+https://api.freeapihub.com/product
+```
+
+### Installation
+
+To use the Product API, you'll need to install Axios. You can do this using either npm or pnpm:
+
+**Note**: Run these commands in your project directory to install Axios.
+
+### Using npm
+
+```bash
+npm install axios
+```
+
+### Using pnpm
+
+```bash
+pnpm add axios
+```
+
+### Example Usage
+
+Here's how to fetch data using Axios:
+
+```tsx
+import axios from "axios";
+
+axios
+  .get("https://api.freeapihub.com/product")
+  .then((response) => {
+    console.log(response.data);
+  })
+  .catch((error) => {
+    12;
+    console.error("Error fetching data:", error);
+  });
+```
+
+### Response Format
+
+Below is a sample JSON response when requesting book data:
+
+```json
+{
+  "data": {
+    "id": "12345",
+    "name": "Wireless Headphones",
+    "category": "Electronics",
+    "price": 59.99,
+    "currency": "USD",
+    "description": "High-quality wireless headphones with noise cancellation.",
+    "stock": 25,
+    "imageUrl": "https://api.freeapihub.com/product/images/wireless_headphones.jpg"
+  }
+}
+```
+
+### Error Handling
+
+When using the Product API, it's essential to handle potential errors effectively. Below are common error codes you may encounter:
+
+| Error Code | Description                    |
+| ---------- | ------------------------------ |
+| 404        | Resource not found             |
+| 429        | Too many requests (rate limit) |
+
+### Example Error Handling
+
+To manage potential errors gracefully, you can use a try...catch block in your Axios requests. Here's an example of how to implement error handling when fetching book data:
+
+```javascript
+import axios from "axios";
+
+async function fetchProductData() {
+  try {
+    const response = await axios.get("https://api.freeapihub.com/product");
+    console.log(response.data);
+  } catch (error) {
+    console.error(
+      "Error fetching product data: ",
+      error.response?.data?.message || "An unexpected error occurred."
+    );
+  }
+}
+
+fetchProductData();
+```
+
+### Usage Tips
+
+- Use the Product API to retrieve product data for e-commerce applications, product listings, or inventory management systems.
+- Experiment with different API calls to explore the variety of products available and to understand the structure and attributes returned.
+- For a deeper understanding of how to effectively use APIs, refer to the API Usage Guide.
+
+Happy coding with the Book API! 🎉
