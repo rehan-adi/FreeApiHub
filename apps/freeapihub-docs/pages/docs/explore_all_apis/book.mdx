@@ -1,0 +1,106 @@
+---
+title: Book API
+---
+
+# Book API
+
+The **Book API** provides access to book data, ideal for retrieving information on books for your applications or for testing purposes.
+
+### Endpoint
+
+```shell
+https://api.freeapihub.com/book
+```
+
+### Installation
+
+To use the Book API, you'll need to install Axios. You can do this using either npm or pnpm:
+
+**Note**: Run these commands in your project directory to install Axios.
+
+### Using npm
+
+```bash
+npm install axios
+```
+
+### Using pnpm
+
+```bash
+pnpm add axios
+```
+
+### Example Usage
+
+Here's how to fetch data using Axios:
+
+```tsx
+import axios from "axios";
+
+axios
+  .get("https://api.freeapihub.com/book")
+  .then((response) => {
+    console.log(response.data);
+  })
+  .catch((error) => {
+    12;
+    console.error("Error fetching data:", error);
+  });
+```
+
+### Response Format
+
+Below is a sample JSON response when requesting book data:
+
+```json
+{
+  "data": {
+    "id": "1",
+    "title": "To Kill a Mockingbird",
+    "author": "Harper Lee",
+    "genre": "Fiction",
+    "publishedYear": 1960,
+    "summary": "A novel about the serious issues of rape and racial inequality in the American South, seen through the eyes of a young girl.",
+    "coverImage": "https://api.freeapihub.com/book/images/tokillamockingbird.jpg"
+  }
+}
+```
+
+### Error Handling
+
+When using the Book API, it's essential to handle potential errors effectively. Below are common error codes you may encounter:
+
+| Error Code | Description                    |
+| ---------- | ------------------------------ |
+| 404        | Resource not found             |
+| 429        | Too many requests (rate limit) |
+
+### Example Error Handling
+
+To manage potential errors gracefully, you can use a try...catch block in your Axios requests. Here's an example of how to implement error handling when fetching book data:
+
+```javascript
+import axios from "axios";
+
+async function fetchBookData() {
+  try {
+    const response = await axios.get("https://api.freeapihub.com/book");
+    console.log(response.data);
+  } catch (error) {
+    console.error(
+      "Error fetching book data: ",
+      error.response?.data?.message || "An unexpected error occurred."
+    );
+  }
+}
+
+fetchBookData();
+```
+
+### Usage Tips
+
+- Use the Book API to retrieve book data for various applications, such as recommendation engines or digital libraries.
+- Experiment with different API calls to explore the variety of books available and to understand the structure and attributes returned.
+- For a deeper understanding of how to effectively use APIs, refer to the API Usage Guide.
+
+Happy coding with the Book API! 🎉
