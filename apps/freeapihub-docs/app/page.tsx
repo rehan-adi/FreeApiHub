@@ -116,9 +116,11 @@ export default function Home() {
             <p className="mt-3 text-sm dark:text-[#A1A1AA] text-black tracking-wider">
               Get up-to-date stock information for real-time financial insights.
             </p>
-            <button className="mt-10 px-4 py-2 text-sm font-semibold text-white dark:text-black dark:bg-white bg-black rounded-md">
-              Explore API
-            </button>
+            <Link href="/docs/explore_all_apis/stock">
+              <button className="mt-10 px-4 py-2 text-sm font-semibold text-white dark:text-black dark:bg-white bg-black rounded-md">
+                Explore API
+              </button>
+            </Link>
           </div>
         </div>
         <div className="flex justify-between items-center flex-col md:flex-row gap-6 dark:text-[#FAFAFACC] text-black">
