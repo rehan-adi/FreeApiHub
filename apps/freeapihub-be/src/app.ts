@@ -4,7 +4,7 @@ import env from "dotenv";
 import helmet from "helmet";
 import morgan from "morgan";
 import rateLimit from "express-rate-limit";
-import swaggerUi from 'swagger-ui-express';
+import swaggerUi from "swagger-ui-express";
 import express, { Request, Response } from "express";
 
 import { OpenAPISpecs } from "./utils/swagger";
@@ -21,8 +21,8 @@ env.config();
 const app = express();
 
 const corsOptions = {
-  origin: process.env.CORIGIN,
-  credentials: trueORS_
+  origin: process.env.CORS_ORIGIN,
+  credentials: true,
 };
 
 const limit = rateLimit({
@@ -32,7 +32,7 @@ const limit = rateLimit({
 });
 
 // Swagger API documentation
-app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(OpenAPISpecs));
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(OpenAPISpecs));
 
 // Middleware
 app.use(express.json());
