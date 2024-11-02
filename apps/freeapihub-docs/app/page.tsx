@@ -15,7 +15,7 @@ import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
-    <div className="text-white pt-16 min-h-screen flex flex-col justify-center items-center">
+    <div className="text-white bg-[#141312] pt-16 min-h-screen flex flex-col justify-center items-center">
 
       {/* Navbar  */}
       <Navbar />
@@ -52,15 +52,15 @@ export default function Home() {
 
       {/* API Details Section */}
       <div className="pb-20 pt-10 lg:px-72 px-4 space-y-6 w-full">
-        <div className="flex justify-between flex-col md:flex-row items-center gap-6 dark:text-[#FAFAFACC] text-black">
-          <div className="bg-zinc-50 p-6 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-700/50 min-h-44 w-full rounded-xl hover:border-zinc-300 dark:hover:border-zinc-700 transition-colors flex flex-col justify-start items-start">
+        <div className="flex justify-between flex-col md:flex-row items-center gap-6 ">
+          <div className="bg-zinc-50 p-6 dark:bg-[#1E1C1B] border border-zinc-200 dark:border-zinc-700/50 min-h-44 w-full rounded-xl hover:border-zinc-300 dark:hover:border-zinc-700 transition-colors flex flex-col justify-start items-start">
             <div className="flex items-center space-x-3">
               <User className="text-black dark:text-white w-6 h-6" />{" "}
              <h3 className="text-xl font-semibold tracking-wider">
                 Random User API
               </h3>
             </div>
-            <p className="mt-3 text-sm tracking-wider">
+            <p className="mt-3 text-sm dark:text-[#A1A1AA] text-black tracking-wider">
               Get random user data packed with detailed information.
             </p>
             <Link href="/docs/explore_all_apis/random-user">
@@ -69,12 +69,12 @@ export default function Home() {
             </button>
             </Link>
           </div>
-          <div className="bg-zinc-50 p-6 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-700/50 min-h-44 w-full rounded-xl hover:border-zinc-300 dark:hover:border-zinc-700 transition-colors flex flex-col justify-start items-start">
+          <div className="bg-zinc-50 p-6 dark:bg-[#1E1C1B] border border-zinc-200 dark:border-zinc-700/50 min-h-44 w-full rounded-xl hover:border-zinc-300 dark:hover:border-zinc-700 transition-colors flex flex-col justify-start items-start">
             <div className="flex items-center space-x-3">
               <Smile className="text-black dark:text-white w-6 h-6" />{" "}
               <h3 className="text-xl font-semibold tracking-wider">Joke API</h3>
             </div>
-            <p className="mt-3 text-sm tracking-wider">
+            <p className="mt-3 text-sm dark:text-[#A1A1AA] text-black tracking-wider">
               Access a variety of jokes for humor and entertainment in your
               applications.
             </p>
@@ -86,14 +86,14 @@ export default function Home() {
           </div>
         </div>
         <div className="flex justify-between flex-col md:flex-row items-center gap-6 dark:text-[#FAFAFACC] text-black">
-          <div className="bg-zinc-50 p-6 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-700/50 min-h-44 w-full rounded-xl hover:border-zinc-300 dark:hover:border-zinc-700 transition-colors flex flex-col justify-start items-start">
+          <div className="bg-zinc-50 p-6 dark:bg-[#1E1C1B] border border-zinc-200 dark:border-zinc-700/50 min-h-44 w-full rounded-xl hover:border-zinc-300 dark:hover:border-zinc-700 transition-colors flex flex-col justify-start items-start">
             <div className="flex items-center space-x-3">
               <Quote className="text-black dark:text-white w-6 h-6" />{" "}
               <h3 className="text-xl font-semibold tracking-wider">
                 Quote API
               </h3>
             </div>
-            <p className="mt-3 text-sm tracking-wider">
+            <p className="mt-3 text-sm dark:text-[#A1A1AA] text-black tracking-wider">
               Retrieve inspiring, thought-provoking quotes to enhance user
               experience.
             </p>
@@ -101,14 +101,14 @@ export default function Home() {
               Explore API
             </button>
           </div>
-          <div className="bg-zinc-50 p-6 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-700/50 min-h-44 w-full rounded-xl hover:border-zinc-300 dark:hover:border-zinc-700 transition-colors flex flex-col justify-start items-start">
+          <div className="bg-zinc-50 p-6 dark:bg-[#1E1C1B] border border-zinc-200 dark:border-zinc-700/50 min-h-44 w-full rounded-xl hover:border-zinc-300 dark:hover:border-zinc-700 transition-colors flex flex-col justify-start items-start">
             <div className="flex items-center space-x-3">
               <LineChart className="text-black dark:text-white w-6 h-6" />{" "}
               <h3 className="text-xl font-semibold tracking-wider">
                 Stock API
               </h3>
             </div>
-            <p className="mt-3 text-sm tracking-wider">
+            <p className="mt-3 text-sm dark:text-[#A1A1AA] text-black tracking-wider">
               Get up-to-date stock information for real-time financial insights.
             </p>
             <button className="mt-10 px-4 py-2 text-sm font-semibold text-white dark:text-black dark:bg-white bg-black rounded-md">
@@ -117,12 +117,12 @@ export default function Home() {
           </div>
         </div>
         <div className="flex justify-between items-center flex-col md:flex-row gap-6 dark:text-[#FAFAFACC] text-black">
-          <div className="bg-zinc-50 p-6 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-700/50 min-h-44 w-full rounded-xl hover:border-zinc-300 dark:hover:border-zinc-700 transition-colors flex flex-col justify-start items-start">
+          <div className="bg-zinc-50 p-6 dark:bg-[#1E1C1B] border border-zinc-200 dark:border-zinc-700/50 min-h-44 w-full rounded-xl hover:border-zinc-300 dark:hover:border-zinc-700 transition-colors flex flex-col justify-start items-start">
             <div className="flex items-center space-x-3">
               <Notebook className="text-black dark:text-white w-6 h-6" />{" "}
               <h3 className="text-xl font-semibold tracking-wider">Book API</h3>
             </div>
-            <p className="mt-3 text-sm tracking-wider">
+            <p className="mt-3 text-sm dark:text-[#A1A1AA] text-black tracking-wider">
               Explore a catalog of books with comprehensive information for
               readers.
             </p>
@@ -130,14 +130,14 @@ export default function Home() {
               Explore API
             </button>
           </div>
-          <div className="bg-zinc-50 p-6 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-700/50 min-h-44 w-full rounded-xl hover:border-zinc-300 dark:hover:border-zinc-700 transition-colors flex flex-col justify-start items-start">
+          <div className="bg-zinc-50 p-6 dark:bg-[#1E1C1B] border border-zinc-200 dark:border-zinc-700/50 min-h-44 w-full rounded-xl hover:border-zinc-300 dark:hover:border-zinc-700 transition-colors flex flex-col justify-start items-start">
             <div className="flex items-center space-x-3">
               <CodeXml className="dark:text-white text-black w-6 h-6" />{" "}
               <h3 className="text-xl font-semibold tracking-wider">
                 Programming Language API
               </h3>
             </div>
-            <p className="mt-3 text-sm tracking-wider">
+            <p className="mt-3 text-sm dark:text-[#A1A1AA] text-black tracking-wider">
               Discover detailed information about various programming languages.
             </p>
             <button className="mt-10 px-4 py-2 text-sm font-semibold text-white dark:text-black dark:bg-white bg-black rounded-md">
@@ -146,14 +146,14 @@ export default function Home() {
           </div>
         </div>
         <div className="flex justify-between items-center flex-col md:flex-row gap-6 dark:text-[#FAFAFACC] text-black">
-          <div className="bg-zinc-50 p-6 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-700/50 min-h-44 md:w-1/2 w-full rounded-xl hover:border-zinc-300 dark:hover:border-zinc-700 transition-colors flex flex-col justify-start items-start">
+          <div className="bg-zinc-50 p-6 dark:bg-[#1E1C1B] border border-zinc-200 dark:border-zinc-700/50 min-h-44 md:w-1/2 w-full rounded-xl hover:border-zinc-300 dark:hover:border-zinc-700 transition-colors flex flex-col justify-start items-start">
             <div className="flex items-center space-x-3">
               <ShoppingCart className="text-black dark:text-white w-6 h-6" />{" "}
               <h3 className="text-xl font-semibold tracking-wider">
                 Product API
               </h3>
             </div>
-            <p className="mt-3 text-sm tracking-wider">
+            <p className="mt-3 text-sm dark:text-[#A1A1AA] text-black tracking-wider">
               Access product details for e-commerce and business applications.
             </p>
             <button className="mt-10 px-4 py-2 text-sm font-semibold text-white dark:text-black dark:bg-white bg-black rounded-md">
