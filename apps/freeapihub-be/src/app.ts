@@ -1,4 +1,5 @@
 import hpp from "hpp";
+import cors from "cors";
 import env from "dotenv";
 import helmet from "helmet";
 import morgan from "morgan";
@@ -19,6 +20,11 @@ env.config();
 
 const app = express();
 
+const corsOptions = {
+  origin: process.env.CORIGIN,
+  credentials: trueORS_
+};
+
 const limit = rateLimit({
   windowMs: 5 * 60 * 1000,
   max: 50,
@@ -30,6 +36,7 @@ app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(OpenAPISpecs));
 
 // Middleware
 app.use(express.json());
+app.use(cors(corsOptions));
 app.use(hpp());
 app.use(limit);
 app.use(helmet());
