@@ -15,7 +15,7 @@ import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
-    <div className="text-white bg-[#141312] pt-16 min-h-screen flex flex-col justify-center items-center">
+    <div className="text-white dark:bg-[#141312]  pt-16 min-h-screen flex flex-col justify-center items-center">
 
       {/* Navbar  */}
       <Navbar />
@@ -28,11 +28,11 @@ export default function Home() {
 
       <div className="flex justify-center gap-6 py-5">
         <Link href="/docs">
-          <button className="dark:text-white text-black text-sm font-medium py-3 px-7 border dark:border-white border-black border-opacity-35 rounded-md hover:border-opacity-100 transition-all">
+          <button className="dark:text-black dark:bg-white bg-black text-white text-base font-medium py-2 px-5 rounded-md hover:border-opacity-100 transition-all">
             Get Started
           </button>
         </Link>
-        <button className=" dark:text-white text-black text-sm font-medium py-3 px-7 border dark:border-white border-black border-opacity-35 rounded-md hover:border-opacity-100 transition-all">
+        <button className="dark:text-black dark:bg-white bg-black text-white text-base font-medium py-2 px-5 rounded-md hover:border-opacity-100 transition-all">
           Explore APIs
         </button>
       </div>
@@ -56,7 +56,7 @@ export default function Home() {
           <div className="bg-zinc-50 p-6 dark:bg-[#1E1C1B] border border-zinc-200 dark:border-zinc-700/50 min-h-44 w-full rounded-xl hover:border-zinc-300 dark:hover:border-zinc-700 transition-colors flex flex-col justify-start items-start">
             <div className="flex items-center space-x-3">
               <User className="text-black dark:text-white w-6 h-6" />{" "}
-             <h3 className="text-xl font-semibold tracking-wider">
+             <h3 className="text-xl text-black dark:text-white font-semibold tracking-wider">
                 Random User API
               </h3>
             </div>
@@ -72,7 +72,7 @@ export default function Home() {
           <div className="bg-zinc-50 p-6 dark:bg-[#1E1C1B] border border-zinc-200 dark:border-zinc-700/50 min-h-44 w-full rounded-xl hover:border-zinc-300 dark:hover:border-zinc-700 transition-colors flex flex-col justify-start items-start">
             <div className="flex items-center space-x-3">
               <Smile className="text-black dark:text-white w-6 h-6" />{" "}
-              <h3 className="text-xl font-semibold tracking-wider">Joke API</h3>
+              <h3 className="text-xl font-semibold text-black dark:text-white tracking-wider">Joke API</h3>
             </div>
             <p className="mt-3 text-sm dark:text-[#A1A1AA] text-black tracking-wider">
               Access a variety of jokes for humor and entertainment in your
@@ -219,29 +219,29 @@ export default function Home() {
         className="[--duration:25s] mb-20 w-[85%] md:max-w-[940px] dark:text-white text-black"
       >
         <div className="flex items-center space-x-8">
-          <blockquote className="text-center p-4 bg-zinc-50 dark:bg-[#1E1B1C] rounded-lg shadow-md w-72">
+          <blockquote className="text-center px-4 py-7 bg-zinc-50 dark:bg-[#1E1B1C] rounded-lg shadow-md w-72">
             <p className="italic text-gray-700 dark:text-gray-300">
               "FreeAPI Hub makes API integration a breeze!"
             </p>
-            <p className="mt-2 font-semibold">– Sarah J., Developer</p>
+            <p className="mt-3 font-semibold">– Sarah J., Developer</p>
           </blockquote>
-          <blockquote className="text-center p-4 bg-zinc-50 dark:bg-[#1E1B1C] rounded-lg shadow-md w-72">
+          <blockquote className="text-center px-4 py-7 bg-zinc-50 dark:bg-[#1E1B1C] rounded-lg shadow-md w-72">
             <p className="italic text-gray-700 dark:text-gray-300">
               "10,000+ developers can’t be wrong. Love it!"
             </p>
-            <p className="mt-2 font-semibold">– Daniel K., Product Manager</p>
+            <p className="mt-3 font-semibold">– Daniel K., Product Manager</p>
           </blockquote>
-          <blockquote className="text-center p-4 bg-zinc-50 dark:bg-[#1E1B1C] rounded-lg shadow-md w-72">
+          <blockquote className="text-center px-4 py-7 bg-zinc-50 dark:bg-[#1E1B1C] rounded-lg shadow-md w-72">
             <p className="italic text-gray-700 dark:text-gray-300">
               "Reliable and easy to use. Great service!"
             </p>
-            <p className="mt-2 font-semibold">– Emily R., Software Engineer</p>
+            <p className="mt-3 font-semibold">– Emily R., Software Engineer</p>
           </blockquote>
-          <blockquote className="text-center p-4 bg-zinc-50 dark:bg-[#1E1B1C] rounded-lg shadow-md w-72">
+          <blockquote className="text-center px-4 py-7 bg-zinc-50 dark:bg-[#1E1B1C] rounded-lg shadow-md w-72">
             <p className="italic text-gray-700 dark:text-gray-300">
               "Highly recommended for any project!"
             </p>
-            <p className="mt-2 font-semibold">– Chris P., Startup Founder</p>
+            <p className="mt-3 font-semibold">– Chris P., Startup Founder</p>
           </blockquote>
         </div>
       </Marquee>
