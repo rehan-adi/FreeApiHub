@@ -97,9 +97,11 @@ export default function Home() {
               Retrieve inspiring, thought-provoking quotes to enhance user
               experience.
             </p>
+            <Link href="/docs/explore_all_apis/quote">
             <button className="mt-10 px-4 py-2 text-sm font-semibold text-white dark:text-black dark:bg-white bg-black rounded-md">
               Explore API
             </button>
+            </Link>
           </div>
           <div className="bg-zinc-50 p-6 dark:bg-[#1E1C1B] border border-zinc-200 dark:border-zinc-700/50 min-h-44 w-full rounded-xl hover:border-zinc-300 dark:hover:border-zinc-700 transition-colors flex flex-col justify-start items-start">
             <div className="flex items-center space-x-3">
