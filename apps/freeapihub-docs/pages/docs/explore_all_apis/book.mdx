@@ -17,10 +17,10 @@ https://freeapihub.onrender.com/api/v1/books
 To retrieve book data by ID, you can use the following endpoint:
 
 ```shell
-https://freeapihub.onrender.com/api/v1/book/:bookId
+https://freeapihub.onrender.com/api/v1/books/:bookId
 ```
 
-Replace :bookId with the actual book ID you want to fetch.
+Replace : bookId with the actual book ID you want to fetch.
 
 ### Installation
 
@@ -65,7 +65,7 @@ import axios from "axios";
 const bookId = "1a2b3c4d"; // Replace with actual book ID
 
 axios
-  .get(`https://freeapihub.onrender.com/api/v1/book/${bookId}`)
+  .get(`https://freeapihub.onrender.com/api/v1/books/${bookId}`)
   .then((response) => {
     console.log(response.data);
   })
