@@ -14,13 +14,13 @@ https://freeapihub.onrender.com/api/v1/products
 
 ### Get Product Data by ID
 
-To retrieve product data by ID, you can use the following endpoint:
+To retrieve product data by productId, you can use the following endpoint:
 
 ```shell
-https://freeapihub.onrender.com/api/v1/product/:id
+https://freeapihub.onrender.com/api/v1/products/:productId
 ```
 
-Replace :id with the actual product ID you want to fetch.
+Replace : productId with the actual product ID you want to fetch.
 
 ### Installation
 
@@ -65,7 +65,7 @@ import axios from "axios";
 const productId = "1a2b3c4d"; // Replace with actual Product ID
 
 axios
-  .get(`https://freeapihub.onrender.com/api/v1/product/${productId}`)
+  .get(`https://freeapihub.onrender.com/api/v1/products/${productId}`)
   .then((response) => {
     console.log(response.data);
   })
