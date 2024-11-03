@@ -1,5 +1,5 @@
 ---
-title:  Stock API
+title: Stock API
 ---
 
 # Stock API
@@ -9,9 +9,18 @@ The **Stock API** provides access to stock price data, enabling you to add real-
 ### Endpoint
 
 ```shell
-https://api.freeapihub.com/stock
+https://freeapihub.onrender.com/api/v1/stocks
 ```
 
+### Get stock Data by ID
+
+To retrieve stock data by ID, you can use the following endpoint:
+
+```shell
+https://freeapihub.onrender.com/api/v1/stock/:stockId
+```
+
+Replace :stockId with the actual stock ID you want to fetch.
 
 ### Installation
 
@@ -24,6 +33,7 @@ To use the Stock API, you'll need to install Axios. You can do this using either
 ```bash
 npm install axios
 ```
+
 ### Using pnpm
 
 ```bash
@@ -38,12 +48,30 @@ Here's how to fetch data using Axios:
 import axios from "axios";
 
 axios
-  .get("https://api.freeapihub.com/stock")
+  .get("https://freeapihub.onrender.com/api/v1/stocks")
   .then((response) => {
     console.log(response.data);
   })
-  .catch((error) => {12
+  .catch((error) => {
+    12;
     console.error("Error fetching data:", error);
+  });
+```
+
+Here's how to fetch stock data by stockId using Axios:
+
+```tsx
+import axios from "axios";
+
+const stockId = "1a2b3c4d"; // Replace with actual stock ID
+
+axios
+  .get(`https://freeapihub.onrender.com/api/v1/stock/${stockId}`)
+  .then((response) => {
+    console.log(response.data);
+  })
+  .catch((error) => {
+    console.error("Error fetching data by ID:", error);
   });
 ```
 
@@ -53,17 +81,25 @@ Below is a sample JSON response when requesting stock data:
 
 ```json
 {
-  "data": {
-    "companyName": "Apple Inc.",
-    "latestPrice": 150.75,
-    "change": -1.25,
-    "percentChange": -0.82,
-    "high": 153.50,
-    "low": 149.00,
-    "open": 151.00,
-    "close": 150.75,
-    "volume": 88234123
-  }
+  "success": true,
+  "data": [
+    {
+      "id": "a3f47c12-5e6d-4a6a-9d9c-1c4b9e5fbc1d",
+      "name": "Tech Solutions Inc.",
+      "symbol": "TSOL",
+      "listingDate": "2023-03-15T00:00:00.000Z",
+      "isin": "US1234567890",
+      "marketCap": 5700000000.0,
+      "currentPrice": 320.5,
+      "highLow": "345.5/280.3",
+      "stockPE": 25.4,
+      "bookValue": 52.3,
+      "dividendYield": 1.5,
+      "roce": 18.3,
+      "roe": 20.1
+    }
+  ],
+  "message": "All stocks retrieved successfully"
 }
 ```
 
@@ -85,7 +121,7 @@ import axios from "axios";
 
 async function fetchStockData() {
   try {
-    const response = await axios.get("https://api.freeapihub.com/stock");
+    const response = await axios.get("https://freeapihub.onrender.com/api/v1/stocks");
     console.log(response.data);
   } catch (error) {
     console.error(
