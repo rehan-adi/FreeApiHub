@@ -9,9 +9,18 @@ The **Joke API** provides access to random jokes, ideal for adding humor to your
 ### Endpoint
 
 ```shell
-https://api.freeapihub.com/joke
+https://freeapihub.onrender.com/api/v1/jokes
 ```
 
+### Get Joke Data by ID
+
+To retrieve joke data by ID, you can use the following endpoint:
+
+```shell
+https://freeapihub.onrender.com/api/v1/joke/:id
+```
+
+Replace :id with the actual joke ID you want to fetch.
 
 ### Installation
 
@@ -38,12 +47,29 @@ Here's how to fetch random joke data using Axios:
 import axios from "axios";
 
 axios
-  .get("https://api.freeapihub.com/joke")
+  .get("https://freeapihub.onrender.com/api/v1/jokes")
   .then((response) => {
     console.log(response.data);
   })
   .catch((error) => {12
     console.error("Error fetching data:", error);
+  });
+```
+
+Here's how to fetch joke data by id using Axios:
+
+```tsx
+import axios from "axios";
+
+const id = "1a2b3c4d"; // Replace with actual joke ID
+
+axios
+  .get(`https://freeapihub.onrender.com/api/v1/jokes/${id}`)
+  .then((response) => {
+    console.log(response.data);
+  })
+  .catch((error) => {
+    console.error("Error fetching user data by ID:", error);
   });
 ```
 
@@ -53,11 +79,19 @@ Below is a sample JSON response when requesting random joke data:
 
 ```json
 {
-  "data": {
-    "id": "1",
-    "joke": "Why did the scarecrow win an award? Because he was outstanding in his field!",
-    "category": "General"
-  }
+    "success": true,
+    "data": [
+        {
+            "id": "fd481681-bc6b-4e2d-8ed9-c95a85c23f15",
+            "author": "Jane Smith",
+            "content": "Why don't scientists trust atoms? Because they make up everything!",
+            "rate": 4,
+            "likes": 250,
+            "dislikes": 5,
+            "category": "Science Humor"
+        },
+    ],
+    "message": "All jokes retrieved successfully"
 }
 ```
 
@@ -79,7 +113,7 @@ import axios from "axios";
 
 async function fetchJoke() {
   try {
-    const response = await axios.get("https://api.freeapihub.com/joke");
+    const response = await axios.get("https://freeapihub.onrender.com/api/v1/jokes");
     console.log(response.data);
   } catch (error) {
     console.error(
