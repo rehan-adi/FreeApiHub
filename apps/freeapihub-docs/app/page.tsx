@@ -133,9 +133,11 @@ export default function Home() {
               Explore a catalog of books with comprehensive information for
               readers.
             </p>
-            <button className="mt-10 px-4 py-2 text-sm font-semibold text-white dark:text-black dark:bg-white bg-black rounded-md">
-              Explore API
-            </button>
+            <Link href="/docs/explore_all_apis/book">
+              <button className="mt-10 px-4 py-2 text-sm font-semibold text-white dark:text-black dark:bg-white bg-black rounded-md">
+                Explore API
+              </button>
+            </Link>
           </div>
           <div className="bg-zinc-50 p-6 dark:bg-[#1E1C1B] border border-zinc-200 dark:border-zinc-700/50 min-h-44 w-full rounded-xl hover:border-zinc-300 dark:hover:border-zinc-700 transition-colors flex flex-col justify-start items-start">
             <div className="flex items-center space-x-3">
@@ -147,9 +149,11 @@ export default function Home() {
             <p className="mt-3 text-sm dark:text-[#A1A1AA] text-black tracking-wider">
               Discover detailed information about various programming languages.
             </p>
-            <button className="mt-10 px-4 py-2 text-sm font-semibold text-white dark:text-black dark:bg-white bg-black rounded-md">
-              Explore API
-            </button>
+            <Link href="/docs/explore_all_apis/programming-language">
+              <button className="mt-10 px-4 py-2 text-sm font-semibold text-white dark:text-black dark:bg-white bg-black rounded-md">
+                Explore API
+              </button>
+            </Link>
           </div>
         </div>
         <div className="flex justify-between items-center flex-col md:flex-row gap-6 dark:text-[#FAFAFACC] text-black">
@@ -163,9 +167,11 @@ export default function Home() {
             <p className="mt-3 text-sm dark:text-[#A1A1AA] text-black tracking-wider">
               Access product details for e-commerce and business applications.
             </p>
-            <button className="mt-10 px-4 py-2 text-sm font-semibold text-white dark:text-black dark:bg-white bg-black rounded-md">
-              Explore API
-            </button>
+            <Link href="/docs/explore_all_apis/product">
+              <button className="mt-10 px-4 py-2 text-sm font-semibold text-white dark:text-black dark:bg-white bg-black rounded-md">
+                Explore API
+              </button>
+            </Link>
           </div>
         </div>
       </div>
