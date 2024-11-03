@@ -9,8 +9,18 @@ The **Book API** provides access to book data, ideal for retrieving information 
 ### Endpoint
 
 ```shell
-https://api.freeapihub.com/book
+https://freeapihub.onrender.com/api/v1/books
 ```
+
+### Get book Data by ID
+
+To retrieve book data by ID, you can use the following endpoint:
+
+```shell
+https://freeapihub.onrender.com/api/v1/book/:bookId
+```
+
+Replace :bookId with the actual book ID you want to fetch.
 
 ### Installation
 
@@ -38,13 +48,29 @@ Here's how to fetch data using Axios:
 import axios from "axios";
 
 axios
-  .get("https://api.freeapihub.com/book")
+  .get("https://freeapihub.onrender.com/api/v1/books")
   .then((response) => {
     console.log(response.data);
   })
   .catch((error) => {
-    12;
     console.error("Error fetching data:", error);
+  });
+```
+
+Here's how to fetch book data by bookId using Axios:
+
+```tsx
+import axios from "axios";
+
+const bookId = "1a2b3c4d"; // Replace with actual book ID
+
+axios
+  .get(`https://freeapihub.onrender.com/api/v1/book/${bookId}`)
+  .then((response) => {
+    console.log(response.data);
+  })
+  .catch((error) => {
+    console.error("Error fetching data by ID:", error);
   });
 ```
 
@@ -54,15 +80,22 @@ Below is a sample JSON response when requesting book data:
 
 ```json
 {
-  "data": {
-    "id": "1",
-    "title": "To Kill a Mockingbird",
-    "author": "Harper Lee",
-    "genre": "Fiction",
-    "publishedYear": 1960,
-    "summary": "A novel about the serious issues of rape and racial inequality in the American South, seen through the eyes of a young girl.",
-    "coverImage": "https://api.freeapihub.com/book/images/tokillamockingbird.jpg"
-  }
+  "success": true,
+  "data": [
+    {
+      "id": "247fe5aa-f555-421c-8b5a-ca01205b6e75",
+      "name": "Rich Dad Poor Dad",
+      "author": "Robert T. Kiyosaki",
+      "description": "A personal finance book advocating financial independence and wealth building through investments and entrepreneurship.",
+      "publisher": "Warner Books",
+      "publishedAt": "1997-04-01T00:00:00.000Z",
+      "genre": "Personal Finance",
+      "pages": 207,
+      "imageUrl": "https://imgs.search.brave.com/afSCRJDsicrWJxQZczfsJlhPfZFFTdmLdc6okfGhpQ8/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/ODFCRTdlZUt6QUwu/anBn",
+      "rating": 4.6
+    }
+  ],
+  "message": "All books retrieved successfully"
 }
 ```
 
@@ -84,7 +117,7 @@ import axios from "axios";
 
 async function fetchBookData() {
   try {
-    const response = await axios.get("https://api.freeapihub.com/book");
+    const response = await axios.get("https://freeapihub.onrender.com/api/v1/books");
     console.log(response.data);
   } catch (error) {
     console.error(
