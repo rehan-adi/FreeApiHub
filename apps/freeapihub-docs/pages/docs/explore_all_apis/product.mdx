@@ -9,8 +9,18 @@ The **Product API** provides access to product data, making it easy to retrieve 
 ### Endpoint
 
 ```shell
-https://api.freeapihub.com/product
+https://freeapihub.onrender.com/api/v1/products
 ```
+
+### Get Product Data by ID
+
+To retrieve product data by ID, you can use the following endpoint:
+
+```shell
+https://freeapihub.onrender.com/api/v1/product/:id
+```
+
+Replace :id with the actual product ID you want to fetch.
 
 ### Installation
 
@@ -38,32 +48,59 @@ Here's how to fetch data using Axios:
 import axios from "axios";
 
 axios
-  .get("https://api.freeapihub.com/product")
+  .get("https://freeapihub.onrender.com/api/v1/products")
   .then((response) => {
     console.log(response.data);
   })
   .catch((error) => {
-    12;
     console.error("Error fetching data:", error);
+  });
+```
+
+Here's how to fetch product data by id using Axios:
+
+```tsx
+import axios from "axios";
+
+const productId = "1a2b3c4d"; // Replace with actual Product ID
+
+axios
+  .get(`https://freeapihub.onrender.com/api/v1/product/${productId}`)
+  .then((response) => {
+    console.log(response.data);
+  })
+  .catch((error) => {
+    console.error("Error fetching user data by ID:", error);
   });
 ```
 
 ### Response Format
 
-Below is a sample JSON response when requesting book data:
+Below is a sample JSON response when requesting product data:
 
 ```json
 {
-  "data": {
-    "id": "12345",
-    "name": "Wireless Headphones",
-    "category": "Electronics",
-    "price": 59.99,
-    "currency": "USD",
-    "description": "High-quality wireless headphones with noise cancellation.",
-    "stock": 25,
-    "imageUrl": "https://api.freeapihub.com/product/images/wireless_headphones.jpg"
-  }
+  "success": true,
+  "data": [
+    {
+      "id": "b1c0e7d2-3f5c-4a4d-bb7a-65a7d9f6a0a9",
+      "title": "Wireless Headphones",
+      "description": "High-quality wireless headphones with noise-cancellation feature.",
+      "price": 129,
+      "discountPercentage": 15,
+      "rating": 5,
+      "stock": 45,
+      "brand": "SoundMaster",
+      "category": "Electronics",
+      "thumbnail": "https://example.com/images/product1-thumbnail.jpg",
+      "images": [
+        "https://example.com/images/product1-1.jpg",
+        "https://example.com/images/product1-2.jpg",
+        "https://example.com/images/product1-3.jpg"
+      ]
+    }
+  ],
+  "message": "All products retrieved successfully"
 }
 ```
 
@@ -85,7 +122,9 @@ import axios from "axios";
 
 async function fetchProductData() {
   try {
-    const response = await axios.get("https://api.freeapihub.com/product");
+    const response = await axios.get(
+      "https://freeapihub.onrender.com/api/v1/products"
+    );
     console.log(response.data);
   } catch (error) {
     console.error(
