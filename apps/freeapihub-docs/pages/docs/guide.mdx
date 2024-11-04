@@ -11,69 +11,99 @@ Welcome to the API Usage Guide! Here, you’ll find everything you need to start
 Each API can be accessed using a simple GET request following this URL format:
 
 ```bash
-GET https://api.freeapihub.com/{api_name}
+GET https://freeapihub.onrender.com/api/v1/{api_name}
 ```
 
 Example URLs for Each API
 
-User API: https://api.freeapihub.com/user<br />
-Product API: https://api.freeapihub.com/product<br />
-Jokes API: https://api.freeapihub.com/jokes<br />
-Books API: https://api.freeapihub.com/books<br />
-Quote API: https://api.freeapihub.com/quote<br />
-Stock API: https://api.freeapihub.com/stock<br />
-Programming Language API: https://api.freeapihub.com/programming-language
+User API: https://freeapihub.onrender.com/api/v1/randomusers<br />
+Product API: https://freeapihub.onrender.com/api/v1/projects<br />
+Jokes API: https://freeapihub.onrender.com/api/v1/jokes<br />
+Books API: https://freeapihub.onrender.com/api/v1/books<br />
+Quote API: https://freeapihub.onrender.com/api/v1/quotes<br />
+Stock API: https://freeapihub.onrender.com/api/v1/stocks<br />
+Programming Language API: https://freeapihub.onrender.com/api/v1/programming-languages
 
 ### Request Format
 
 To make a request, you can use your preferred HTTP client (e.g., Axios or fetch JavaScript, or tools like Postman and cURL). Here’s an example using JavaScript fetch:
 
 ```javascript
+import axios from "axios";
 
-import axios from 'axios';
-
-axios.get('https://example.com/api/endpoint')
-  .then(response => {
-    console.log('Data:', response.data);
+axios
+  .get("https://example.com/api/v1/endpoint")
+  .then((response) => {
+    console.log("Data:", response.data);
   })
-  .catch(error => {
-    console.error('Error fetching data:', error);
-});
-
+  .catch((error) => {
+    console.error("Error fetching data:", error);
+  });
 ```
 
 Using curl from the Command Line
 
 ```bash
-curl -X GET "https://api.freeapihub.com/user"
+curl -X GET "https://freeapihub.onrender.com/api/v1/randomusers"
 ```
 
 ### Example Using Postman
 
 Open Postman and create a new request.<br />
 Select GET as the request method.<br />
-Enter the desired API URL (e.g., https://api.freeapihub.com/user).<br />
+Enter the desired API URL (e.g., https://freeapihub.onrender.com/api/v1/randomusers).<br />
 Click Send to view the response.
 
 ### Response Format
+
 All responses are returned in JSON format to ensure easy integration. Below is an example of a response from the User API:
 
 ```json
 {
-  "id": "123",
-  "name": "John Doe",
-  "email": "johndoe@example.com"
+  "success": true,
+  "data": [
+    {
+      "id": "cm2ivfrdc0002fo4ch5zi0car",
+      "gender": "male",
+      "firstName": "John",
+      "lastName": "Doe",
+      "email": "john.doe@example.com",
+      "username": "johndoe123",
+      "password": "password123",
+      "phone": "+1234567890",
+      "age": 34,
+      "streetNumber": 123,
+      "streetName": "Main St",
+      "city": "Anytown",
+      "state": "California",
+      "country": "USA",
+      "postcode": 90210,
+      "picture": "https://randomuser.me/api/portraits/men/1.jpg",
+      "nationality": "American",
+      "createdAt": "2024-10-21T10:26:09.061Z",
+      "updatedAt": "2024-10-21T10:26:09.061Z"
+    }
+  ],
+  "message": "All users retrieved successfully"
 }
 ```
-
 
 ### Common Fields in Responses
 
 id: A unique identifier for the record.<br />
-name: Name associated with the record (e.g., user, product, etc.).<br />
-type: API-specific data fields, varying per endpoint.<br />
+success: A boolean value indicating whether the API request was successful (true) or if there was an error (false). This field helps you quickly determine the outcome of your request.<br />
+message: A string providing context about the response, such as success confirmation or error details. This field can vary by endpoint and offers insights into the nature of the response, making it easier to debug issues or confirm data retrieval.<br />
+
+### Swagger API Documentation
+
+To enhance your experience with the FreeApiHub APIs, we provide an interactive **Swagger UI** that allows you to test the APIs directly from your browser. Swagger makes it easy to explore the available endpoints, view request and response formats, and execute API calls in real-time.
+
+You can access the Swagger documentation here: [Swagger Guide](/docs/swagger).
+
+With Swagger, you can easily understand how to interact with the FreeApiHub APIs and test them without writing any code.
 
 ### Rate Limiting
+
 To ensure fair use and consistent access, FreeApiHub enforces rate limits on API calls. For most endpoints, the default limit is 100 requests per minute. If you exceed this limit, you may receive a 429 Too Many Requests error.
 
 ### Best Practices
