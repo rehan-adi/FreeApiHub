@@ -31,33 +31,21 @@ export const jokeRouter = express.Router();
  *             schema:
  *               type: array
  *               items:
- *                 type: object
- *                 properties:
- *                   id:
- *                     type: string
- *                     format: uuid
- *                     description: The joke ID (UUID).
- *                   author:
- *                     type: string
- *                     description: The author of the joke.
- *                   content:
- *                     type: string
- *                     description: The content of the joke.
- *                   rate:
- *                     type: integer
- *                     description: The rating of the joke.
- *                   likes:
- *                     type: integer
- *                     description: The number of likes the joke has received.
- *                   dislikes:
- *                     type: integer
- *                     description: The number of dislikes the joke has received.
- *                   category:
- *                     type: string
- *                     nullable: true
- *                     description: The category of the joke (if applicable).
- *     security:
- *       - api_key: []
+ *                 $ref: '#/components/schemas/Joke'
+ *             examples:
+ *               sampleJokes:
+ *                 summary: A sample list of jokes
+ *                 value: [
+ *                   {
+ *                     "id": "123e4567-e89b-12d3-a456-426614174000",
+ *                     "author": "John Doe",
+ *                     "content": "Why did the scarecrow win an award? Because he was outstanding in his field!",
+ *                     "rate": 5,
+ *                     "likes": 100,
+ *                     "dislikes": 2,
+ *                     "category": "Funny"
+ *                   }
+ *                 ]
  */
 
 /**
@@ -81,35 +69,53 @@ export const jokeRouter = express.Router();
  *         content:
  *           application/json:
  *             schema:
- *               type: object
- *               properties:
- *                 id:
- *                   type: string
- *                   format: uuid
- *                   description: The joke ID (UUID).
- *                 author:
- *                   type: string
- *                   description: The author of the joke.
- *                 content:
- *                   type: string
- *                   description: The content of the joke.
- *                 rate:
- *                   type: integer
- *                   description: The rating of the joke.
- *                 likes:
- *                   type: integer
- *                   description: The number of likes the joke has received.
- *                 dislikes:
- *                   type: integer
- *                   description: The number of dislikes the joke has received.
- *                 category:
- *                   type: string
- *                   nullable: true
- *                   description: The category of the joke (if applicable).
+ *               $ref: '#/components/schemas/Joke'
+ *             examples:
+ *               sampleJoke:
+ *                 summary: A sample joke detail
+ *                 value: {
+ *                   "id": "123e4567-e89b-12d3-a456-426614174000",
+ *                   "author": "Jane Doe",
+ *                   "content": "I told my computer I needed a break, and now it won’t stop sending me KitKat ads.",
+ *                   "rate": 4,
+ *                   "likes": 50,
+ *                   "dislikes": 1,
+ *                   "category": "Tech"
+ *                 }
  *       404:
  *         description: Joke not found
- *     security:
- *       - api_key: []
+ */
+
+/**
+ * @swagger
+ * components:
+ *   schemas:
+ *     Joke:
+ *       type: object
+ *       properties:
+ *         id:
+ *           type: string
+ *           format: uuid
+ *           description: The unique identifier for the joke (UUID).
+ *         author:
+ *           type: string
+ *           description: The author of the joke.
+ *         content:
+ *           type: string
+ *           description: The content of the joke.
+ *         rate:
+ *           type: integer
+ *           description: The rating of the joke.
+ *         likes:
+ *           type: integer
+ *           description: The number of likes the joke has received.
+ *         dislikes:
+ *           type: integer
+ *           description: The number of dislikes the joke has received.
+ *         category:
+ *           type: string
+ *           nullable: true
+ *           description: The category of the joke (if applicable).
  */
 
 jokeRouter.get("/", getJokes);
