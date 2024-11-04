@@ -17,10 +17,10 @@ https://freeapihub.onrender.com/api/v1/jokes
 To retrieve joke data by ID, you can use the following endpoint:
 
 ```shell
-https://freeapihub.onrender.com/api/v1/jokes/:id
+https://freeapihub.onrender.com/api/v1/jokes/:jokeId
 ```
 
-Replace :id with the actual joke ID you want to fetch.
+Replace : jokeId with the actual joke ID you want to fetch.
 
 ### Installation
 
@@ -56,15 +56,15 @@ axios
   });
 ```
 
-Here's how to fetch joke data by id using Axios:
+Here's how to fetch joke data by jokeId using Axios:
 
 ```tsx
 import axios from "axios";
 
-const id = "1a2b3c4d"; // Replace with actual joke ID
+const jokeId = "1a2b3c4d"; // Replace with actual joke ID
 
 axios
-  .get(`https://freeapihub.onrender.com/api/v1/jokes/${id}`)
+  .get(`https://freeapihub.onrender.com/api/v1/jokes/${jokeId}`)
   .then((response) => {
     console.log(response.data);
   })
