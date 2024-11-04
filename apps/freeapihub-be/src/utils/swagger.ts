@@ -7,7 +7,16 @@ const options = {
       title: "FreeApiHub",
       version: "1.0.0",
       description:
-        "This is the API documentation for FreeApiHub to interact with public data",
+        "This is the API documentation for FreeApiHub to interact with public data. For more details, visit the [documentation](http://your-docs-link.com).",
+      contact: {
+        name: "Rehan",
+        email: "rehanalire52@gmail.com",
+        url: "https://github.com/rehan-adi",
+      },
+      license: {
+        name: "MIT",
+        url: "https://github.com/rehan-adi/FreeApiHub/blob/main/LICENSE",
+      },
     },
     servers: [
       {
