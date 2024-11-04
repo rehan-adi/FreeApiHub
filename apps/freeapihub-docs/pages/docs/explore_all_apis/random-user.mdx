@@ -17,10 +17,10 @@ https://freeapihub.onrender.com/api/v1/randomusers
 To retrieve user data by ID, you can use the following endpoint:
 
 ```shell
-https://freeapihub.onrender.com/api/v1/randomusers/:id
+https://freeapihub.onrender.com/api/v1/randomusers/:userId
 ```
 
-Replace :id with the actual user ID you want to fetch.
+Replace : userId with the actual user ID you want to fetch.
 
 ### Installation
 
@@ -57,16 +57,16 @@ axios
   });
 ```
 
-Here's how to fetch random user data by id using Axios:
+Here's how to fetch random user data by userId using Axios:
 
 ```tsx
 import axios from "axios";
 
 // Fetching user data by ID
-const id = "1a2b3c4d"; // Replace with actual user ID
+const userId = "1a2b3c4d"; // Replace with actual user ID
 
 axios
-  .get(`https://freeapihub.onrender.com/api/v1/randomusers/${id}`)
+  .get(`https://freeapihub.onrender.com/api/v1/randomusers/${userId}`)
   .then((response) => {
     console.log(response.data);
   })
@@ -131,7 +131,7 @@ async function fetchUserData() {
     console.log(response.data);
   } catch (error) {
     console.error(
-      "Error fetching user data:",
+      "Error fetching random user data:",
       error.response?.data?.message || "An unexpected error occurred."
     );
   }
