@@ -9,8 +9,18 @@ The **Programming Language API** provides information about different programmin
 ### Endpoint
 
 ```shell
-https://api.freeapihub.com/programming-language
+https://freeapihub.onrender.com/api/v1/programming-languages
 ```
+
+### Get Language Data by ID
+
+To retrieve programming language data by ID, you can use the following endpoint:
+
+```shell
+https://freeapihub.onrender.com/api/v1/programming-languages/:languageId
+```
+
+Replace : languageId with the actual programming language ID you want to fetch.
 
 ### Installation
 
@@ -38,13 +48,29 @@ Here's how to fetch programming language data using Axios:
 import axios from "axios";
 
 axios
-  .get("https://api.freeapihub.com/programming-language")
+  .get("https://freeapihub.onrender.com/api/v1/programming-languages")
   .then((response) => {
     console.log(response.data);
   })
   .catch((error) => {
-    12;
     console.error("Error fetching data:", error);
+  });
+```
+
+Here's how to fetch programming language data by id using Axios:
+
+```tsx
+import axios from "axios";
+
+const languageId = "1a2b3c4d"; // Replace with actual language ID
+
+axios
+  .get(`https://freeapihub.onrender.com/api/v1/programming-languages/${languageId}`)
+  .then((response) => {
+    console.log(response.data);
+  })
+  .catch((error) => {
+    console.error("Error fetching joke data by ID:", error);
   });
 ```
 
@@ -54,16 +80,38 @@ Below is a sample JSON response when requesting programming language data:
 
 ```json
 {
-  "data": {
-    "id": "python",
-    "name": "Python",
-    "paradigm": ["Object-Oriented", "Procedural", "Functional"],
-    "firstAppeared": 1991,
-    "developer": "Guido van Rossum",
-    "description": "A high-level, interpreted language known for its readability and versatility.",
-    "latestVersion": "3.10.2",
-    "website": "https://www.python.org"
-  }
+  "success": true,
+  "data": [
+    {
+      "id": "f4a54c6d-5f2b-472e-bdd3-a1d3b63a678d",
+      "name": "JavaScript",
+      "description": "JavaScript is a versatile, high-level programming language primarily used for web development.",
+      "logoUrl": "https://example.com/javascript-logo.png",
+      "creator": "Brendan Eich",
+      "foundationYear": 1995,
+      "popularity": 10,
+      "marketDemand": 9,
+      "industryUse": "Web Development, Mobile Applications, Server-Side Development",
+      "type": "Interpreted",
+      "version": "ES6",
+      "learningDifficulty": 3
+    },
+    {
+      "id": "ab9c8d9e-fc5d-48df-89c5-87323d5fe77b",
+      "name": "Rust",
+      "description": "Rust is a systems programming language focused on safety, speed, and concurrency.",
+      "logoUrl": "https://example.com/rust-logo.png",
+      "creator": "Graydon Hoare",
+      "foundationYear": 2010,
+      "popularity": 8,
+      "marketDemand": 7,
+      "industryUse": "Systems Programming, Embedded Systems, WebAssembly",
+      "type": "Compiled",
+      "version": "1.54.0",
+      "learningDifficulty": 4
+    }
+  ],
+  "message": "All programming languages retrieved successfully"
 }
 ```
 
@@ -78,14 +126,14 @@ When using the Programming Language API, it's essential to handle potential erro
 
 ### Example Error Handling
 
-To manage potential errors gracefully, you can use a try...catch block in your Axios requests. Here's an example of how to implement error handling when fetching book data:
+To manage potential errors gracefully, you can use a try...catch block in your Axios requests. Here's an example of how to implement error handling when fetching programming language data:
 
 ```javascript
 import axios from "axios";
 
 async function fetchProgrammingLanguageData() {
   try {
-    const response = await axios.get("https://api.freeapihub.com/programming-language");
+    const response = await axios.get("https://freeapihub.onrender.com/api/v1/programming-languages");
     console.log(response.data);
   } catch (error) {
     console.error(
