@@ -13,7 +13,7 @@ export const programmingLanguageRouter = express.Router();
  * @swagger
  * tags:
  *   - name: Programming Languages
- *     description: Explore programming languages with details like name, description, popularity, and usage.
+ *     description: Discover various programming languages with details like origin, popularity, industry demand, and learning difficulty.
  */
 
 /**
@@ -21,7 +21,7 @@ export const programmingLanguageRouter = express.Router();
  * /api/v1/programming-languages:
  *   get:
  *     summary: Retrieve a list of programming languages
- *     description: Get a list of all programming languages with details including name, description, and popularity.
+ *     description: Fetch a comprehensive list of programming languages with details such as their creator, foundation year, popularity, industry usage, and learning difficulty.
  *     tags: [Programming Languages]
  *     responses:
  *       200:
@@ -31,53 +31,34 @@ export const programmingLanguageRouter = express.Router();
  *             schema:
  *               type: array
  *               items:
- *                 type: object
- *                 properties:
- *                   id:
- *                     type: string
- *                     format: uuid
- *                     description: The programming language ID (UUID).
- *                   name:
- *                     type: string
- *                     description: The name of the programming language.
- *                   description:
- *                     type: string
- *                     description: A description of the programming language.
- *                   logoUrl:
- *                     type: string
- *                     description: URL of the programming language's logo.
- *                   creator:
- *                     type: string
- *                     description: The creator of the programming language.
- *                   foundationYear:
- *                     type: integer
- *                     description: The year the programming language was founded.
- *                   popularity:
- *                     type: integer
- *                     description: Popularity rating of the programming language.
- *                   marketDemand:
- *                     type: integer
- *                     description: Market demand rating for the programming language.
- *                   industryUse:
- *                     type: string
- *                     description: Industries that commonly use the programming language.
- *                   type:
- *                     type: string
- *                     description: The type of programming language (e.g., compiled, interpreted).
- *                   version:
- *                     type: string
- *                     description: The current version of the programming language.
- *                   learningDifficulty:
- *                     type: integer
- *                     description: Difficulty level for learning the programming language (scale of 1-10).
+ *                 $ref: '#/components/schemas/ProgrammingLanguage'
+ *             examples:
+ *               sampleLanguages:
+ *                 summary: Sample list of programming languages
+ *                 value: [
+ *                   {
+ *                     "id": "123e4567-e89b-12d3-a456-426614174000",
+ *                     "name": "JavaScript",
+ *                     "description": "A versatile language commonly used for web development.",
+ *                     "logoUrl": "http://example.com/images/javascript_logo.jpg",
+ *                     "creator": "Brendan Eich",
+ *                     "foundationYear": 1995,
+ *                     "popularity": 9,
+ *                     "marketDemand": 8,
+ *                     "industryUse": "Web Development, Mobile Apps",
+ *                     "type": "Interpreted",
+ *                     "version": "ES2022",
+ *                     "learningDifficulty": 3
+ *                   }
+ *                 ]
  */
 
 /**
  * @swagger
  * /api/v1/programming-languages/{languageId}:
  *   get:
- *     summary: Retrieve a single programming language by ID
- *     description: Get details of a specific programming language by its ID.
+ *     summary: Retrieve a specific programming language by ID
+ *     description: Retrieve detailed information about a specific programming language, including its creator, foundation year, popularity, and current version.
  *     tags: [Programming Languages]
  *     parameters:
  *       - in: path
@@ -86,54 +67,79 @@ export const programmingLanguageRouter = express.Router();
  *         schema:
  *           type: string
  *           format: uuid
- *         description: The programming language ID (UUID).
+ *         description: The unique identifier (UUID) for the programming language.
  *     responses:
  *       200:
- *         description: A single programming language.
+ *         description: Details of a specific programming language.
  *         content:
  *           application/json:
  *             schema:
- *               type: object
- *               properties:
- *                 id:
- *                   type: string
- *                   format: uuid
- *                   description: The programming language ID (UUID).
- *                 name:
- *                   type: string
- *                   description: The name of the programming language.
- *                 description:
- *                   type: string
- *                   description: A description of the programming language.
- *                 logoUrl:
- *                   type: string
- *                   description: URL of the programming language's logo.
- *                 creator:
- *                   type: string
- *                   description: The creator of the programming language.
- *                 foundationYear:
- *                   type: integer
- *                   description: The year the programming language was founded.
- *                 popularity:
- *                   type: integer
- *                   description: Popularity rating of the programming language.
- *                 marketDemand:
- *                   type: integer
- *                   description: Market demand rating for the programming language.
- *                 industryUse:
- *                   type: string
- *                   description: Industries that commonly use the programming language.
- *                 type:
- *                   type: string
- *                   description: The type of programming language (e.g., compiled, interpreted).
- *                 version:
- *                   type: string
- *                   description: The current version of the programming language.
- *                 learningDifficulty:
- *                   type: integer
- *                   description: Difficulty level for learning the programming language (scale of 1-10).
+ *               $ref: '#/components/schemas/ProgrammingLanguage'
+ *             examples:
+ *               sampleLanguage:
+ *                 summary: Sample programming language details
+ *                 value: {
+ *                   "id": "123e4567-e89b-12d3-a456-426614174000",
+ *                   "name": "Python",
+ *                   "description": "A high-level language known for readability and wide applicability.",
+ *                   "logoUrl": "http://example.com/images/python_logo.jpg",
+ *                   "creator": "Guido van Rossum",
+ *                   "foundationYear": 1991,
+ *                   "popularity": 10,
+ *                   "marketDemand": 9,
+ *                   "industryUse": "Data Science, Web Development, Automation",
+ *                   "type": "Interpreted",
+ *                   "version": "3.10",
+ *                   "learningDifficulty": 2
+ *                 }
  *       404:
  *         description: Programming language not found
+ */
+
+/**
+ * @swagger
+ * components:
+ *   schemas:
+ *     ProgrammingLanguage:
+ *       type: object
+ *       properties:
+ *         id:
+ *           type: string
+ *           format: uuid
+ *           description: Unique identifier for the programming language (UUID).
+ *         name:
+ *           type: string
+ *           description: Name of the programming language.
+ *         description:
+ *           type: string
+ *           description: Brief description of the programming language and its use.
+ *         logoUrl:
+ *           type: string
+ *           description: URL of the programming language's logo.
+ *         creator:
+ *           type: string
+ *           description: The individual or organization that created the language.
+ *         foundationYear:
+ *           type: integer
+ *           description: The year the language was initially developed.
+ *         popularity:
+ *           type: integer
+ *           description: Popularity rating (scale of 1-10).
+ *         marketDemand:
+ *           type: integer
+ *           description: Market demand rating (scale of 1-10).
+ *         industryUse:
+ *           type: string
+ *           description: Common industries where the language is widely used.
+ *         type:
+ *           type: string
+ *           description: The classification of the language (e.g., compiled, interpreted).
+ *         version:
+ *           type: string
+ *           description: The most recent version of the language.
+ *         learningDifficulty:
+ *           type: integer
+ *           description: Difficulty level for learning the language (scale of 1-10).
  */
 
 programmingLanguageRouter.get("/", getProgrammingLanguage);
