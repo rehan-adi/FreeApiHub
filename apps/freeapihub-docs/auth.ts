@@ -31,8 +31,14 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
               password: hashedPassword,
             },
           });
-          return { email, message: "Account created successfully." };
+          return {
+            email: user.email,
+            message: "Account created successfully.",
+          };
         } else {
+          if (!user.password) {
+            throw new Error("User password is not set");
+          }
           const isValidPassword = await bcrypt.compare(password, user.password);
           if (!isValidPassword) {
             throw new Error("Invalid password");
