@@ -234,25 +234,25 @@ export default function Home() {
         <div className="flex items-center space-x-8">
           <blockquote className="text-center px-4 py-7 bg-zinc-50 dark:bg-[#1E1B1C] rounded-lg shadow-md w-72">
             <p className="italic text-gray-700 dark:text-gray-300">
-              "FreeAPI Hub makes API integration a breeze!"
+            &quot;FreeAPI Hub makes API integration a breeze!&quot;
             </p>
             <p className="mt-3 font-semibold">– Sarah J., Developer</p>
           </blockquote>
           <blockquote className="text-center px-4 py-7 bg-zinc-50 dark:bg-[#1E1B1C] rounded-lg shadow-md w-72">
             <p className="italic text-gray-700 dark:text-gray-300">
-              "10,000+ developers can’t be wrong. Love it!"
+            &quot;10,000+ developers can’t be wrong. Love it!&quot;
             </p>
             <p className="mt-3 font-semibold">– Daniel K., Product Manager</p>
           </blockquote>
           <blockquote className="text-center px-4 py-7 bg-zinc-50 dark:bg-[#1E1B1C] rounded-lg shadow-md w-72">
             <p className="italic text-gray-700 dark:text-gray-300">
-              "Reliable and easy to use. Great service!"
+            &quot;Reliable and easy to use. Great service!&quot;
             </p>
             <p className="mt-3 font-semibold">– Emily R., Software Engineer</p>
           </blockquote>
           <blockquote className="text-center px-4 py-7 bg-zinc-50 dark:bg-[#1E1B1C] rounded-lg shadow-md w-72">
             <p className="italic text-gray-700 dark:text-gray-300">
-              "Highly recommended for any project!"
+            &quot;Highly recommended for any project!&quot;
             </p>
             <p className="mt-3 font-semibold">– Chris P., Startup Founder</p>
           </blockquote>
