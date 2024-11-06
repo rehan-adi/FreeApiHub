@@ -3,5 +3,6 @@ export default {
   guide: "API Usage Guide",
   swagger: "Swagger Guide",
   explore_all_apis: "Explor All APIs",
+  best_practices: "Best Practices for React/Next.js API Handling",
   faq: "FAQ",
 };
