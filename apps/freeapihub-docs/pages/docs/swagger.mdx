@@ -1,0 +1,77 @@
+---
+title: Swagger API Guide
+---
+
+# Swagger API Guide
+
+## Introduction
+
+Welcome to the **Swagger API Guide**! This guide will help you explore and test **FreeApiHub** APIs directly from your browser using our interactive Swagger UI.
+
+## What is Swagger?
+
+**Swagger** is a user-friendly interface for testing APIs. It displays available endpoints, how to use them, and what to expect in responses — all without writing code.
+
+### Accessing Swagger UI
+
+To get started, open the Swagger UI for FreeApiHub: [Swagger UI](https://freeapihub.onrender.com/api-docs). You’ll see a list of available APIs organized by category.
+
+![Swagger Home Screen showing API list](/images/swagger_ui_home.png)
+
+---
+
+## Exploring Endpoints
+
+### Step 1: View Available APIs
+
+When you open the Swagger UI, you’ll see a list of API categories. Each category expands to show available endpoints.
+
+1. **Fetch All Data**: Lists all data in a category.
+2. **Fetch by ID**: Retrieves a specific entry by its unique identifier (ID).
+
+![API endpoint details](/images/swagger_ui_api_details.png)
+
+### Step 2: Selecting an Endpoint
+
+Click on any endpoint (like "GET /books") to view details such as description and sample response.
+
+
+## Making a Request
+
+### Step 3: Executing a GET Request
+
+No additional parameters are needed, as these endpoints either retrieve all entries or a single entry by ID. To make a request:
+
+1. **For all data**: Click **Try it out** for the endpoint (like `GET /books`) and select **Execute** to retrieve all data.
+2. **For a specific item**: Enter the item’s ID in the provided field under the `GET /books/{id}` endpoint and click **Execute**.
+
+![Entering an ID to fetch specific data](/images/swagger_ui_api_try.png)
+
+### Step 4: View the Response
+
+Swagger displays the response with three main parts:
+
+- **Status Code**: Indicates request success (e.g., `200 OK`) or error.
+- **Response Body**: Shows JSON data retrieved from the API.
+- **Response Headers**: Provides extra details like content type.
+
+![Response with status code and data](/images/swagger_ui_api_response.png)
+
+---
+
+### Tips for Using Swagger
+
+- **Explore**: Test different endpoints and responses.
+- **Experiment**: Try retrieving data for specific IDs.
+- **Use the Documentation**: See the [API Usage Guide](/docs/guide) for more details.
+
+### Quick Start
+1. Go to the [Swagger UI](https://freeapihub.onrender.com/api-docs).
+2. Choose an endpoint (e.g., `GET /books` for all books or `GET /books/{id}` for a specific book).
+3. Click **Try it out** and **Execute** to see the response.
+
+### Conclusion
+
+The Swagger UI allows you to easily test **FreeApiHub** APIs in real time. If you have any questions, feel free to reach out!
+
+Happy testing! 🚀
