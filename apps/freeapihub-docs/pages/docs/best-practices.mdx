@@ -1,0 +1,67 @@
+---
+title: Best Practices for React/Next.js with APIs
+---
+
+# Best Practices for Handling APIs in React/Next.js
+
+## Introduction
+
+When building production-grade applications with **React** or **Next.js**, it’s essential to handle APIs and state management efficiently. This guide will cover best practices to help you maintain clean, performant, and scalable code when interacting with APIs.
+
+### 1. Using `useEffect` and `useState` for Fetching Data
+
+In React, the **`useEffect`** hook is commonly used for side-effects, like fetching data from an API when a component mounts. Here's how you can handle API requests in a clean, efficient way using **`useState`** and **`useEffect`**:
+
+### Example: Fetching Data with `useEffect`
+
+```jsx
+import { useState, useEffect } from "react";
+
+function BooksList() {
+  const [books, setBooks] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchBooks = async () => {
+      setLoading(true); // Reset loading to true whenever data is being fetched
+      try {
+        const response = await fetch("https://freeapihub.onrender.com/books");
+        if (!response.ok) throw new Error("Failed to fetch books");
+        const data = await response.json();
+        setBooks(data);
+      } catch (error) {
+        setError(error.message);
+      } finally {
+        setLoading(false); // Set loading to false once the fetching is done
+      }
+    };
+
+    fetchBooks();
+  }, []); // Empty dependency array ensures it runs once when the component mounts
+
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>Error: {error}</p>;
+
+  return (
+    <div>
+      <h1>Books</h1>
+      <ul>
+        {books.map((book) => (
+          <li key={book.id}>{book.name}</li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+```
+
+### Key Points:
+
+- useEffect: Used to fetch data when the component mounts (by passing an empty array [] as the second argument).
+- Error Handling: Always handle errors when dealing with API requests.
+- State Management: Use useState for loading, data, and error states.
+
+### Conclusion
+
+Handling API requests effectively in React or Next.js involves a combination of state management, error handling, and performance optimization techniques. By following these best practices, you can ensure that your application performs well and remains maintainable as it scales.
