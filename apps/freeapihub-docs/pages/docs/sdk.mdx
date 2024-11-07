@@ -1,0 +1,73 @@
+---
+title: FreeApiHub SDK Guide
+description: Learn how to integrate the FreeApiHub SDK into your JavaScript and TypeScript projects.
+---
+
+# FreeApiHub SDK Guide
+
+Welcome to the FreeApiHub SDK! This SDK provides a simple and effective way to access various free APIs for data retrieval and integration into your JavaScript or TypeScript projects.
+
+## Installation
+
+To get started, install the FreeApiHub SDK via npm or pnpm:
+
+### Using npm
+
+```bash
+npm install freeapihub
+```
+
+### Using pnpm
+
+```bash
+pnpm add freeapihub
+```
+
+## Basic Usage
+
+The FreeApiHub SDK provides functions for each available API, making it easy to fetch data with just a few lines of code. Below are some examples of how to use these APIs.
+
+### Example 1: Fetching All Books
+
+```jsx
+import { getAllBooks } from "freeapihub";
+
+async function fetchBooks() {
+  const books = await getAllBooks();
+  console.log(books);
+}
+
+fetchBooks();
+```
+
+### Example 2: Fetching a Book by ID
+
+```jsx
+import { getBookById } from "freeapihub";
+
+async function fetchBookById() {
+  const book = await getBookById("your-book-id");
+  console.log(book);
+}
+
+fetchBookById();
+```
+
+## Error Handling
+
+Each API function is designed to handle errors gracefully. If an error occurs (e.g., network issues, invalid ID), it will throw an error that you can catch in your code:
+
+```jsx
+import { getAllJokes } from "freeapihub";
+
+async function fetchJokes() {
+  try {
+    const jokes = await getAllJokes();
+    console.log(jokes);
+  } catch (error) {
+    console.error("Failed to fetch jokes:", error);
+  }
+}
+
+fetchJokes();
+```
