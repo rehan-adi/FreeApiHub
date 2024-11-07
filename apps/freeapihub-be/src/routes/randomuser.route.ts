@@ -18,7 +18,7 @@ export const randomUserRouter = express.Router();
 
 /**
  * @swagger
- * /api/v1/random-users:
+ * /api/v1/randomusers:
  *   get:
  *     summary: Retrieve a list of random users
  *     description: Fetch a list of random users, with fields like name, email, contact details, and address.
@@ -62,7 +62,7 @@ export const randomUserRouter = express.Router();
 
 /**
  * @swagger
- * /api/v1/random-users/{userId}:
+ * /api/v1/randomusers/{userId}:
  *   get:
  *     summary: Retrieve a random user by ID
  *     description: Get details of a specific user by their unique CUID.
