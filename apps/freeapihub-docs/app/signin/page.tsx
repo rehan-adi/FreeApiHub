@@ -5,8 +5,6 @@ import { toast } from "sonner";
 import { useState } from "react";
 import { Loader2 } from "lucide-react";
 import { signIn } from "next-auth/react";
-import { FcGoogle } from "react-icons/fc";
-import { FaGithub } from "react-icons/fa";
 import { useRouter } from "next/navigation";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm, SubmitHandler } from "react-hook-form";
@@ -59,21 +57,9 @@ const Page = () => {
     }
   };
 
-  const handleGithubSignIn = async () => {
-    const result = await signIn("github");
-
-    if (result?.error) {
-      console.error(result.error);
-      toast.error("An unexpected error occurred during GitHub login.");
-    } else {
-      toast.success("Login successful!");
-      router.push("/");
-    }
-  };
-
   return (
     <div className="min-h-screen w-full flex justify-center items-center bg-[#141312]">
-      <div className="px-10 py-8 flex justify-center items-center md:w-[26vw] md:h-[91vh] h-screen w-full flex-col bg-[#0D0C0C] border border-[#292624] rounded-lg">
+      <div className="px-10 py-8 flex justify-center items-center md:w-[26vw] md:h-[66vh] h-screen w-full flex-col bg-[#0D0C0C] border border-[#292624] rounded-lg">
         <header className="flex justify-center items-center flex-col">
           <span className="flex justify-between text-center font-semibold items-center">
             <svg
@@ -127,37 +113,11 @@ const Page = () => {
             >
               {loading ? (
                 <>
-                  <Loader2 className="animate-spin text-center h-5 w-5" />
+                  <Loader2 className="animate-spin text-center h-6 w-5" />
                 </>
               ) : (
                 "Login"
               )}
-            </button>
-          </div>
-          <div className="text-center flex justify-between mt-8 text-[#8C877D] items-center">
-            <span className="inline-block w-1/2 border-t"></span>
-            <span className="mx-2">OR</span>
-            <span className="inline-block w-1/2 border-t"></span>
-          </div>
-
-          <div className="flex justify-between items-center flex-col gap-3 mt-3 py-4">
-            <button className="w-full flex justify-center items-center px-4 py-3 text-[#8C877D] rounded border-2 border-[#1E1C1B] focus:outline-none">
-              <span className="inline-block mr-4 text-2xl">
-                <FcGoogle />
-              </span>
-              Login with Google
-            </button>
-            <button
-              onClick={(e) => {
-                e.preventDefault();
-                handleGithubSignIn();
-              }}
-              className="w-full flex justify-center items-center px-4 py-3 text-white rounded border-2 border-[#1E1C1B] focus:outline-none"
-            >
-              <span className="inline-block mr-4 text-2xl">
-                <FaGithub />
-              </span>
-              <span className="text-[#8C877D]">Login with GitHub</span>
             </button>
           </div>
         </form>

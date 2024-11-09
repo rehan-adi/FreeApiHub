@@ -1,7 +1,6 @@
 import bcrypt from "bcryptjs";
 import NextAuth from "next-auth";
 import prisma from "@freeapihub/db/index";
-import GitHubProvider from "next-auth/providers/github";
 import Credentials from "next-auth/providers/credentials";
 
 export const { handlers, signIn, signOut, auth } = NextAuth({
@@ -45,35 +44,6 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
           }
         }
 
-        return {
-          email: user?.email,
-          message: "Login successful!",
-        };
-      },
-    }),
-    GitHubProvider({
-      clientId: process.env.GITHUB_ID,
-      clientSecret: process.env.GITHUB_SECRET,
-
-      async profile(profile) {
-        const email =
-          profile.email || profile.login + "@users.noreply.github.com";
-        const name = profile.name || profile.login;
-        const image = profile.avatar_url;
-
-        let user = await prisma.user.findUnique({
-          where: { email },
-        });
-
-        if (!user) {
-          user = await prisma.user.create({
-            data: {
-              email,
-              name,
-              image,
-            },
-          });
-        }
         return {
           email: user?.email,
           message: "Login successful!",
