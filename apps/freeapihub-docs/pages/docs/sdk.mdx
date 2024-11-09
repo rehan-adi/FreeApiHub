@@ -23,6 +23,20 @@ npm install freeapihub
 pnpm add freeapihub
 ```
 
+## ENV Configuration
+
+To ensure the SDK connects to the correct API endpoint, you need to configure an environment variable in your project.
+
+1. Create a **.env** file at the root of your project (if it doesn’t already exist).
+
+2. Add the following line to specify the base URL for API requests:
+
+```bash
+API_BASE_URL="https://freeapihub.onrender.com"
+```
+
+This URL is required for the SDK functions to properly retrieve data from FreeApiHub.
+
 ## Basic Usage
 
 The FreeApiHub SDK provides functions for each available API, making it easy to fetch data with just a few lines of code. Below are some examples of how to use these APIs.
@@ -71,3 +85,9 @@ async function fetchJokes() {
 
 fetchJokes();
 ```
+
+## Next Steps
+
+Now that you have the FreeApiHub SDK set up and working, you can start integrating it into your project! You can explore other available APIs, like User, Joke, and Stock, using similar functions to fetch and display the data you need.
+
+Happy coding, and enjoy the power of FreeApiHub!
