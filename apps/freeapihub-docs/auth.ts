@@ -56,6 +56,17 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
     error: "/auth/error",
   },
   secret: process.env.NEXTAUTH_SECRET, 
+  cookies: {
+    sessionToken: {
+      name: `freeapitoken`,
+      options: {
+        httpOnly: true,
+        secure: process.env.NODE_ENV === "production",
+        sameSite: "lax",
+        path: "/",
+      },
+    },
+  },
   session: {
     strategy: "jwt",
   },
