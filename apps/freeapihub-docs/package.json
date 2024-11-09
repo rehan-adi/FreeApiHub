@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "postinstall": "pnpm --filter @freeapihub/db run generate",
+    "migrate": "prisma migrate deploy --schema=../../packages/db/prisma/schema.prisma"
   },
   "dependencies": {
     "@freeapihub/db": "workspace:*",
