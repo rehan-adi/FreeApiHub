@@ -83,7 +83,7 @@ const Page = () => {
           </p>
         </header>
         <form onSubmit={handleSubmit(onSubmit)} className="mt-7 w-full">
-          <div className="mb-3">
+          <div className="mb-4">
             <input
               type="email"
               placeholder="Email"
@@ -94,7 +94,7 @@ const Page = () => {
               <p className="text-red-500 mt-1">{errors.email.message}</p>
             )}
           </div>
-          <div className="mb-7">
+          <div className="mb-8">
             <input
               type="password"
               placeholder="Password"
