@@ -57,7 +57,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
       name: `freeapitoken`,
       options: {
         httpOnly: true,
-        secure: process.env.NODE_ENV === "production",
+        secure: true,
         sameSite: "strict",
         path: "/",
       },
