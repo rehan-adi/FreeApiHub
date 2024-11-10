@@ -30,10 +30,6 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
               password: hashedPassword,
             },
           });
-          return {
-            email: user.email,
-            message: "Account created successfully.",
-          };
         } else {
           if (!user.password) {
             throw new Error("User password is not set");
@@ -43,9 +39,9 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
             throw new Error("Invalid password");
           }
         }
-
         return {
-          email: user?.email,
+          id: user.id,
+          email: user.email,
           message: "Login successful!",
         };
       },
@@ -55,14 +51,14 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
     signIn: "/signin",
     error: "/auth/error",
   },
-  secret: process.env.NEXTAUTH_SECRET, 
+  secret: process.env.NEXTAUTH_SECRET,
   cookies: {
     sessionToken: {
       name: `freeapitoken`,
       options: {
         httpOnly: true,
         secure: process.env.NODE_ENV === "production",
-        sameSite: "lax",
+        sameSite: "strict",
         path: "/",
       },
     },
