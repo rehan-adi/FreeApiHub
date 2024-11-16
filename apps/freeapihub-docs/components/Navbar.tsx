@@ -104,7 +104,7 @@ const Navbar = () => {
 
       {/* Sidebar Component */}
       <div
-         className={`fixed top-20 transition-transform duration-300 transform z-50 md:w-full w-[90%] px-5 py-6 rounded-xl border dark:border-opacity-15 border-opacity-25 dark:border-white border-black shadow-lg bg-white dark:bg-black ${
+         className={`fixed top-20 transition-transform duration-300 transform z-50 md:w-full w-[90%] px-5 py-6 rounded-xl border dark:border-opacity-15 border-opacity-25 dark:border-white border-black shadow-lg bg-white dark:bg-[#141312] ${
           open ? "right-[50%] translate-x-[50%]" : "right-0 translate-x-full"
         } md:hidden`}
       >
