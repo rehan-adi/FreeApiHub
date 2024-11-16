@@ -15,12 +15,12 @@ import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
-    <div className="text-white dark:bg-[#141312]  pt-16 min-h-screen flex flex-col justify-center items-center">
+    <div className="text-white dark:bg-[#141312] pt-16 min-h-screen flex flex-col justify-center items-center">
       {/* Navbar  */}
       <Navbar />
 
       <header className="text-center pt-12 pb-8">
-        <h1 className="md:text-6xl text-4xl bg-clip-text px-4 text-transparent dark:bg-gradient-to-r dark:from-white dark:to-gray-500  bg-gradient-to-r from-black to-blue-800 w-full md:w-[60vw] font-extrabold tracking-tighter line-height">
+        <h1 className="md:text-6xl text-4xl px-4 dark:text-white text-black w-full md:w-[60vw] font-bold tracking-tighter line-height">
           Explore and leverage a wide range of APIs with ease.
         </h1>
       </header>
@@ -52,7 +52,7 @@ export default function Home() {
       </Marquee>
 
       {/* API Details Section */}
-      <div className="pb-20 pt-10 lg:px-72 px-4 space-y-6 w-full">
+      <div className="pb-20 pt-10 lg:px-80 px-4 space-y-6 w-full">
         <div className="flex justify-between flex-col md:flex-row items-center gap-6 ">
           <div className="bg-zinc-50 p-6 dark:bg-[#1E1C1B] border border-zinc-200 dark:border-zinc-700/50 min-h-44 w-full rounded-xl hover:border-zinc-300 dark:hover:border-zinc-700 transition-colors flex flex-col justify-start items-start">
             <div className="flex items-center space-x-3">
@@ -178,10 +178,10 @@ export default function Home() {
 
       {/* pricing */}
       <div className="pb-16">
-        <h1 className="text-xl font-medium mb-10 text-center w-full dark:text-white text-black">
+        <h1 className="text-xl font-medium tracking-wider mb-10 text-center w-full dark:text-white text-black">
           Pricing
         </h1>
-        <div className="px-4 py-6 lg:w-[380px] w-full border border-pink-400 rounded text-center transition-colors self-stretch">
+        <div className="px-8 py-6 lg:w-[380px] w-full border border-pink-400 rounded-xl text-center transition-colors self-stretch">
           <h2 className="mb-6 text-2xl font-medium dark:text-[#FAFAFACC] text-black">
             Free
           </h2>
@@ -223,7 +223,7 @@ export default function Home() {
       </div>
 
       <div className="w-full text-center mb-8">
-        <h1 className="text-xl font-medium text-black dark:text-white">
+        <h1 className="text-xl font-medium tracking-wider text-black dark:text-white">
           What Our Users Are Saying
         </h1>
       </div>
@@ -234,25 +234,25 @@ export default function Home() {
         <div className="flex items-center space-x-8">
           <blockquote className="text-center px-4 py-7 bg-zinc-50 dark:bg-[#1E1B1C] rounded-lg shadow-md w-72">
             <p className="italic text-gray-700 dark:text-gray-300">
-            &quot;FreeAPI Hub makes API integration a breeze!&quot;
+              &quot;FreeAPI Hub makes API integration a breeze!&quot;
             </p>
             <p className="mt-3 font-semibold">– Sarah J., Developer</p>
           </blockquote>
           <blockquote className="text-center px-4 py-7 bg-zinc-50 dark:bg-[#1E1B1C] rounded-lg shadow-md w-72">
             <p className="italic text-gray-700 dark:text-gray-300">
-            &quot;10,000+ developers can’t be wrong. Love it!&quot;
+              &quot;10,000+ developers can’t be wrong. Love it!&quot;
             </p>
             <p className="mt-3 font-semibold">– Daniel K., Product Manager</p>
           </blockquote>
           <blockquote className="text-center px-4 py-7 bg-zinc-50 dark:bg-[#1E1B1C] rounded-lg shadow-md w-72">
             <p className="italic text-gray-700 dark:text-gray-300">
-            &quot;Reliable and easy to use. Great service!&quot;
+              &quot;Reliable and easy to use. Great service!&quot;
             </p>
             <p className="mt-3 font-semibold">– Emily R., Software Engineer</p>
           </blockquote>
           <blockquote className="text-center px-4 py-7 bg-zinc-50 dark:bg-[#1E1B1C] rounded-lg shadow-md w-72">
             <p className="italic text-gray-700 dark:text-gray-300">
-            &quot;Highly recommended for any project!&quot;
+              &quot;Highly recommended for any project!&quot;
             </p>
             <p className="mt-3 font-semibold">– Chris P., Startup Founder</p>
           </blockquote>
