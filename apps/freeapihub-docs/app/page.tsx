@@ -9,6 +9,7 @@ import {
   ShoppingCart,
   Smile,
   Quote,
+  ArrowRight
 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -88,6 +89,7 @@ export default function Home() {
             <Link href="/docs/explore_all_apis/random-user">
               <button className="mt-10 px-4 py-2 text-sm font-semibold text-white dark:text-black dark:bg-white bg-black rounded-md">
                 Explore API
+                <ArrowRight size={17} className="ml-2 inline-block"/>
               </button>
             </Link>
           </div>
@@ -104,7 +106,8 @@ export default function Home() {
             </p>
             <Link href="/docs/explore_all_apis/joke">
               <button className="mt-10 px-4 py-2 text-sm font-semibold text-white dark:text-black dark:bg-white bg-black rounded-md">
-                Explore API
+              Explore API
+              <ArrowRight size={17} className="ml-2 inline-block"/>
               </button>
             </Link>
           </div>
@@ -123,7 +126,8 @@ export default function Home() {
             </p>
             <Link href="/docs/explore_all_apis/quote">
               <button className="mt-10 px-4 py-2 text-sm font-semibold text-white dark:text-black dark:bg-white bg-black rounded-md">
-                Explore API
+              Explore API
+              <ArrowRight size={17} className="ml-2 inline-block"/>
               </button>
             </Link>
           </div>
@@ -139,7 +143,8 @@ export default function Home() {
             </p>
             <Link href="/docs/explore_all_apis/stock">
               <button className="mt-10 px-4 py-2 text-sm font-semibold text-white dark:text-black dark:bg-white bg-black rounded-md">
-                Explore API
+              Explore API
+              <ArrowRight size={17} className="ml-2 inline-block"/>
               </button>
             </Link>
           </div>
@@ -156,7 +161,8 @@ export default function Home() {
             </p>
             <Link href="/docs/explore_all_apis/book">
               <button className="mt-10 px-4 py-2 text-sm font-semibold text-white dark:text-black dark:bg-white bg-black rounded-md">
-                Explore API
+              Explore API
+              <ArrowRight size={17} className="ml-2 inline-block"/>
               </button>
             </Link>
           </div>
@@ -172,7 +178,8 @@ export default function Home() {
             </p>
             <Link href="/docs/explore_all_apis/programming-language">
               <button className="mt-10 px-4 py-2 text-sm font-semibold text-white dark:text-black dark:bg-white bg-black rounded-md">
-                Explore API
+              Explore API
+              <ArrowRight size={17} className="ml-2 inline-block"/>
               </button>
             </Link>
           </div>
@@ -190,7 +197,8 @@ export default function Home() {
             </p>
             <Link href="/docs/explore_all_apis/product">
               <button className="mt-10 px-4 py-2 text-sm font-semibold text-white dark:text-black dark:bg-white bg-black rounded-md">
-                Explore API
+              Explore API
+              <ArrowRight size={17} className="ml-2 inline-block"/>
               </button>
             </Link>
           </div>
