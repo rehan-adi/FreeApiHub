@@ -1,8 +1,6 @@
 import "./globals.css";
-import { Toaster } from "sonner";
 import type { Metadata } from "next";
 import { ThemeProvider } from "next-themes";
-import { SessionProvider } from "next-auth/react";
 
 export const metadata: Metadata = {
   title: "FreeApiHub",
@@ -18,12 +16,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <SessionProvider>
-          <ThemeProvider attribute="class">
-            <Toaster richColors theme="dark" />
-            {children}
-          </ThemeProvider>
-        </SessionProvider>
+        <ThemeProvider attribute="class">
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );
