@@ -12,6 +12,7 @@ import {
 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { MarqueeDemo } from "@/components/Marquee";
 
 export default function Home() {
   return (
@@ -19,8 +20,8 @@ export default function Home() {
       {/* Navbar  */}
       <Navbar />
 
-      <div className="pt-12 px-4">
-        <div className="mb-4">
+      <div className="pt-12">
+        <div className="mb-4 px-4 md:ml-16">
           <p className="inline-flex items-center justify-center whitespace-nowrap rounded-full bg-background px-3 py-1 text-sm font-medium text-foreground shadow-sm shadow-black/[.12] dark:bg-accent">
             <span className="mr-2 flex shrink-0 border-r border-border pr-2">
               <svg
@@ -39,7 +40,7 @@ export default function Home() {
           </p>
         </div>
         <header className="text-center pb-8">
-          <h1 className="md:text-6xl text-4xl dark:text-white text-black w-full md:w-[60vw] font-bold tracking-tighter line-height">
+          <h1 className="text-4xl px-3 md:text-6xl dark:text-white text-black w-full md:w-[60vw] font-bold tracking-tighter line-height">
             Explore and leverage a wide range of APIs with ease.
           </h1>
         </header>
@@ -242,42 +243,13 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="w-full text-center mb-8">
+      <div className="w-full text-center mb-3">
         <h1 className="text-xl font-medium tracking-wider text-black dark:text-white">
           What Our Users Are Saying
         </h1>
       </div>
-      <Marquee
-        pauseOnHover
-        className="[--duration:25s] mb-20 w-[85%] md:max-w-[940px] dark:text-white text-black"
-      >
-        <div className="flex items-center space-x-8">
-          <blockquote className="text-center px-4 py-7 bg-zinc-50 dark:bg-[#1E1B1C] rounded-lg shadow-md w-72">
-            <p className="italic text-gray-700 dark:text-gray-300">
-              &quot;FreeAPI Hub makes API integration a breeze!&quot;
-            </p>
-            <p className="mt-3 font-semibold">– Sarah J., Developer</p>
-          </blockquote>
-          <blockquote className="text-center px-4 py-7 bg-zinc-50 dark:bg-[#1E1B1C] rounded-lg shadow-md w-72">
-            <p className="italic text-gray-700 dark:text-gray-300">
-              &quot;10,000+ developers can’t be wrong. Love it!&quot;
-            </p>
-            <p className="mt-3 font-semibold">– Daniel K., Product Manager</p>
-          </blockquote>
-          <blockquote className="text-center px-4 py-7 bg-zinc-50 dark:bg-[#1E1B1C] rounded-lg shadow-md w-72">
-            <p className="italic text-gray-700 dark:text-gray-300">
-              &quot;Reliable and easy to use. Great service!&quot;
-            </p>
-            <p className="mt-3 font-semibold">– Emily R., Software Engineer</p>
-          </blockquote>
-          <blockquote className="text-center px-4 py-7 bg-zinc-50 dark:bg-[#1E1B1C] rounded-lg shadow-md w-72">
-            <p className="italic text-gray-700 dark:text-gray-300">
-              &quot;Highly recommended for any project!&quot;
-            </p>
-            <p className="mt-3 font-semibold">– Chris P., Startup Founder</p>
-          </blockquote>
-        </div>
-      </Marquee>
+
+      <MarqueeDemo />
 
       {/* Footer  */}
       <Footer />
