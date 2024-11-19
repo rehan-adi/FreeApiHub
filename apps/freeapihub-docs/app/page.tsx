@@ -19,11 +19,31 @@ export default function Home() {
       {/* Navbar  */}
       <Navbar />
 
-      <header className="text-center pt-12 pb-8">
-        <h1 className="md:text-6xl text-4xl px-4 dark:text-white text-black w-full md:w-[60vw] font-bold tracking-tighter line-height">
-          Explore and leverage a wide range of APIs with ease.
-        </h1>
-      </header>
+      <div className="pt-12 px-4">
+        <div className="mb-4">
+          <p className="inline-flex items-center justify-center whitespace-nowrap rounded-full bg-background px-3 py-1 text-sm font-medium text-foreground shadow-sm shadow-black/[.12] dark:bg-accent">
+            <span className="mr-2 flex shrink-0 border-r border-border pr-2">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width={12}
+                height={12}
+                fill="none"
+              >
+                <path
+                  className="fill-zinc-500"
+                  d="M6.958.713a1 1 0 0 0-1.916 0l-.999 3.33-3.33 1a1 1 0 0 0 0 1.915l3.33.999 1 3.33a1 1 0 0 0 1.915 0l.999-3.33 3.33-1a1 1 0 0 0 0-1.915l-3.33-.999-1-3.33Z"
+                />
+              </svg>
+            </span>
+            Getting Data is easy now
+          </p>
+        </div>
+        <header className="text-center pb-8">
+          <h1 className="md:text-6xl text-4xl dark:text-white text-black w-full md:w-[60vw] font-bold tracking-tighter line-height">
+            Explore and leverage a wide range of APIs with ease.
+          </h1>
+        </header>
+      </div>
 
       <div className="flex justify-center gap-6 py-5">
         <Link href="/docs">
