@@ -6,20 +6,8 @@ const Navbar = () => {
   return (
     <>
       <nav className="py-4 flex justify-between fixed top-0 z-50 w-full border-b dark:border-white dark:border-opacity-10 border-black border-opacity-15 backdrop-blur items-center md:px-44 px-5">
-        <span className="flex justify-between text-black dark:text-white md:text-base text-sm font-semibold items-center">
-          <svg
-            fill="currentColor"
-            className="h-7 w-7 mr-2 inline-block"
-            viewBox="-100 -100 200 200"
-          >
-            <path d="M70 60L42-27h30l28 87z"></path>
-            <path d="M20.42 40.054L42-27h30L50.42 40.054z"></path>
-            <path d="M20.42 40.054L-15-70h30L50.42 40.054z"></path>
-            <path d="M-50.42 40.054L-15-70h30L-20.42 40.054z"></path>
-            <path d="M-50.42 40.054L-72-27h30l21.58 67.054z"></path>
-            <path d="M-100 60l28-87h30l-28 87z"></path>
-          </svg>
-          FreeApiHub
+        <span className="">
+          <img src="/images/icon.png" className="md:w-8 w-7 md:h-8 h-7" alt="Logo" />
         </span>
         <div className="flex justify-between items-center gap-3">
           <ThemeToggle />
