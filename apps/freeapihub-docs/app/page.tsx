@@ -13,6 +13,7 @@ import {
 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import Feedback from "@/components/Feedback";
 import { MarqueeDemo } from "@/components/Marquee";
 
 export default function Home() {
@@ -258,6 +259,8 @@ export default function Home() {
       </div>
 
       <MarqueeDemo />
+
+       <Feedback />
 
       {/* Footer  */}
       <Footer />
