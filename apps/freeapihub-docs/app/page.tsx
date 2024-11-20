@@ -64,13 +64,13 @@ export default function Home() {
         pauseOnHover
         className="[--duration:20s] z-0 mt-12 md:mb-20 mb-8 w-[85%] dark:text-white text-black md:max-w-xl "
       >
-        <h1>Random User APi</h1>
-        <h1>Joke API</h1>
-        <h1>Book API</h1>
-        <h1>Quote API</h1>
-        <h1>Stock API</h1>
-        <h1>Programming Language API</h1>
-        <h1>Product API</h1>
+        <h1><User className="text-black dark:text-white w-5 h-4 inline-block mr-2" />Random User APi</h1>
+        <h1><Smile className="text-black dark:text-white w-4 h-4 inline-block mr-2" />Joke API</h1>
+        <h1><Quote className="text-black dark:text-white w-4 h-4 inline-block mr-2" />Quote API</h1>
+        <h1><LineChart className="text-black dark:text-white w-4 h-4 inline-block mr-2" />Stock API</h1>
+        <h1><Notebook className="text-black dark:text-white w-4 h-4 inline-block mr-2" />Book API</h1>
+        <h1><CodeXml className="text-black dark:text-white w-5 h-5 inline-block mr-2" />Programming Language API</h1>
+        <h1><ShoppingCart className="text-black dark:text-white w-4 h-5 inline-block mr-2" />Product API</h1>
       </Marquee>
 
       {/* API Details Section */}
@@ -167,8 +167,8 @@ export default function Home() {
             </Link>
           </div>
           <div className="bg-zinc-50 p-6 dark:bg-[#1E1C1B] border border-zinc-200 dark:border-zinc-700/50 min-h-44 w-full rounded-xl hover:border-zinc-300 dark:hover:border-zinc-700 transition-colors flex flex-col justify-start items-start">
-            <div className="flex items-center space-x-3">
-              <CodeXml className="dark:text-white text-black w-6 h-6" />{" "}
+            <div className="flex items-start space-x-3">
+              <CodeXml className="dark:text-white text-black w-7 h-7" />{" "}
               <h3 className="text-xl font-semibold tracking-wider">
                 Programming Language API
               </h3>
