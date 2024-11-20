@@ -5,6 +5,12 @@ const withNextra = Nextra({
   themeConfig: "./theme.config.tsx",
 });
 
-const nextConfig = {};
+const nextConfig = {
+  reactStrictMode: true,
+  images: {
+    domains: ["avatar.vercel.sh"],
+  },
+  basePath: "",
+};
 
 export default withNextra(nextConfig);
