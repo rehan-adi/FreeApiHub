@@ -11,7 +11,7 @@ const Navbar = () => {
           width={32}
           height={32}
           alt="Logo"
-          className="md:w-8 w-7 md:h-8 h-7"
+          className="w-8 h-8"
         />
         </span>
         <div className="flex justify-between items-center gap-3">
