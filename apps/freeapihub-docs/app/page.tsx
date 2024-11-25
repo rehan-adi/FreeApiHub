@@ -42,7 +42,7 @@ export default function Home() {
               Getting Data is easy now
             </p>
           </div>
-          <header className="text-center pb-8">
+          <header className="md:text-center text-start pb-8">
             <h1 className="text-4xl px-3 md:text-6xl dark:text-white text-black w-full md:w-[60vw] font-bold tracking-tighter line-height">
               Explore and leverage a wide range of APIs with ease.
             </h1>
