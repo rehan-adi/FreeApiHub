@@ -1,81 +1,53 @@
-# Turborepo starter
+# FreeApiHub
 
-This is an official starter Turborepo.
+FreeApiHub is a free and open-source platform providing access to various APIs such as User, Books, Jokes, and more. It serves as a reliable hub for developers to fetch large JSON responses for testing or integration into their projects.
 
-## Using this example
+### Features
 
-Run the following command:
+- **Free APIs**: Access a variety of APIs, including User data, Book information, Jokes, and more.
+- **Large JSON Responses**: Get comprehensive and realistic data for development and testing purposes.
+- **Open Source**: Free to use and contribute.
+- **SDK Support**: A TypeScript SDK for easy API integration.
 
-```sh
-npx create-turbo@latest
-```
+### Tech Stack
 
-## What's inside?
+- **Frontend**: Next Js, Nextra
+- **Backend**: Node.js, Express, Prisma
+- **Database**: PostgreSQL
+- **Package Manager**: pnpm
 
-This Turborepo includes the following packages/apps:
 
-### Apps and Packages
+### FreeApiHub SDK
 
-- `docs`: a [Next.js](https://nextjs.org/) app
-- `web`: another [Next.js](https://nextjs.org/) app
-- `@repo/ui`: a stub React component library shared by both `web` and `docs` applications
-- `@repo/eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `@repo/typescript-config`: `tsconfig.json`s used throughout the monorepo
+A TypeScript SDK for FreeApiHub, providing simple access to free APIs with support for data retrieval and integration. Ideal for JavaScript and TypeScript projects.
 
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
+#### Features
 
-### Utilities
+- Simple API calls to interact with different endpoints (e.g., books, jokes, quotes).
 
-This Turborepo has some additional tools already setup for you:
+- TypeScript support for type safety and better developer experience.
 
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
+- Easy to integrate into your JavaScript or TypeScript projects.
 
-### Build
+### API Documentation
 
-To build all apps and packages, run the following command:
+For detailed documentation on each API endpoint, refer to the [FreeApiHub API documentation](https://freeapi-hub.vercel.app/docs).
 
-```
-cd my-turborepo
-pnpm build
-```
 
-### Develop
+### Contribution
 
-To develop all apps and packages, run the following command:
+Contributions are welcome! If you have ideas for new APIs or want to improve the existing ones, feel free to fork the repository and create a pull request.
 
-```
-cd my-turborepo
-pnpm dev
-```
+### License
 
-### Remote Caching
+This project is licensed under the MIT License. See the LICENSE file for more details.
 
-Turborepo can use a technique known as [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching) to share cache artifacts across machines, enabling you to share build caches with your team and CI/CD pipelines.
+### Inspiration: 
 
-By default, Turborepo will cache locally. To enable Remote Caching you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup), then enter the following commands:
+Inspired by JSONPlaceholder.
 
-```
-cd my-turborepo
-npx turbo login
-```
+### Contact
 
-This will authenticate the Turborepo CLI with your [Vercel account](https://vercel.com/docs/concepts/personal-accounts/overview).
+For questions or suggestions, feel free to reach out at rehanalire52@gmail.com.
 
-Next, you can link your Turborepo to your Remote Cache by running the following command from the root of your Turborepo:
-
-```
-npx turbo link
-```
-
-## Useful Links
-
-Learn more about the power of Turborepo:
-
-- [Tasks](https://turbo.build/repo/docs/core-concepts/monorepos/running-tasks)
-- [Caching](https://turbo.build/repo/docs/core-concepts/caching)
-- [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching)
-- [Filtering](https://turbo.build/repo/docs/core-concepts/monorepos/filtering)
-- [Configuration Options](https://turbo.build/repo/docs/reference/configuration)
-- [CLI Usage](https://turbo.build/repo/docs/reference/command-line-reference)
+Happy Coding!
